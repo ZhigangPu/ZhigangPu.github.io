@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Github特色Markdown | Byron&#39;s Plan A</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是适配Github实际情况的Markdown使用方法。  如果非要说对Markdown有什么感情，它和Latex一起打破了Word的概念垄断，自那以后，文字处理与Office无关，它是可编程的，它是有想象空间的。就像爱情不仅仅是你侬我侬，也可以相坐无言，共言采薇。">
+  <meta name="description" content="这是适配Github实际情况的Markdown使用方法。  如果非要说对Markdown有什么感情，它和Latex一起打破了Word的概念垄断，自那以后，文字处理与Office无关，它是可编程的，它是有想象空间的。就像爱情不仅仅是你侬我侬，也可以相坐无言，共言采薇。  文献引用效果： …content needed a reference…\(^1\) 1. some reference to c">
 <meta name="keywords" content="Writing">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Github特色Markdown">
 <meta property="og:url" content="http://yoursite.com/2019/02/17/markdown-for-github-page/index.html">
 <meta property="og:site_name" content="Byron&#39;s Plan A">
-<meta property="og:description" content="这是适配Github实际情况的Markdown使用方法。  如果非要说对Markdown有什么感情，它和Latex一起打破了Word的概念垄断，自那以后，文字处理与Office无关，它是可编程的，它是有想象空间的。就像爱情不仅仅是你侬我侬，也可以相坐无言，共言采薇。">
+<meta property="og:description" content="这是适配Github实际情况的Markdown使用方法。  如果非要说对Markdown有什么感情，它和Latex一起打破了Word的概念垄断，自那以后，文字处理与Office无关，它是可编程的，它是有想象空间的。就像爱情不仅仅是你侬我侬，也可以相坐无言，共言采薇。  文献引用效果： …content needed a reference…\(^1\) 1. some reference to c">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-17T09:04:24.600Z">
+<meta property="og:updated_time" content="2019-02-17T09:15:02.590Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Github特色Markdown">
-<meta name="twitter:description" content="这是适配Github实际情况的Markdown使用方法。  如果非要说对Markdown有什么感情，它和Latex一起打破了Word的概念垄断，自那以后，文字处理与Office无关，它是可编程的，它是有想象空间的。就像爱情不仅仅是你侬我侬，也可以相坐无言，共言采薇。">
+<meta name="twitter:description" content="这是适配Github实际情况的Markdown使用方法。  如果非要说对Markdown有什么感情，它和Latex一起打破了Word的概念垄断，自那以后，文字处理与Office无关，它是可编程的，它是有想象空间的。就像爱情不仅仅是你侬我侬，也可以相坐无言，共言采薇。  文献引用效果： …content needed a reference…\(^1\) 1. some reference to c">
   
     <link rel="alternative" href="/atom.xml" title="Byron&#39;s Plan A" type="application/atom+xml">
   
@@ -167,6 +167,13 @@
 <blockquote>
 <p>如果非要说对Markdown有什么感情，它和Latex一起打破了Word的概念垄断，自那以后，文字处理与Office无关，它是可编程的，它是有想象空间的。就像爱情不仅仅是你侬我侬，也可以相坐无言，共言采薇。</p>
 </blockquote>
+<h1 id="文献引用"><a href="#文献引用" class="headerlink" title="文献引用"></a>文献引用</h1><p><strong>效果</strong>：</p>
+<p>…content needed a reference…<a href="1">\(^1\)</a></p>
+<p><a name="1">1. some reference to content before superscripts </a></p>
+<p><strong>实现</strong>：</p>
+<p><code>...content needed a reference...&lt;a href=&quot;#1&quot;&gt;\\(^1\\)&lt;/a&gt;</code></p>
+<p><code>&lt;a name=&quot;1&quot;&gt;1. some reference to content before superscripts &lt;/a&gt;</code></p>
+<p>通过调用html自带的跳转<code>href=&quot;# &lt;name of element&gt;&quot;</code>功能实现跳转。</p>
 
       
 
@@ -273,7 +280,7 @@
   
   
     <a href="/2019/02/17/VIM-configuration/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">VIM配置</div>
+      <div class="article-nav-title">流浪VIM</div>
       <i class="icon-circle-right"></i>
     </a>
   
