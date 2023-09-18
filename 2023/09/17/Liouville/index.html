@@ -529,12 +529,12 @@ variable denoting tomorrow's weather, 0 being sunny, 1 being rainy. Let
 weather, so now we have a probability distribution for two random
 variables.</p>
 <p><span class="math display">\[
-\begin{tabular}{|l|l|l|l|l|}
-\hline $\mathrm{P}(\mathrm{A}=\mathrm{x}, \mathrm{B}=\mathrm{y})$ &amp;
-$(1,0)$ &amp; $(1,1)$ &amp; $(0,0)$ &amp; $(0,1)$ \\
+\begin{array}{|l|l|l|l|l|}
+\hline \mathrm{P}(\mathrm{A}=\mathrm{x}, \mathrm{B}=\mathrm{y}) &amp;
+(1,0) &amp; (1,1) &amp; (0,0) &amp; (0,1) \\
 \hline val &amp; 0.1 &amp; 0.3 &amp; 0.2 &amp; 0.4 \\
 \hline
-\end{tabular}
+\end{array}
 \]</span></p>
 <p>Now if I only want to know <span class="math inline">\(P(A)\)</span>,
 then I should integrate out <span class="math inline">\(B\)</span>. This
