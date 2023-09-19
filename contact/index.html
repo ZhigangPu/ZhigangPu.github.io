@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Tags, Ayron&#39;s blog">
+    <meta name="keywords" content="contact, Ayron&#39;s blog">
     <meta name="description" content="Ayron&#39;s blog">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Tags | Ayron&#39;s blog</title>
+    <title>contact | Ayron&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -330,7 +330,13 @@
 
 </header>
 
-    <div class="bg-cover pd-header about-cover">
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/css/barrager.css">
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jquery.barrager.js"></script>
+
+<div class="bg-cover pd-header about-cover">
     <div class="container">
     <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
@@ -383,85 +389,103 @@
     </div>
 </div>
 
-<main class="content">
-
-    
-
-<div id="tags" class="container chip-container">
-    <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">
-                <i class="fas fa-tags"></i>&nbsp;&nbsp;Post Tags
-            </div>
-            <div class="tag-chips">
-                
-                
-                <a href="/tags/Liouville-equation/" title="Liouville equation: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Liouville equation" style="background-color: #F9EBEA;">Liouville equation
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Vlasov-equation/" title="Vlasov equation: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Vlasov equation" style="background-color: #F5EEF8;">Vlasov equation
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Lie-algebra/" title="Lie algebra: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Lie algebra" style="background-color: #D5F5E3;">Lie algebra
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/BBGKY/" title="BBGKY: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="BBGKY" style="background-color: #E8F8F5;">BBGKY
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-    
-    <link rel="stylesheet" type="text/css" href="/libs/jqcloud/jqcloud.css">
-<style type="text/css">
-    #tag-wordcloud {
-        width: 100%;
-        height: 300px;
+<style>
+    #send{
+        margin-bottom: 10px;
+        width: 49%;
+        background-color: #0ba360;
+    }
+    #clear{
+        margin-bottom: 10px;
+        width: 49%;
+        background-color: #e7c65c;
+    }
+    p{
+        text-align: center;
     }
 </style>
+<main class="content">
+    <div id="contact" class="container chip-container">
+        <div class="card">
+            <div class="card-content">
+                <div class="tag-title center-align">
+                    <i class="fas fa-comments"></i>&nbsp;&nbsp;Contact
+                </div>
+                
 
-<div class="container" data-aos="fade-up">
-    <div class="card">
-        <div id="tag-wordcloud" class="card-content"></div>
+            </div>
+            <!--valine评论弹幕-->
+            
+        </div>
+
+        <!--其他评论card-->
+        <div class="card">
+            
+
+            
+
+            
+                <div class="disqus-card card" data-aos="fade-up">
+    <div id="disqus_thread" class="card-content">
+        <noscript>Please enable JavaScript to view the
+            <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
     </div>
 </div>
 
-<script type="text/javascript" src="/libs/jqcloud/jqcloud-1.0.4.min.js"></script>
 <script type="text/javascript">
-    
+    disqus_config = function () {
+        this.page.url = 'https://zhigangpu.github.io/contact/index.html';
+        this.page.identifier = '/contact/index.html';
+        this.page.title = 'contact';
+    };
+    let disqus_shortname = 'Ayron-blog';
 
-    $('#tag-wordcloud').jQCloud([{"text":"Liouville equation","weight":1,"link":"/tags/Liouville-equation/"},{"text":"Vlasov equation","weight":1,"link":"/tags/Vlasov-equation/"},{"text":"Lie algebra","weight":1,"link":"/tags/Lie-algebra/"},{"text":"BBGKY","weight":1,"link":"/tags/BBGKY/"}], {
-        autoResize: true
-    });
+    (function () { // DON'T EDIT BELOW THIS LINE
+        let d = document, s = d.createElement('script');
+        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', new Date());
+        (d.head || d.body).appendChild(s);
+    })();
 </script>
 
-    
+ 
+<script>
+//   var disqus_shortname = 'Ayron-blog';
+  var disqus_config = function() {
+    this.page.url = 'https://zhigangpu.github.io/contact/index.html';
+    this.page.identifier = 'contact/index.html';
+    this.page.title = 'contact';
+  };
+  (function() {
+    var dsq = document.createElement('script');
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.setAttribute('data-timestamp', '' + new Date());
+    (document.head || document.body).appendChild(dsq);
+  })();
+</script>
+ 
+<script
+  id="dsq-count-scr"
+  src="https://Ayron-blog.disqus.com/count.js"
+  async
+></script>
+ 
 
+            
+
+            
+
+            
+
+            
+
+            
+
+        </div>
+    </div>
 </main>
 
 
@@ -808,9 +832,9 @@ $(function () {
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://zhigangpu.github.io/tags/index.html';
-        this.page.identifier = '/tags/index.html';
-        this.page.title = 'Tags';
+        this.page.url = 'https://zhigangpu.github.io/contact/index.html';
+        this.page.identifier = '/contact/index.html';
+        this.page.title = 'contact';
     };
     let disqus_shortname = 'Ayron-blog';
 
@@ -827,9 +851,9 @@ $(function () {
 <script>
 //   var disqus_shortname = 'Ayron-blog';
   var disqus_config = function() {
-    this.page.url = 'https://zhigangpu.github.io/tags/index.html';
-    this.page.identifier = 'tags/index.html';
-    this.page.title = 'Tags';
+    this.page.url = 'https://zhigangpu.github.io/contact/index.html';
+    this.page.identifier = 'contact/index.html';
+    this.page.title = 'contact';
   };
   (function() {
     var dsq = document.createElement('script');
