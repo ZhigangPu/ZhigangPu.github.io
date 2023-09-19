@@ -588,7 +588,7 @@ class="math inline">\(p_i\)</span> are canonically conjugate.</p>
 <p>Combining (2.15) and (2.16), we are in a position of calculating
 explicitly the Lie bracket of any pair of dynamical functions. The
 former equation reduces to <span class="math display">\[
-[a(q, p), \quad b(q, p)]=\sum_{i=1}^f\left(\frac{\partial a}{\partial
+[a(q, p), \quad b(q, p)]=\sum_{i=1}^N\left(\frac{\partial a}{\partial
 q_i} \frac{\partial b}{\partial p_i}-\frac{\partial a}{\partial p_i}
 \frac{\partial b}{\partial q_i}\right) .
 \]</span> This is the familiar expression of the Poisson bracket. It
@@ -1165,6 +1165,163 @@ opens the gate towards the description of a dissipative and irreversible
 evolution. This property was absent in the initial Hamiltonian
 description, but is indispensable for understanding macroscopic
 physics.</p>
+<h2 id="the-vlasov-kinetic-equation">The Vlasov kinetic equation</h2>
+<p>Note that the interaction Liouvillian operator has the form</p>
+<p><span class="math display">\[
+\begin{aligned}
+L_{12}^{\prime \alpha \beta} &amp;= [V_{12}^{\alpha \beta}, F]\\
+&amp; =\left[\nabla_{12} V^{\alpha
+\beta}\left(\boldsymbol{q}_1-\boldsymbol{q}_2\right)\right]
+\cdot\left(\partial_1-\partial_2\right)F \\
+&amp; =e_\alpha e_\beta\left(\nabla_{12}
+\frac{1}{\left|\boldsymbol{q}_1-\boldsymbol{q}_2\right|}\right)
+\cdot\left(\partial_1-\partial_2\right)F,
+\end{aligned}
+\]</span> where the following abbreviations were used: <span
+class="math display">\[
+\nabla_{12} \equiv (\frac{\partial}{\partial q_1},
+\frac{\partial}{\partial q_2} ), \quad \partial_1 \equiv
+\frac{\partial}{\partial p_1}
+\]</span></p>
+<p>The second term on the right-hand side of the dynamic equation can be
+transformed as <span class="math display">\[
+\begin{aligned}
+&amp; \sum_\beta \int \mathrm{d} 2 L_{12}^{\prime \alpha \beta}
+f^\alpha(1 ; t) f^\beta(2 ; t) \\
+&amp; =\sum_\beta \int \mathrm{d} 2\left(\nabla_{12} V_{12}^{\alpha
+\beta}\right) \cdot\left(m_\alpha^{-1} \partial_1-m_\beta^{-1}
+\partial_2\right) f^\alpha(1 ; t) f^\beta(2 ; t) \\
+&amp; =\left(\nabla_{1} \sum_\beta \int \mathrm{d} 2 V_{12}^{\alpha
+\beta} f^\beta(2 ; t)\right) \cdot m_\alpha^{-1} \partial_1 f^\alpha(1 ;
+t) \\
+&amp; \equiv-\frac{e_\alpha}{m_\alpha} \bar{E}\left(\boldsymbol{q}_1 ;
+t\right) \cdot \partial_1 f^\alpha(1 ; t),
+\end{aligned}
+\]</span> where <span class="math display">\[
+\bar{E}\left(q_1 ; t\right) \equiv-\nabla_1 \bar{\Phi}\left(q_1 ;
+t\right)
+\]</span> and: <span class="math display">\[
+\overline{\boldsymbol{\Phi}}\left(\boldsymbol{q}_1 ; t\right)=\sum_\beta
+e_\beta \int \mathrm{d} \boldsymbol{q}_2 \mathrm{~d} \boldsymbol{v}_2
+\frac{1}{\left|\boldsymbol{q}_1-\boldsymbol{q}_2\right|}
+f^\beta\left(\boldsymbol{q}_2, \boldsymbol{v}_2 ; t\right) .
+\]</span></p>
+<p>These results have a very simple physical interpretation. We
+recognize in the above equality <span class="math inline">\(\sum_\beta
+\int \mathrm{d} 2 L_{12}^{\prime \alpha \beta} f^\alpha(1 ; t) f^\beta(2
+; t)\)</span> the gradient of the average interaction potential which,
+in turn, can be expressed in the form of an electric field <span
+class="math inline">\(\overline{\boldsymbol{E}}\)</span> deriving from a
+scalar potential <span
+class="math inline">\(\overline{\boldsymbol{\Phi}}\)</span>, defined as
+integral over coulomb potential times particle 2's distribution
+function. The latter has exactly the form of the potential produced by a
+macroscopic continuous charge distribution <span
+class="math inline">\(\sigma\)</span>,</p>
+<p><span class="math display">\[
+\sigma\left(\boldsymbol{q}_2 ; t\right)=\sum_\beta e_\beta \int
+\mathrm{d} \boldsymbol{v}_2 f^\beta\left(\boldsymbol{q}_2,
+\boldsymbol{v}_2 ; t\right)
+\]</span></p>
+<p>More precisely, the potential <span
+class="math inline">\(\bar{\Phi}\left(\boldsymbol{q}_1 ;
+t\right)\)</span> is a solution of the Poisson equation</p>
+<p><span class="math display">\[
+\nabla^2 \bar{\Phi}\left(q_1 ; t\right)=-4 \pi \sigma\left(q_1 ;
+t\right) .
+\]</span> This effect of the interactions can be described as follows.
+Each particle (1) feels the action of an average electric field produced
+by all the other particles in the system; these particles act like a
+"smeared-out" continuous charge distribution <span
+class="math inline">\(\sigma\left(q_1 ; t\right)\)</span> : they lost
+their discrete, point-like character in the process of averaging. This
+electric field is self-consistent in the following sense: <span
+class="math inline">\(\overline{\boldsymbol{E}}\)</span> acts on the
+distribution function <span class="math inline">\(f^\alpha\)</span> and
+makes it change in time; but as <span
+class="math inline">\(f^\alpha\)</span> changes, it modifies, in turn,
+the potential through.</p>
+<p>We now note that the vlasov equation has been reduced to the same
+form as the electric field term in the one-particle Liouville equation.
+The latter field <span class="math inline">\(\boldsymbol{E}_0\)</span>
+is, by definition, an external field, produced by sources outside the
+plasma: the corresponding potential <span
+class="math inline">\(\Phi_0\)</span> therefore obeys the homogeneous
+Laplace equation, i.e. with <span
+class="math inline">\(\sigma=0\)</span>. We now define the total
+electric field in the plasma, <span
+class="math inline">\(\boldsymbol{E}(\boldsymbol{q} ; t)\)</span>, as
+<span class="math display">\[
+\boldsymbol{E}(\boldsymbol{q} ; t)=\boldsymbol{E}_0(\boldsymbol{q} ;
+t)+\overline{\boldsymbol{E}}(\boldsymbol{q} ; t) .
+\]</span> It derives from the potential <span
+class="math inline">\(\Phi=\Phi_0+\bar{\Phi}\)</span>, which obeys the
+Poisson equation with source inside the plasma (with the same source
+term <span class="math inline">\(\sigma\)</span> ), with appropriate
+boundary conditions.</p>
+<p>We may thus write the kinetic equation, omitting the collision term
+<span class="math inline">\(\mathscr{K}^\alpha\)</span>, in the explicit
+form</p>
+<p><span class="math display">\[
+\partial_t f^\alpha(1 ; t)=-v_1 \cdot \nabla_1 f^\alpha(1 ;
+t)-\frac{e_\alpha}{m_\alpha}\left(\frac{1}{c}\left(v_1 \times
+\boldsymbol{B}\right)+\boldsymbol{E}\right) \cdot \partial_1 f^\alpha(1
+; t),
+\]</span></p>
+<p>which is coupled to the Poisson equation</p>
+<p><span class="math display">\[
+\nabla \cdot \boldsymbol{E}(\boldsymbol{q} ; t)=4 \pi \sum_\beta e_\beta
+\int \mathrm{d} \boldsymbol{v} f^\beta(\boldsymbol{q}, \boldsymbol{v} ;
+t),
+\]</span></p>
+<p>together with</p>
+<p><span class="math display">\[
+\nabla \times \boldsymbol{E}(\boldsymbol{q} ; t)=0 .
+\]</span></p>
+<p>This is the celebrated Vlasov equation (Vlasov 1938) which plays a
+fundamental role in plasma physics. It is also called the "collisionless
+kinetic equation" (or, very improperly, the "collisionless Boltzmann
+equation"). One feature is immediately striking: it has the same form as
+the one-particle Liouville equation. But one should never forget the
+essential difference between these equations. In the Liouville equation,
+the electric field <span class="math inline">\(\boldsymbol{E}_0\)</span>
+is external, i.e., it is a prescribed function of <span
+class="math inline">\(\boldsymbol{q}\)</span> and <span
+class="math inline">\(t\)</span>. As a result, the Liouville equation is
+linear in <span class="math inline">\(f^\alpha\)</span>. On the
+contrary, the "linear" form of the Vlasov equation is only apparent,
+because here the electric field is to be considered as a second unknown
+function, along with <span class="math inline">\(f^a\)</span>; the
+Vlasov equation is coupled to the Poisson equation. Hence, the Vlasov
+equation is non-linear. This property is a necessary consequence of the
+interactions.</p>
+<p>Now we only consider the Coulombic effects, so the self-consistent
+effects only reveal on the electric field. We haven't consider the
+magnetic interaction between particles, that requires a relativistic
+theory, which is not an easy matter. A simple treatment, sufficient for
+the derivation of the Vlasov equaion, is given by Klimontovich(1964).
+The average velocity of the particles builds up an electric current,
+which acts as a source of a self-consistent magnetic field <span
+class="math inline">\(\boldsymbol{B}(\boldsymbol{q};t)\)</span> that
+must be added to the external field in order to produce the total
+magnetic field.</p>
+<p>As a result, the Vlasov equation is still valid as it stands, but it
+is coupled to the full set of Maxwell equations, <span
+class="math display">\[
+\begin{aligned}
+&amp; \nabla \cdot \boldsymbol{E}(\boldsymbol{q} ; t)=4 \pi \sum_\beta
+e_\beta \int \mathrm{d} v f^\alpha(\boldsymbol{q}, \boldsymbol{v} ; t),
+\\
+&amp; \nabla \times \boldsymbol{E}(\boldsymbol{q} ; t)=-c^{-1}
+\partial_t \boldsymbol{B}(\boldsymbol{q} ; t), \\
+&amp; \nabla \cdot \boldsymbol{B}(\boldsymbol{q} ; t)=0, \\
+&amp; \nabla \time \boldsymbol{B}(\boldsymbol{q} ; t)=c^{-1} \partial_t
+\boldsymbol{E}(\boldsymbol{q} ; t)+(4 \pi / c) \sum_\beta e_\beta \int
+\mathrm{d} \boldsymbol{v} v f^\alpha(\boldsymbol{q}, \boldsymbol{v} ; t)
+.
+\end{aligned}
+\]</span> Clearly, if we let <span class="math inline">\(c \rightarrow
+\infty\)</span>, we come back to the previous picture.</p>
 
                 
             </div>
