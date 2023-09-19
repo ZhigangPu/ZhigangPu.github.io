@@ -785,19 +785,16 @@ electric potential, both are external stationary fields. <span
 class="math inline">\(H_{0j}^{\alpha_j}\)</span> is single particle
 <span class="math inline">\(j\)</span>'s Hamiltonian. This additive
 structure is characteristic of system of non-interacting particles.</p>
-<p>Now we consider the Liouville operator <span
-class="math inline">\(L\)</span> for this system. Since this operator is
-linear, so it has the same additive structure as the Hamiltonian: <span
-class="math display">\[
+<!-- Now we consider the Liouville operator $L$ for this system. Since this operator is linear, so it has the same additive structure as the Hamiltonian:
+$$
 L=\sum_{j=1}^N L_j^{\alpha_j}
-\]</span> where <span class="math display">\[
+$$
+where
+$$
 L_j^{\alpha_j}=\left[H_{0_j}^{\alpha_j}, \text{some } F \right]
-\]</span> Here, <span class="math inline">\(L\)</span> operates on all
-coordinates <span class="math inline">\((\boldsymbol{q}_j,
-\boldsymbol{p}_j)\)</span> while <span
-class="math inline">\(L_j^{\alpha_j}\)</span> operates only on particle
-<span class="math inline">\(j\)</span>'s coordinates. Recall that for
-Lie bracket, we have such linear relation:</p>
+$$
+Here, $L$ operates on all coordinates $(\boldsymbol{q}_j, \boldsymbol{p}_j)$ while $L_j^{\alpha_j}$ operates only on particle $j$'s coordinates. -->
+<p>Recall that for Lie bracket, we have such linear relation:</p>
 <p><span class="math display">\[
 \begin{aligned}
 &amp; {[\alpha a, b]=\alpha[a, b],} \\
@@ -808,8 +805,55 @@ Lie bracket, we have such linear relation:</p>
 <p>Therefore, for Liouville operator</p>
 <p><span class="math display">\[
 LF = [H, F] = [\sum_{j=1}^NH_{0}^{\alpha_j}, F] =
+\sum_{j=1}^N[H_{0}^{\alpha_j},F]= [\sum_{j=1}^N L_j^{\alpha_j}] F
+\]</span></p>
+<p>Then the equation for the distribution function is</p>
+<p><span class="math display">\[
+\partial_t  F = LF = [\sum_{j=1}^N L_j^{\alpha_j}] F =
 \sum_{j=1}^N[H_{0}^{\alpha_j},F]
 \]</span></p>
+<p>Multiply both sides by <span class="math inline">\(N_\alpha\)</span>
+and integrate over the positions and momenta of all the particles,
+except those of particle 1 of species <span
+class="math inline">\(\alpha\)</span>, we have</p>
+<p><span class="math display">\[
+\partial_t \hat{f}_1^\alpha\left(\boldsymbol{q}_1, \boldsymbol{p}_1 ;
+\boldsymbol{t}\right)=L_1^\alpha \hat{f}_1^\alpha\left(\boldsymbol{q}_1,
+\boldsymbol{p}_1 ; \boldsymbol{t}\right)
+\]</span></p>
+<p>because the contribution of all the one-particle Liouville other than
+<span class="math inline">\(L_1^{\alpha}\)</span> vanish by partial
+integration. But if Hamiltonian doesn't have such good linear property
+as to be written as separate single particle's Hamiltonian, then we
+won't have such single equation for one-particle distribution.</p>
+<p>We now adopt a more compact notation: we drop the index 1 from <span
+class="math inline">\(f_1^\alpha\)</span>, it being understood that
+<span class="math inline">\(\hat{f}^\alpha\)</span> denotes a
+one-particle reduced distribution function. Moreover, in the text, we
+shall refer to <span class="math inline">\(\hat{f}^\alpha\)</span>
+simply as the distribution function (of species <span
+class="math inline">\(\alpha\)</span> ). The index 1 is also superfluous
+on <span class="math inline">\(L_1^\alpha\)</span> and on the variables
+<span class="math inline">\(\boldsymbol{q}_1\)</span>, <span
+class="math inline">\(\boldsymbol{p}_1\)</span>. Thus, we simply write
+<span class="math display">\[
+\partial_t \hat{f}^\alpha=L^\alpha \hat{f}^\alpha(\boldsymbol{q},
+\boldsymbol{p} ; t),
+\]</span> or, equivalently, <span class="math display">\[
+\partial_t \hat{f}^\alpha=\left[H_0^\alpha, \hat{f}^\alpha\right],
+\]</span> or, even more explicitly, <span class="math display">\[
+\partial_t \hat{f}^\alpha=\left[H_0^\alpha, \boldsymbol{q}\right] \cdot
+\frac{\partial \hat{f}^\alpha}{\partial
+\boldsymbol{q}}+\left[H_0^\alpha, \boldsymbol{p}\right] \cdot
+\frac{\partial \hat{f}^\alpha}{\partial \boldsymbol{q}},
+\]</span> and <span class="math display">\[
+H_0^\alpha=\frac{1}{2 m_\alpha}\left|\boldsymbol{p}-\frac{e_\alpha}{c}
+\boldsymbol{A}(\boldsymbol{q})\right|^2+e_\alpha \Phi_0(q) .
+\]</span> The important feature of this result is the following. For a
+non-interacting system, the reduced one-particle distribution function
+obeys an equation of evolution which has the same form as the Liouville
+equation in the reduced phase space defined by the position and the
+momentum of a single particle.</p>
 <h2 id="summary">Summary</h2>
 <p>In this article, we briefly introduce the Liouville equation and
 conceopt of reduced distribution function. In next article, we will
@@ -859,15 +903,20 @@ V^{\boldsymbol{\alpha}_j \boldsymbol{\alpha}_n}\left(\boldsymbol{q}_j,
 \]</span></p>
 <p>This is a non-relativistic fully ionized interacting system. In sipte
 of these limitations, this model covers a large spectrum of interesting
-problems. Next, we introduce reduced distribution functions and derive
-from the Liouville equation an equation for the reduced one-particle
-distribution function <span
-class="math inline">\(f^{\alpha}(\boldsymbol{q}_1, \boldsymbol{v}_1,
-t)\)</span>. At this point arises the essential difference introduced by
-the interactions. The interaction introduces a term involving the
-two-particle reduced distribution function <span
-class="math inline">\(f^{\alpha\beta}(\boldsymbol{q}_1,
-\boldsymbol{v}_1, \boldsymbol{q}_2, \boldsymbol{v}_2,t)\)</span>:</p>
+problems.</p>
+<p>Let's try to apply the Liouville operator,</p>
+<p><span class="math display">\[
+\begin{align*}
+LF &amp;= [H, F] = [ \sum_{j=1}^N H_{0_j}^{\alpha_j}+\sum_{j&lt;n=1}^N
+V_{j n}^{\alpha_j \alpha_n} , F] \\
+&amp;= [ \sum_{j=1}^N H_{0_j}^{\alpha_j}, F] + [\sum_{j&lt;n=1}^N V_{j
+n}^{\alpha_j \alpha_n} , F] \\
+&amp;= \sum_{j=1}^N [H_{0_j}^{\alpha_j}, F] + \sum_{j&lt;n=1}^N[ V_{j
+n}^{\alpha_j \alpha_n} , F]
+\end{align*}
+\]</span></p>
+<p>As shown above, there exsits a correlation part. Coresspondingly, the
+Liouville equation an equation for reduced distribution functions is</p>
 <p><span class="math display">\[
 \begin{aligned}
 &amp; \partial_t f^\alpha\left(\boldsymbol{q}_1, \boldsymbol{v}_1 ;
@@ -878,15 +927,23 @@ f^{\alpha \beta}\left(\boldsymbol{q}_1, \boldsymbol{v}_1,
 \boldsymbol{q}_2, \boldsymbol{v}_2 ; t\right) .
 \end{aligned}
 \]</span></p>
-<p>The operator <span class="math inline">\(L_{12}^{&#39;\alpha
-\beta}\)</span> is the interaction Liouvillian, describing the
-interaction of particle 1 (of species <span
-class="math inline">\(\alpha\)</span>) and 2 (of species <span
-class="math inline">\(\beta\)</span>):</p>
+<p>where, <span class="math inline">\(L_1^{\alpha} = [H_{0_1}^{\alpha},
+F]\)</span>, and the operator <span
+class="math inline">\(L_{12}^{&#39;\alpha \beta}\)</span> is the
+interaction Liouvillian, describing the interaction of particle 1 (of
+species <span class="math inline">\(\alpha\)</span>) and 2 (of species
+<span class="math inline">\(\beta\)</span>):</p>
 <p><span class="math display">\[L_{12}^{&#39;\alpha \beta} =
-[V_{12}^{\alpha \beta}, G]\]</span></p>
-<p>for any function <span class="math inline">\(G\)</span> of the
-coordinates of particles 1 and 2.</p>
+[V_{12}^{\alpha \beta}, F]\]</span></p>
+<p>for any function <span class="math inline">\(F\)</span> of the
+coordinates of particles 1 and 2. Compare to non-interacting case, here
+the interacting potential make the distribution function equation become
+more complicated and non-closed. To solve one-particle distribution, one
+has to know two-particle distribution. However, when one tries to solve
+two-particle distribution, the solution requires three-particle
+distribution fucntion and so on. Thus, the exact solution requires the
+solution the <span class="math inline">\(N\)</span> coupled equations
+for all the rdf: the well-known BBGKY hierarchy.</p>
 
                 
             </div>
