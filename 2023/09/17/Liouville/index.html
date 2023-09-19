@@ -944,6 +944,227 @@ two-particle distribution, the solution requires three-particle
 distribution fucntion and so on. Thus, the exact solution requires the
 solution the <span class="math inline">\(N\)</span> coupled equations
 for all the rdf: the well-known BBGKY hierarchy.</p>
+<h2 id="weak-coupling-approximation">Weak coupling approximation</h2>
+<p>In order to define this approximation, we first introduce the concept
+of a binary correlation function <span class="math inline">\(g^{\alpha
+\beta}(\boldsymbol{q}_1, \boldsymbol{v}_1,\boldsymbol{q}_2,
+\boldsymbol{v}_2;t)\)</span>,</p>
+<p><span class="math display">\[
+g^{\alpha \beta}\left(\boldsymbol{q}_1, \boldsymbol{v}_1,
+\boldsymbol{q}_2, \boldsymbol{v}_2 ; t\right)
+=f^{\alpha \beta}\left(\boldsymbol{q}_1, \boldsymbol{v}_1,
+\boldsymbol{q}_2, \boldsymbol{v}_2 ;
+t\right)-f^\alpha\left(\boldsymbol{q}_1, \boldsymbol{v}_1 ; t\right)
+f^\beta\left(\boldsymbol{q}_2, \boldsymbol{v}_2 ; t\right)
+\]</span></p>
+<p>The correlation function measures the deviation from statistical
+independence of the two particles. It is expected, on physical grounds,
+that <span class="math inline">\(g^{\alpha,\beta}\rightarrow 0\)</span>
+as the relative distance between the particles increases. One may
+usually define a quantity <span class="math inline">\(r_c\)</span>,
+called the range of the correlations, noting that</p>
+<p><span class="math display">\[
+g^{\alpha \beta}\left(q_1, v_1, q_2, v_2 ; t\right) \approx 0 \text {
+for }\left|q_1-q_2\right|&gt;r_{\mathrm{c}}
+\]</span></p>
+<p>The following normalization property exists:</p>
+<p><span class="math display">\[
+\int \mathrm{d} q_1 \mathrm{~d} v_1 \mathrm{~d} q_2 \mathrm{~d} v_2
+g^{\alpha \beta}\left(q_1, v_1, q_2, v_2 ; t\right)=0 .
+\]</span></p>
+<p>Since</p>
+<p><span class="math display">\[
+\int \mathrm{d} q_1 \mathrm{~d} v_1 \mathrm{~d} q_2 \mathrm{~d} v_2
+f^{\alpha \beta}\left(q_1, v_1, q_2, v_2 ; t\right)= \int \mathrm{d} q_1
+\mathrm{~d} v_1 \mathrm{~d} q_2 \mathrm{~d} v_2
+f^\alpha\left(\boldsymbol{q}_1, \boldsymbol{v}_1 ; t\right)
+f^\beta\left(\boldsymbol{q}_2, \boldsymbol{v}_2 ; t\right) = N_\alpha
+N_\beta
+\]</span></p>
+<p>The physical origin of the correlation is the existence of
+interactions, which cause the particles to feel their mutual
+influence.</p>
+<p>It is well known that, in a plasma, the relative importance of the
+Coulomb interactions, compared to the mean kinetic energy (i.e. the
+thermal energy) is measured by the characteristic dimensionless
+parameter <span class="math inline">\(\mu_{\mathrm{p}}\)</span>,
+involving the charge <span class="math inline">\(e_\alpha\)</span>, the
+mean particle density <span class="math inline">\(n_\alpha\)</span> and
+the temperature <span class="math inline">\(T_\alpha\)</span> : <span
+class="math display">\[
+\mu_{\mathrm{P}}=\left(\frac{4}{3} \pi \lambda_{\mathrm{D}}^3
+n_{\mathrm{i}}\right)^{-2 / 3}=(36 \pi)^{1 / 3} \frac{e^2
+n_{\mathrm{i}}^{-1 / 3}\left(Z
+T_{\mathrm{e}}+T_{\mathrm{i}}\right)}{T_{\mathrm{e}}
+T_{\mathrm{i}}(1+Z)},
+\]</span> where <span class="math inline">\(\lambda_D\)</span> is the
+Debye length (Trubnikov 1965), <span class="math display">\[
+\lambda_{\mathrm{D}}=\left(\frac{4 \pi Z e^2\left(n_{\mathrm{e}}
+T_{\mathrm{e}}+n_{\mathrm{i}} T_{\mathrm{i}}\right)}{T_{\mathrm{e}}
+T_{\mathrm{i}}(1+Z)}\right)^{-1 / 2} .
+\]</span> The plasma parameter is defined by various authors in slightly
+different ways, differing by a numerical factor, or by the exponent in
+eq. (4.7). The definition adopted here has a very simple physical
+interpretation. Up to the factor <span class="math inline">\((36 \pi)^{1
+/ 3} \simeq 4.836\)</span>, the right-hand side of eq. (4.7) represents
+the ratio of the Coulomb energy, evaluated at the mean distance of the
+ions, <span class="math inline">\(n_{\mathrm{i}}^{-1 / 3}\)</span>, to
+the mean thermal energy, defined as <span class="math display">\[
+T^{-1}=\frac{Z T_{\mathrm{e}}+T_{\mathrm{i}}}{(1+Z) T_{\mathrm{e}}
+T_{\mathrm{i}}}=\left(\frac{1}{n_{\mathrm{i}}
+T_{\mathrm{i}}}+\frac{1}{n_{\mathrm{e}} T_{\mathrm{e}}}\right)
+/\left(\frac{1}{n_{\mathrm{i}}}+\frac{1}{n_{\mathrm{e}}}\right),
+\]</span> where we used the electroneutrality condition <span
+class="math inline">\(n_{\mathrm{e}}=Z n_{\mathrm{i}}\)</span> and where
+the temperature is expressed in energy units (see section 3.2). Other
+authors prefer to use the parameter <span
+class="math inline">\(N_{\mathrm{D}}\)</span>, <span
+class="math display">\[
+N_{\mathrm{D}}=\frac{4}{3} \pi \lambda_{\mathrm{D}}^3
+n_{\mathrm{i}}=\mu_{\mathrm{P}}^{-3 / 2} .
+\]</span> The parameter <span
+class="math inline">\(N_{\mathrm{D}}\)</span> represents the number of
+particles in a sphere of radius equal to the Debye length <span
+class="math inline">\(\lambda_{\mathrm{D}}\)</span>.</p>
+<p>We define a plasma as being weakly coupled when the following
+relation is satisfied:</p>
+<p><span class="math display">\[
+\mu_p \ll 1
+\]</span></p>
+<p>Clearly, this condition can be met in two ways. For a given
+temperature, the condition is satisfied for sufficiently low density;
+alternatively, for a given density, it holds for sufficiently high
+temperatures. Thus in a weak coupling regime, the potential interaction
+energy of the particles is, on the average, very small compared to their
+mean kinetic energy. A nautral truncation of the BBGKY hierarchy is
+obtained by negelecting all correlation functions of more than two
+particles.</p>
+<p>The equation for <span class="math inline">\(f^\alpha\)</span> is
+obtained, <span class="math display">\[
+\begin{aligned}
+\partial_t f^\alpha(1 ; t)= &amp; L_1^\alpha f^\alpha(1 ; t)+\sum_\beta
+\int \mathrm{d} 2 L_{12}^{\prime \alpha \beta} f^\alpha(1 ; t) f^\beta(2
+; t) \\
+&amp; +\sum_\beta \int \mathrm{d} 2 L_{12}^{\prime \alpha \beta}
+g^{\alpha \beta}(1,2 ; t) .
+\end{aligned}
+\]</span> where <span class="math inline">\(f(1;t) \equiv
+f(\boldsymbol{q}_1, \boldsymbol{p}_1; t)\)</span> (using the obvious
+abbreviation <span class="math inline">\(j\)</span> for the <span
+class="math inline">\(\operatorname{set}\left(q_j, v_j\right)\)</span>
+).</p>
+<p>This equation is coupled to the equation for the correlation function
+(see Balescu 1975), in which the three-body correlation is set equal to
+zero: <span class="math display">\[
+\begin{aligned}
+\partial_t g^{\alpha \beta}(1,2 ; t) \\
+=\left(L_1^\alpha+L_2^\beta\right) g^{\alpha \beta}(1,2 ;
+t)+L_{12}^{\prime \alpha \beta} g^{\alpha \beta}(1,2 ; t) \\
+\quad+\sum_\gamma \int \mathrm{d} 3\left[L_{13}^{\prime \alpha \gamma}
+f^\alpha(1 ; t) g^{\beta \gamma}(2,3 ; t)+L_{23}^{\prime \beta \gamma}
+f^\beta(2 ; t) g^{\alpha \gamma}(1,3 ; t)\right. \\
+\left.\quad+\left(L_{13}^{\prime \alpha \gamma}+L_{23}^{\prime \beta
+\gamma}\right) f^\gamma(3 ; t) g^{\alpha \beta}(1,2 ;
+t)\right]+L_{12}^{\prime \alpha \beta} f^\alpha(1 ; t) f^\beta(2 ; t)
+\end{aligned}
+\]</span> Even this set of two coupled equations for <span
+class="math inline">\(f^\alpha\)</span> and <span
+class="math inline">\(g^{\alpha \beta}\)</span> is too complicated for
+explicit calculations. By using arguments which will not be described in
+detail for lack of space, it can be shown that the following two simpler
+versions are appropriate for describing a plasma. In a first stage, we
+retain <span class="math display">\[
+\begin{aligned}
+&amp; \partial_t g^{\alpha \beta}(1,2 ;
+t)-\left(L_1^\alpha+L_2^\beta\right) g^{\alpha \beta}(1,2 ; t) \\
+&amp; =\sum_\gamma \int \mathrm{d} 3\left[L_{13}^{\prime \alpha \gamma}
+f^\alpha(1 ; t) g^{\beta \gamma}(2,3 ; t)+L_{23}^{\prime \beta \gamma}
+f^\beta(2 ; t) g^{\alpha \gamma}(1,3 ; t)\right] \\
+&amp; \quad+L_{12}^{\prime \alpha \beta} f^\alpha(1 ; t) f^\beta(2 ; t)
+. \quad[B L]
+\end{aligned}
+\]</span></p>
+<p>The second, simpler version is <span class="math display">\[
+\partial_t g^{\alpha \beta}(1,2 ; t)-\left(L_1^\alpha+L_2^\beta\right)
+g^{\alpha \beta}(1,2 ; t)=
+L_{12}^{\prime \alpha \beta} f^\alpha(1 ; t) f^\beta(2 ; t) . \quad[L]
+\]</span></p>
+<p>The main difference between the two approximations can be readily
+recognized. In second version, only the two particles 1 and 2, appearing
+in the unknown correlation function, are involved. One therefore expects
+this approximation to describe an evolution driven by binary collisions
+of the particles (in the weak coupling approximation). The end result of
+this approximation will be the <strong>Landau kinetic equation</strong>.
+On the contrary, in first version, we also retain interactions with a
+third particle taken from the "bath". This implies that we admit a
+certain class of many-body interactions in the approximate description
+of the evolution. The product of this procedure is the Balescu-Lenard
+equation, which contains a dynamic description of the screening or
+polarization in the plasma, a typical collective effect.</p>
+<p>The last stage in reaching a true kinetic equation is the elimination
+of the correlation function. This is a crucial and non-trivial step,
+which will be discussed later. Let us say here that if the formal
+solution of correlation function is substituted into dynamic equaiton,
+the resulting equation is quite untractable, because of its mathematical
+complexity. A careful study reveals, however, the possible emergence of
+a regime in which the correlation function at time <span
+class="math inline">\(t\)</span> becomes a functional of the
+one-particle distribution functions at the same time <span
+class="math inline">\(t\)</span> (Bogoliubov 1962, Balescu 1975):</p>
+<p><span class="math display">\[
+g^{\alpha \beta}(t)=g^{\alpha \beta}\{f(t)\} .
+\]</span></p>
+<p>When this kinetic regime is established, the substitution of this
+correlation function into dynamic equation results in</p>
+<p><span class="math display">\[
+\partial_t f^\alpha(1 ; t)=L_1^\alpha f^\alpha(1 ; t)+\sum_\beta \int
+\mathrm{d} 2 L_{12}^{\alpha \beta} f^\alpha(1 ; t) f^\beta(2 ;
+t)+\mathscr{K}^\alpha\{f(t)\}
+\]</span> where <span
+class="math inline">\(\mathscr{K}^\alpha\{f(t)\}\)</span> represents
+term <span class="math inline">\(\sum_\beta \int \mathrm{d} 2
+L_{12}^{\prime \alpha \beta} g^{\alpha \beta}(1,2 ; t)\)</span> is the
+so-called collision term.</p>
+<p>This is the typical, generic form of a kinetic equation. This concept
+is defined as a closed, Markovian, generally non-linear equation of
+evolution for the one-particle distribution function <span
+class="math inline">\(f^\alpha(1 ; t)\)</span>. The word "Markovian"
+means (broadly speaking) that the kinetic equation only involves the
+value of the unknown distribution function at time <span
+class="math inline">\(t\)</span>. In particular, the rate of change
+<span class="math inline">\(\partial_t f^\alpha(1 ; t)\)</span> is not
+influenced by the values taken by the distribution function in the past,
+i.e. <span class="math inline">\(f^\alpha(1 ; t-\tau),
+\tau&gt;0\)</span>.</p>
+<p>We may already characterize the role of the various terms in the
+above equation in driving the change in time of the distribution
+function. <span class="math inline">\(L_1^\alpha\)</span> describes the
+effect of the free motion (kinetic energy) as well as the effect of the
+external electric and magnetic fields. The interactions affect the
+motion in two ways. The second term <span
+class="math inline">\(\sum_\beta \int \mathrm{d} 2 L_{12}^{\alpha \beta}
+f^\alpha(1 ; t) f^\beta(2 ; t)\)</span> on the right-hand side will be
+shown to represent the effect of <strong>an average self-consistent
+field acting on particle 1 and produced by all the other particles in
+the system</strong>. Besides this "smooth" background action, the
+interactions also act more "violently" upon a sufficiently close
+approach of two (or more) particles. This important effect is contained
+in the collision term <span
+class="math inline">\(\mathscr{K}^\alpha\)</span>. Its specific form
+depends widely on the nature and the state of the system. For instance,
+it is quite different when only binary collisions are considered or when
+collective effects are included; its form depends on the density and the
+temperature, being quite different for a fusion plasma or for a
+degenerate quantum plasma; it can be affected by the presence of a (very
+strong) electric or magnetic field, etc.</p>
+<p>The most important property of the above equation is the following.
+When the kinetic regime is established, the Hamiltonian (or Liouvillian)
+structure of the evolution process is lost. The detailed reason for this
+"symmetry breaking" will appear later. Let us say here that this feature
+opens the gate towards the description of a dissipative and irreversible
+evolution. This property was absent in the initial Hamiltonian
+description, but is indispensable for understanding macroscopic
+physics.</p>
 
                 
             </div>
