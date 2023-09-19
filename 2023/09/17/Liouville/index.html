@@ -262,7 +262,7 @@ equation, Landau equation in kinetic regime and two">
         
         <li><div class="divider"></div></li>
         <li>
-            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+            <a href="https://github.com/ZhigangPu" class="waves-effect waves-light" target="_blank">
                 <i class="fab fa-github-square fa-fw"></i>Fork Me
             </a>
         </li>
@@ -319,7 +319,7 @@ equation, Landau equation in kinetic regime and two">
     }
 </style>
 
-<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+<a href="https://github.com/ZhigangPu" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
    data-tooltip="Fork Me" data-position="left" data-delay="50">
     <svg viewBox="0 0 250 250" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -433,6 +433,168 @@ mechanics into the realm of statistical mechanics and of its daughter
 kinetic theory.</p>
 <p>This article mainly refers to R.Balescu, Transport Processes In
 Plasmas, Vol1.</p>
+<h1 id="lie-algebra">Lie algebra</h1>
+<p>The special importance of the Lie bracket for the dynamics comes from
+the following postulate:</p>
+<p><strong>The evolution in time of any dynamical function, due to the
+motion of the system, is determined by the equation:</strong></p>
+<p><span class="math display">\[
+\dot{a} = [a, H]
+\]</span></p>
+<p><strong>This is the most general form of the equation of motion in
+the Hamiltonian formalism</strong>. From classic mechanics to quantum
+mechanics, physics language evolves from Newtons' formalism to Langrange
+(Hamilton) formalism. We treat the physical system as force and geometry
+to energy and functionals. The Lie algebra is a effective language to
+describe more general physics for post-Newton's era. Some extra reading
+is required here to derive this dynamic equation.Reasons for developing
+Lie algebra are firstly put forward, then we restart from the begining
+to learn details.</p>
+<p>Any theory of a system evolving in time must be constructed upon two
+concepts: a definition of the state of the system, and a definition of
+the law of evolution. In classical Hamiltonian mechanics, the state of a
+system of <span class="math inline">\(f\)</span> degrees of freedom
+requires the specification of <span class="math inline">\(2 f\)</span>
+variables which are taken (in a first stage) as the generalized
+coordinates <span class="math inline">\(q_i\)</span> and momenta <span
+class="math inline">\(p_i\)</span>, <span class="math display">\[
+\left(q_i, p_i\right), \quad i=1,2, \ldots, f .
+\]</span> The law of motion is governed by a specified function of the
+state variables: the Hamiltonian <span class="math inline">\(H(q,
+p)\)</span>. Here <span class="math inline">\((q, p)\)</span> is an
+abbreviation for the set <span class="math inline">\(\left(q_1, \ldots,
+q_f, p_1, \ldots, p_f\right)\)</span>. Here, and in all forthcoming
+sections up to section 1.9, we assume the Hamiltonian to be independent
+of the time, <span class="math inline">\(t\)</span>. The system is then
+called an autonomous system. The motion, i.e., the change in time of the
+positions and of the momenta, is determined by the Hamilton equation
+<span class="math display">\[
+\dot{q}_i(t)=\frac{\partial H(q, p)}{\partial p_i}, \quad
+\dot{p}_i(t)=-\frac{\partial H(q, p)}{\partial q_i}
+\]</span></p>
+<p>Besides <span class="math inline">\(q_i\)</span> and <span
+class="math inline">\(p_i\)</span>, we are interested in many other
+quantities which take definite values in each state of the system. The
+Hamiltonian, as well as other physical quantities, such as <strong>the
+total momentum, the angular momentum</strong>, etc., are obvious
+physical examples. A subtler example is provided by the solution of eqs.
+(2.2). The coordinate <span class="math inline">\(q_i(t)\)</span> at
+time <span class="math inline">\(t\)</span> is a function of the initial
+coordinates and momenta <span class="math inline">\(q_i, p_i\)</span>
+and of the time. We decide from here on to take the set <span
+class="math inline">\((q, p)\)</span>, representing the coordinates and
+the momenta at aiven (initial) time, as the variables spanning a (fixed)
+phase space of the dynamical system. All the quantities mentioned above
+are then defined (in classical mechanics) as functions of the phase
+space coordinates <span class="math inline">\((q, p)\)</span>, possibly
+depending on some "external parameters" <span
+class="math inline">\(\alpha\)</span>; they will be called dynamical
+functions and will be denoted by <span class="math inline">\(a, b,
+\ldots\)</span> : <span class="math display">\[
+a \equiv a(q, p ; \alpha) .
+\]</span> Typical examples of external parameters are: the time <span
+class="math inline">\(t\)</span>, parameters characterizing the system
+(such as the mass <span class="math inline">\(m\)</span>, or the charge
+<span class="math inline">\(e\)</span> ), or characterizing the
+environment (such as the magnetic field <span
+class="math inline">\(\boldsymbol{B}\)</span> ), or universal constants
+(such as the speed of light <span class="math inline">\(c\)</span> ), or
+simply numerical constants.</p>
+<p>We now consider the set <span
+class="math inline">\(\mathscr{D}\)</span> of all the dynamical
+functions and define the permissible operations on its members; in other
+words, we endow the set with an algebraic structure. We postulate that,
+for any member <span class="math inline">\(a, b, \ldots \in
+\mathscr{D}\)</span>, the result of the following operations is also a
+member of the set <span class="math inline">\(\mathscr{D}\)</span> :
+Multiplication by an external parameter: <span class="math display">\[
+\alpha a=c, \quad c \in \mathscr{D} .
+\]</span> Linear combination *: <span class="math display">\[
+\alpha a+\beta b=d, \quad d \in \mathscr{D} .
+\]</span> Multiplication: <span class="math display">\[
+a \cdot b=e, \quad e \in \mathscr{D} .
+\]</span> Inversion: <span class="math display">\[
+a^{-1}=f, \quad f \in \mathscr{D} .
+\]</span> These operations have their usual algebraic meaning and
+properties. Clearly, aking <span class="math inline">\(q\)</span> and
+<span class="math inline">\(p\)</span> as "building blocks", we can
+construct by means of these operations very wide classes of dynamical
+functions (e.g. polynomials, analytical functions, meromorphic
+functions, Fourier series, etc.). But the truly characteristic feature
+of the set <span class="math inline">\(\mathscr{D}\)</span> is obtained
+by defining an additional operation, the Lie bracket, <span
+class="math display">\[
+[a, b]=g, \quad g \in \mathscr{D},
+\]</span> with the following properties. It is an antisymmetric
+operation: <span class="math display">\[
+[a, b]=-[b, a] .
+\]</span> It is a non-associative operation, governed by the Jacobi
+relation: <span class="math display">\[
+[[a, b], c]+[[b, c], a]+[[c, a], b]=0 .
+\]</span> It is related as follows to the three basic operations
+(2.4)-(2.6): <span class="math display">\[
+\begin{aligned}
+&amp; {[\alpha a, b]=\alpha[a, b],} \\
+&amp; {[\alpha a+\beta b, c]=\alpha[a, c]+\beta[b, c],} \\
+&amp; {[a b, c]=a[b, c]+b[a, c] .}
+\end{aligned}
+\]</span> The set <span class="math inline">\(\mathscr{D}\)</span> of
+dynamical functions, endowed with the operations (2.4)-(2.8), is called
+a Lie algebra.</p>
+<p>The three rules (2.11)-(2.13) imply that the Lie bracket has
+properties analogous to a first order differential operator. They imply
+the following important, easily derived relation <span
+class="math display">\[
+[a(q, p), b]=\sum_{i=1}^f\left(\frac{\partial a}{\partial q_i}\left[q_i,
+b\right]+\frac{\partial a}{\partial p_i}\left[p_i, b\right]\right) .
+\]</span> Iterating this relation, we find <span class="math display">\[
+\begin{aligned}
+&amp; {[a(q, p), b(q, p)]} \\
+&amp; \qquad \sum_{i=1}^f \sum_{j=1}^f\left(\frac{\partial a}{\partial
+q_i} \frac{\partial b}{\partial q_j}\left[q_i, q_j\right]+\frac{\partial
+a}{\partial q_i} \frac{\partial b}{\partial p_j}\left[q_i,
+p_j\right]\right. \\
+&amp; \left.\quad+\frac{\partial a}{\partial p_i} \frac{\partial
+b}{\partial q_j}\left[p_i, q_j\right]+\frac{\partial a}{\partial p_i}
+\frac{\partial b}{\partial p_j}\left[p_i, p_j\right]\right) .
+\end{aligned}
+\]</span></p>
+<p>This very important relation enables us to calculate explicitly the
+Lie bracket of any pair of functions of the phase space coordinates,
+provided we know the fundamental Lie brackets of the "building stones"
+<span class="math inline">\(q_i, p_i\)</span>. At this stage in the
+Hamiltonian formalism, we postulate the following value of the
+fundamental Lie brackets: <span class="math display">\[
+\begin{aligned}
+&amp; {\left[q_i, q_j\right]=0,} \\
+&amp; {\left[p_i, p_j\right]=0,} \\
+&amp; {\left[q_i, p_j\right]=\delta_{i j}, \quad i, j=1,2, \ldots, f .}
+\end{aligned}
+\]</span> For completeness, the following relations <span
+class="math display">\[
+\begin{aligned}
+&amp; {\left[\alpha, q_i\right]=0,} \\
+&amp; {\left[\alpha, p_i\right]=0, \quad i=1,2, \ldots, f}
+\end{aligned}
+\]</span> must be added for any external parameter <span
+class="math inline">\(\alpha\)</span>. Actually, eqs. (2.17) can be
+considered as a general definition of an external parameter. Equations
+(2.16) can be called the Lie multiplication table of the Lie algebra
+<span class="math inline">\(\mathscr{D}\)</span> in the variables <span
+class="math inline">\(\left(q_i, p_i\right)\)</span>. Any set of
+variables satisfying (2.16) is called a set of canonical variables. It
+is also said that <span class="math inline">\(q_i\)</span> and <span
+class="math inline">\(p_i\)</span> are canonically conjugate.</p>
+<p>Combining (2.15) and (2.16), we are in a position of calculating
+explicitly the Lie bracket of any pair of dynamical functions. The
+former equation reduces to <span class="math display">\[
+[a(q, p), \quad b(q, p)]=\sum_{i=1}^f\left(\frac{\partial a}{\partial
+q_i} \frac{\partial b}{\partial p_i}-\frac{\partial a}{\partial p_i}
+\frac{\partial b}{\partial q_i}\right) .
+\]</span> This is the familiar expression of the Poisson bracket. It
+appears as a specific realization of the Lie bracket, valid when the
+fundamental variables <span class="math inline">\(q_i, p_i\)</span> are
+canonical.</p>
 <h1 id="liouville-equation">Liouville equation</h1>
 <h2 id="derivation-of-the-liouville-equation">Derivation of the
 Liouville equation</h2>
@@ -508,7 +670,7 @@ two-particle distribution functions are given:</p>
 &amp; \hat{f}_1^\alpha\left(\boldsymbol{q}_1, \boldsymbol{p}_1 ;
 t\right)=N_\alpha \int \mathrm{d} \boldsymbol{q}_2 \mathrm{~d}
 \boldsymbol{p}_2 \cdots \mathrm{d} \boldsymbol{q}_N \mathrm{~d}
-\boldsymbol{p}_N F(q, p ; t) \\
+\boldsymbol{p}_N F(q, p; t) \\
 &amp; \hat{f}_2^{\alpha \alpha}\left(\boldsymbol{q}_1, \boldsymbol{p}_1,
 \boldsymbol{q}_2, \boldsymbol{p}_2 ;
 t\right)=N_\alpha\left(N_\alpha-1\right) \int \mathrm{d}
@@ -604,6 +766,50 @@ class="math inline">\(\hat{f}_1^\alpha(\boldsymbol{q}, \boldsymbol{p} ;
 t)\)</span>. Up to now, there is no error introduced, but if we want to
 derive a equation for <span class="math inline">\(r d f\)</span>, there
 will be some approximation.</p>
+<h2 id="liouville-equation-for-independent-particles">Liouville equation
+for independent particles</h2>
+<p>To put it simple, we start by a fictitious system of non-interacting
+particles. This is useful even in some quite important descriptions of
+the interacting plasmas. The Hamiltonian of this ideal system is
+then,</p>
+<p><span class="math display">\[
+H(q, p)=\sum_{j=1}^N\left(\frac{1}{2 m_{\alpha_j}}\left|p_j-c^{-1}
+e_{\alpha_j} A\left(q_j\right)\right|^2+e_{\alpha_j}
+\Phi_0\left(q_j\right)\right) = \sum_{j=1}^NH_{0}^{\alpha_j},
+\]</span></p>
+<p>where the index <span class="math inline">\(\alpha_j\)</span> labels
+the species of particles <span class="math inline">\(j\)</span>. <span
+class="math inline">\(\boldsymbol{A}(x)\)</span> is the magnetic vector
+potential, while <span class="math inline">\(\Psi(x)\)</span> is
+electric potential, both are external stationary fields. <span
+class="math inline">\(H_{0j}^{\alpha_j}\)</span> is single particle
+<span class="math inline">\(j\)</span>'s Hamiltonian. This additive
+structure is characteristic of system of non-interacting particles.</p>
+<p>Now we consider the Liouville operator <span
+class="math inline">\(L\)</span> for this system. Since this operator is
+linear, so it has the same additive structure as the Hamiltonian: <span
+class="math display">\[
+L=\sum_{j=1}^N L_j^{\alpha_j}
+\]</span> where <span class="math display">\[
+L_j^{\alpha_j}=\left[H_{0_j}^{\alpha_j}, \text{some } F \right]
+\]</span> Here, <span class="math inline">\(L\)</span> operates on all
+coordinates <span class="math inline">\((\boldsymbol{q}_j,
+\boldsymbol{p}_j)\)</span> while <span
+class="math inline">\(L_j^{\alpha_j}\)</span> operates only on particle
+<span class="math inline">\(j\)</span>'s coordinates. Recall that for
+Lie bracket, we have such linear relation:</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; {[\alpha a, b]=\alpha[a, b],} \\
+&amp; {[\alpha a+\beta b, c]=\alpha[a, c]+\beta[b, c],} \\
+&amp; {[a b, c]=a[b, c]+b[a, c] .}
+\end{aligned}
+\]</span></p>
+<p>Therefore, for Liouville operator</p>
+<p><span class="math display">\[
+LF = [H, F] = [\sum_{j=1}^NH_{0}^{\alpha_j}, F] =
+\sum_{j=1}^N[H_{0}^{\alpha_j},F]
+\]</span></p>
 <h2 id="summary">Summary</h2>
 <p>In this article, we briefly introduce the Liouville equation and
 conceopt of reduced distribution function. In next article, we will
@@ -667,11 +873,20 @@ class="math inline">\(f^{\alpha\beta}(\boldsymbol{q}_1,
 &amp; \partial_t f^\alpha\left(\boldsymbol{q}_1, \boldsymbol{v}_1 ;
 t\right) =L_1^\alpha f^\alpha\left(\boldsymbol{q}_1, \boldsymbol{v} ;
 t\right)+\sum_{\beta=\mathrm{e}, \mathrm{i}} \int \mathrm{d}
-\boldsymbol{q}_2 \mathrm{~d} \boldsymbol{v}_2 L_{12}^{\alpha \beta}
+\boldsymbol{q}_2 \mathrm{~d} \boldsymbol{v}_2 L_{12}^{&#39;\alpha \beta}
 f^{\alpha \beta}\left(\boldsymbol{q}_1, \boldsymbol{v}_1,
 \boldsymbol{q}_2, \boldsymbol{v}_2 ; t\right) .
 \end{aligned}
 \]</span></p>
+<p>The operator <span class="math inline">\(L_{12}^{&#39;\alpha
+\beta}\)</span> is the interaction Liouvillian, describing the
+interaction of particle 1 (of species <span
+class="math inline">\(\alpha\)</span>) and 2 (of species <span
+class="math inline">\(\beta\)</span>):</p>
+<p><span class="math display">\[L_{12}^{&#39;\alpha \beta} =
+[V_{12}^{\alpha \beta}, G]\]</span></p>
+<p>for any function <span class="math inline">\(G\)</span> of the
+coordinates of particles 1 and 2.</p>
 
                 
             </div>
