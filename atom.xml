@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Ayron&#39;s blog</title>
+  
+  <subtitle>长枪策马平天下</subtitle>
+  <link href="https://zhigangpu.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://zhigangpu.github.io/"/>
+  <updated>2023-09-19T07:34:26.985Z</updated>
+  <id>https://zhigangpu.github.io/</id>
+  
+  <author>
+    <name>Ayron</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>From Hamiltonian to Laudan Equation</title>
+    <link href="https://zhigangpu.github.io/2023/09/17/Liouville/"/>
+    <id>https://zhigangpu.github.io/2023/09/17/Liouville/</id>
+    <published>2023-09-17T09:29:26.000Z</published>
+    <updated>2023-09-19T07:34:26.985Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;preface&quot;&gt;Preface&lt;/h1&gt;
+&lt;p&gt;The well-known equations for fully ionized plasma are Vlasov
+equation, Landau equation in kinetic regime</summary>
+        
+      
+    
+    
+    
+    <category term="Kinetic theory" scheme="https://zhigangpu.github.io/categories/Kinetic-theory/"/>
+    
+    
+    <category term="Liouville equation" scheme="https://zhigangpu.github.io/tags/Liouville-equation/"/>
+    
+    <category term="Vlasov equation" scheme="https://zhigangpu.github.io/tags/Vlasov-equation/"/>
+    
+    <category term="Lie algebra" scheme="https://zhigangpu.github.io/tags/Lie-algebra/"/>
+    
+    <category term="BBGKY" scheme="https://zhigangpu.github.io/tags/BBGKY/"/>
+    
+  </entry>
+  
+</feed>
