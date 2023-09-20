@@ -1066,7 +1066,7 @@ obtained, <span class="math display">\[
 \int \mathrm{d} 2 L_{12}^{\prime \alpha \beta} f^\alpha(1 ; t) f^\beta(2
 ; t) \\
 &amp; +\sum_\beta \int \mathrm{d} 2 L_{12}^{\prime \alpha \beta}
-g^{\alpha \beta}(1,2 ; t) .
+g^{\alpha \beta}(1,2 ; t) . \tag{1}
 \end{aligned}
 \]</span> where <span class="math inline">\(f(1;t) \equiv
 f(\boldsymbol{q}_1, \boldsymbol{p}_1; t)\)</span> (using the obvious
@@ -1077,14 +1077,14 @@ class="math inline">\(\operatorname{set}\left(q_j, v_j\right)\)</span>
 (see Balescu 1975), in which the three-body correlation is set equal to
 zero: <span class="math display">\[
 \begin{aligned}
-\partial_t g^{\alpha \beta}(1,2 ; t) \\
-=\left(L_1^\alpha+L_2^\beta\right) g^{\alpha \beta}(1,2 ;
+\partial_t g^{\alpha \beta}(1,2 ; t)
+&amp;=\left(L_1^\alpha+L_2^\beta\right) g^{\alpha \beta}(1,2 ;
 t)+L_{12}^{\prime \alpha \beta} g^{\alpha \beta}(1,2 ; t) \\
-\quad+\sum_\gamma \int \mathrm{d} 3\left[L_{13}^{\prime \alpha \gamma}
-f^\alpha(1 ; t) g^{\beta \gamma}(2,3 ; t)+L_{23}^{\prime \beta \gamma}
-f^\beta(2 ; t) g^{\alpha \gamma}(1,3 ; t)\right. \\
-\left.\quad+\left(L_{13}^{\prime \alpha \gamma}+L_{23}^{\prime \beta
-\gamma}\right) f^\gamma(3 ; t) g^{\alpha \beta}(1,2 ;
+&amp;\quad+\sum_\gamma \int \mathrm{d} 3\left[L_{13}^{\prime \alpha
+\gamma} f^\alpha(1 ; t) g^{\beta \gamma}(2,3 ; t)+L_{23}^{\prime \beta
+\gamma} f^\beta(2 ; t) g^{\alpha \gamma}(1,3 ; t)\right. \\
+&amp;\left.\quad+\left(L_{13}^{\prime \alpha \gamma}+L_{23}^{\prime
+\beta \gamma}\right) f^\gamma(3 ; t) g^{\alpha \beta}(1,2 ;
 t)\right]+L_{12}^{\prime \alpha \beta} f^\alpha(1 ; t) f^\beta(2 ; t)
 \end{aligned}
 \]</span> Even this set of two coupled equations for <span
@@ -1342,6 +1342,293 @@ e_\beta \int \mathrm{d} v f^\alpha(\boldsymbol{q}, \boldsymbol{v} ; t),
 \end{aligned}
 \]</span> Clearly, if we let <span class="math inline">\(c \rightarrow
 \infty\)</span>, we come back to the previous picture.</p>
+<h2 id="the-landau-kinetic-equation">The Landau kinetic equation</h2>
+<p>The Vlasov equation ignore the collision term, but now we try to
+derive the collision term. Our goal is the elimination of the
+correlation function <span class="math inline">\(g^{\alpha,
+\beta}(1,2;t)\)</span> from the last term in Eq.(1). For this purpose,
+we must solve one of the truncated versions of the second BBGKY
+equation: we choose here the simplest case which only involve two
+particles. This linear, inhomogeneous equation for <span
+class="math inline">\(g^{\alpha \beta}(1,2 ; t)\)</span> is formally
+solved in terms of a propagator <span
+class="math inline">\(U_{12}^{\alpha \beta}(t)\)</span>, which obeys
+<span class="math display">\[
+\partial_t U_{12}^{\alpha \beta}(t)-\left(L_1^\alpha+L_2^\beta\right)
+U_{12}^{\alpha \beta}(t)=0, \quad U_{12}^{\alpha \beta}(0)=I,
+\]</span> where <span class="math inline">\(I\)</span> is the identity
+operator. The propagator is used to propagate information along some
+characteristic line. The solution of the initial value problem for
+Eq.(L) is then <span class="math display">\[
+\begin{aligned}
+g^{\alpha \beta}(1,2 ; t)= &amp; \int_0^t \mathrm{~d} \tau
+U_{12}^{\alpha \beta}(\tau) L_{12}^{\prime \alpha \beta} f^\alpha(1 ;
+t-\tau) f^\beta(2 ; t-\tau) \\
+&amp; +U_{12}^{\alpha \beta}(t) g^{\alpha \beta}(1,2 ; 0),
+\end{aligned}
+\]</span> where <span class="math inline">\(g^{\alpha \beta}(1,2 ;
+0)\)</span> is the (given) initial condition for the correlation
+function. Here the information deciding <span
+class="math inline">\(g^{\alpha\beta}\)</span> at time <span
+class="math inline">\(t\)</span> is divided into two part: the first
+part is correlation part, it is an integral over some characteristic
+line and varies all the way. The second part is initial state which
+propagates without any distraction. This is very similar to integral
+solution of the BGK equation.</p>
+<p>Substituting this result into the last term of Eq.(1), we obtain
+<span class="math display">\[
+\begin{aligned}
+\mathscr{K}^\alpha= &amp; \sum_\beta \int \mathrm{d} 2 \int_0^t
+\mathrm{~d} \tau L_{12}^{\alpha \beta} U_{12}^{\alpha \beta}(\tau)
+L_{12}^{\prime \alpha \beta} f^\alpha(1 ; t-\tau) f^\beta(2 ; t-\tau) \\
+&amp; +\sum_\beta \int \mathrm{d} 2 L_{12}^{\alpha \beta} U_{12}^{\alpha
+\beta}(t) g^{\alpha \beta}(1,2 ; 0) .
+\end{aligned}
+\]</span> This equation is formally exact (within the weak coupling
+approximation) and yields a closed equation for <span
+class="math inline">\(f^\alpha(1 ; t)\)</span>. It is called the master
+equation and was originally derived (in a more general context) by
+Prigogine and Résibois (1961). This equation has some quite unfamiliar
+properties. A striking feature is its non-Markovian character. It is an
+integro-differential equation in time; hence, the rate of change <span
+class="math inline">\(\partial_t f^\alpha(1 ; t)\)</span> at time <span
+class="math inline">\(t\)</span> depends on the integral of <span
+class="math inline">\(f^\alpha(1 ; t-\tau)\)</span> over the whole past
+history. And Markovian character means that the current state only
+depends on the former time step, such as random walk.</p>
+<p>Such a structure cannot be expected to lead to the familiar
+macroscopic equations of hydrodynamics or electrodynamics, which are all
+Markovian. (For macroscopic equation, if you discretize the equation
+with a timestep <span class="math inline">\(\Delta t\)</span>, the state
+of <span class="math inline">\(t^{n+1}\)</span> only depends on state of
+<span class="math inline">\(t^{n}\)</span>. That's why there will be
+constraint of timestep.) Moreover, the second term is very strange: it
+implies that the rate of change at time <span
+class="math inline">\(t\)</span> of <span
+class="math inline">\(f^\alpha(1 ; t)\)</span> depends on the initial
+value of the correlations, i.e. on the initial preparation of the
+system. In order to get out of these difficulties, we must exploit more
+thoroughly the physics of the problem and disentangle the relevant
+features from the less relevant ones.</p>
+<p>We first note that the two-body propagator <span
+class="math inline">\(U_{12}^{\alpha \beta}(t)\)</span> relates to the
+unperturbed motion of independent particles. It is well known (or easily
+checked) that this quantity factorizes as <span class="math display">\[
+U_{12}^{\alpha \beta}(t)=U_1^\alpha(t) U_2^\beta(t)
+\]</span> where the one-particle propagator satisfies the simpler
+Liouville equation <span class="math display">\[
+\partial_t U_1^\alpha(t)=L_1^\alpha U_1^\alpha(t)
+\]</span> Next, we note that the determination of the propagator is
+equivalent to the solution of the equations of motion of a single
+particle. Indeed, the Liouville theorem asserts that the phase space
+density at time <span class="math inline">\(t\)</span>, at the point
+<span class="math inline">\((q, v)\)</span>, is the same as the density
+at time 0 , at the point where the particle was at time <span
+class="math inline">\((-t)\)</span> (the phase space fluid element
+density remains unchanged): <span class="math display">\[
+U_1^\alpha(t) f^\alpha\left(q_1, v_1 ; 0\right)=f^\alpha\left(q_1, v_1 ;
+t\right)=f^\alpha\left(q_1(-t), v_1(-t) ; 0\right),
+\]</span> where <span class="math inline">\(q(-t)\)</span> obeys the
+"backward" equation of motion, <span class="math display">\[
+\dot{q}(-t)=-[q(-t), H]=[H, q(-t)]
+\]</span> with the initial condition <span class="math display">\[
+\boldsymbol{q}(0)=\boldsymbol{q}
+\]</span> and similar equations for <span
+class="math inline">\(v(-t)\)</span>. But we know that even this
+one-particle problem is, in general, very difficult in the presence of
+inhomogeneous external fields. The feature that saves us and leads to
+the derivation of an explicit kinetic equation is the fact that
+<strong>in a plasma there exist several characteristic time-and
+length-scales and that these scales may be widely separated</strong>, at
+least in some cases. In order to discuss these, we must formulate a
+certain number of intuitive, qualitative statements or anticipations,
+which must be checked a posteriori.</p>
+<p>We have already mentioned that the correlation function introduces a
+characteristic length, the range of correlation <span
+class="math inline">\(r_{\mathrm{c} \alpha}\)</span>, defined by the
+fact that <span class="math inline">\(g^{\alpha \beta} \simeq 0\)</span>
+whenever the relative distance <span
+class="math inline">\(\left|\boldsymbol{q}_1-\boldsymbol{q}_2\right|\)</span>
+exceeds <span class="math inline">\(r_{\mathrm{c} \alpha}\)</span>. On
+the basis of elementary plasma physics (the Debye theory) it can be
+argued that <span class="math inline">\(r_{\mathrm{c} \alpha}\)</span>
+is of the order of the Debye length of species <span
+class="math inline">\(\alpha\)</span>, <span class="math display">\[
+r_{\mathrm{c} \alpha}=\lambda_{\mathrm{D} \alpha}=\left(\frac{4 \pi
+e_\alpha^2 n_\alpha}{T_\alpha}\right)^{-1 / 2},
+\]</span></p>
+<p>where <span class="math inline">\(n_\alpha\)</span> is the number
+density and <span class="math inline">\(T_\alpha\)</span> is the
+temperature (expressed in energy units) of species <span
+class="math inline">\(\alpha\)</span>. To this characteristic length
+corresponds a characteristic time, the inverse plasma frequency of
+species <span class="math inline">\(\alpha\)</span>, <span
+class="math display">\[
+\tau_{\mathrm{c} \alpha}=\omega_{\mathrm{P} \alpha}^{-1}=\left(\frac{4
+\pi e_\alpha^2 n_\alpha}{m_\alpha}\right)^{-1 / 2}
+\]</span> Next, we consider the range of the interactions: this poses a
+problem for the Coulomb forces, which decrease very slowly with distance
+and can be considered, for many purposes, to have infinite range.
+Nevertheless, the elementary Debye theory tells us that the statistical
+correlations produce a screening of these forces for distances larger
+than <span class="math inline">\(\lambda_{\mathrm{D} \alpha}\)</span>.
+Hence, the effective range of the interactions can be estimated as being
+equal to <span class="math inline">\(r_{c \alpha}\)</span> as well. It
+then follows that <span class="math inline">\(\tau_{\mathrm{c}
+\alpha}\)</span> estimates the time spent by a typical particle in the
+sphere of interaction of another, i.e. the duration of a collision.</p>
+<p>An independent characteristic time is provided by the collision term
+as a whole. Anticipating the fact that the collisions drive the system
+towards equilibrium, the collision term can be, very roughly speaking,
+represented as <span class="math display">\[
+\mathscr{K}^\alpha \approx
+\frac{f^\alpha-f_{\mathrm{eq}}^\alpha}{\tau_\alpha} .
+\]</span> We thus introduce the relaxation time <span
+class="math inline">\(\tau_\alpha\)</span> of species <span
+class="math inline">\(\alpha\)</span>, which may be defined as the time
+over which the distribution function <span
+class="math inline">\(f^\alpha\)</span> undergoes a significant change
+under the effect of the collisions. It will be determined more precisely
+in chapter 4. Associated with it is the mean free path of species <span
+class="math inline">\(\alpha\)</span>, defined as <span
+class="math display">\[
+\lambda_{\mathrm{mfp} \alpha}=V_{\mathrm{T} \alpha} \tau_\alpha,
+\]</span> where <span class="math inline">\(V_{\mathrm{T}
+\alpha}\)</span> is the thermal velocity of species <span
+class="math inline">\(\alpha\)</span>, <span class="math display">\[
+V_{\mathrm{T} \alpha}=\left(\frac{2 T_\alpha}{m_\alpha}\right)^{1 / 2} .
+\]</span> A third, independent characteristic length is associated with
+the spatial variation of the macroscopic quantities of the system
+(density, temperature,...), of the electric and magnetic fields, and
+also of the distribution function itself.</p>
+<p>Assuming that all these lengths are of the same order, we define
+<span class="math inline">\(L_{\mathrm{H}}\)</span>, the gradient length
+scale, or hydrodynamic length, as <span class="math display">\[
+L_{\mathrm{H}}=\left(\frac{1}{A}\left|\frac{\partial A}{\partial
+\boldsymbol{q}}\right|\right)^{-1},
+\]</span> where <span class="math inline">\(A\)</span> is any one of the
+above mentioned quantities. Here the gradient is normalised by the
+magnitude of the quantity itself. We also define a hydrodynamic time as
+<span class="math display">\[
+\tau_{\mathrm{H} \alpha}=L_{\mathrm{H}} / V_{\mathrm{T} \alpha} .
+\]</span> Last, but not least, there is a time scale defined by the
+Larmor frequency, <span class="math display">\[
+\tau_{B \alpha}=\left|\Omega_\alpha\right|^{-1}=\frac{m_\alpha
+c}{\left|e_\alpha\right| B},
+\]</span> and, corresponding to it, a length scale defined by the Larmor
+radius: <span class="math display">\[
+\rho_{\mathrm{L} \alpha}=V_{\mathrm{T} \alpha} \tau_{B \alpha}
+\]</span> The order relations between these scales determines various
+regimes of evolution. The most familiar one is characterized as follows.
+The gradient scale length <span
+class="math inline">\(L_{\mathrm{H}}\)</span> is a macroscopic quantity,
+typically measured in meters, centimeters,...; it is produced by a
+macroscopic preparation of the system. At the other extreme, the range
+of the correlations or of the interactions, <span
+class="math inline">\(r_{c \alpha}\)</span>, is a purely microscopic
+quantity. For a neutral gas, it is of the order of the size of a
+molecule, i.e. a few ångstroms. For a plasma, the Debye length can be
+much larger, depending on the density and the temperature. For
+laboratory systems (such as a thermonuclear plasma) it does not exceed
+<span class="math inline">\(10^{-3} \mathrm{~cm}\)</span>. As for the
+mean free path, it is always much longer than the range of the
+interactions, provided the plasma is weakly coupled; but its relation to
+the hydrodynamic length is much more variable. In neutral, not too
+dilute gases, one has <span class="math inline">\(L_{\mathrm{H}} \gg
+\lambda_{\mathrm{mfp} \alpha}\)</span>. But in a plasma at high
+temperature, the mean free path may easily become as large as several
+meters.</p>
+<p>In conclusion, we may assume the following relationships as
+representing typical situations in a weakly coupled plasma: <span
+class="math display">\[
+r_{\text {c } \alpha} \ll \lambda_{\text {mfp } \alpha} \leq
+L_{\mathrm{H}},
+\]</span> together with <span class="math display">\[
+\tau_{\mathrm{c} \alpha} \ll \tau_\alpha \lessgtr \tau_{\mathrm{H}
+\alpha} .
+\]</span></p>
+<p>Alternatively, we may have <span class="math display">\[
+r_{\text {c } \alpha} \ll L_{\mathrm{H}}&lt;\lambda_{\text {mfp }
+\alpha},
+\]</span> together with <span class="math display">\[
+\tau_{\mathrm{c} \alpha} \ll \tau_{\mathrm{H} \alpha}&lt;\tau_\alpha
+\]</span> Considering now the magnetic effects, we assume that the
+magnetic field is sufficiently small in order to ensure the conditions *
+<span class="math display">\[
+\left|\Omega_\alpha\right| \tau_{\mathrm{c} \alpha}&lt;1, \quad
+\frac{r_{\mathrm{c} \alpha}}{\rho_{\mathrm{L} \alpha}}&lt;1 .
+\]</span> It may be useful to note that this condition can be satisfied
+in practice even with very strong magnetic fields, such that <span
+class="math display">\[
+\frac{L_{\mathrm{H}}}{\rho_{\mathrm{L} \alpha}} \gg 1, \quad
+\frac{\lambda_{\mathrm{mfp} \alpha}}{\rho_{\mathrm{L} \alpha}} \gg 1 .
+\]</span> It should be realized that the first of these conditions
+precisely defines the applicability of the drift approximation.
+Forgetting now the details of the rough estimation of the various
+quantities, we only retain the basic five assumptions and make the best
+use of them in deriving an expression for the collision operator.</p>
+<p>In kinetic theory, we are mainly interested in the approach to
+equilibrium. This process takes place on the characteristic time scale
+<span class="math inline">\(\tau_\alpha\)</span>, which is much longer
+than the duration of the collisions, <span
+class="math inline">\(\tau_{\mathrm{c} \alpha}\)</span>. We therefore
+decide to study the evolution by "smoothing out" the details of the
+motion that arise on the short time scale <span
+class="math inline">\(\tau_{c \alpha}\)</span>. The resulting "smooth",
+or "asymptotic" evolution law will be an appropriate description of the
+phenomena, whenever we are not interested in short-living transient
+processes. (Note that a similar philosophy underlies the description of
+the particle motion in the drift approximation, where we use
+average)</p>
+<p>The result of this treatment is certainly familiar to many readers:
+it is the explicit form of the kinetic equation in the weak coupling
+approximation,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\mathscr{K}^\alpha= &amp; \sum_\beta 2 \pi e_\alpha^2 e_\beta^2 \ln
+\Lambda \int \mathrm{d} v_2 m_\alpha^{-1} \frac{\partial}{\partial v_{1
+r}} G_{r s}(g) \\
+&amp; \times\left(m_\alpha^{-1} \frac{\partial}{\partial v_{1
+s}}-m_\beta^{-1} \frac{\partial}{\partial v_{2 s}}\right)
+f^\alpha\left(\boldsymbol{q}_1, \boldsymbol{v}_1 ; t\right)
+f^\beta\left(\boldsymbol{q}_1, \boldsymbol{v}_2 ; t\right) .\tag{2}
+\end{aligned}
+\]</span> Here, we use the notation <span
+class="math inline">\(g\)</span> for the relative velocity vector, <span
+class="math display">\[
+g=v_1-v_2
+\]</span> The important Landau tensor <span class="math inline">\(G_{r
+s}(a)\)</span> is defined, for an arbitrary vector <span
+class="math inline">\(\boldsymbol{a}\)</span>, as <span
+class="math display">\[
+G_{r s}(a)=\frac{a^2 \delta_{r s}-a_r a_s}{a^3} .
+\]</span> Finally, the Coulomb logarithm, <span
+class="math inline">\(\ln \Lambda\)</span>, is defined as <span
+class="math display">\[
+\ln \Lambda=\ln
+\frac{\frac{3}{2}\left(T_{\mathrm{e}}+T_{\mathrm{i}}\right)
+\lambda_{\mathrm{D}}}{Z e^2} .
+\]</span> Eq.(2) represents the celebrated Landau collision term, that
+provides the basis of most of the existing works on plasma transport
+theory. It was first obtained by Landau (1936) from the Boltzmann
+equation of the kinetic theory of gases, combined with the weak coupling
+assumption. It has been later derived more rigourously by many authors
+(Bogoliubov 1946, Balescu 1963, 1975, Klimontovich 1964, 1982) and its
+properties are discussed in many textbooks on plasma physics (e.g.
+Montgomery and Tidman 1964, Ichimaru 1974, Krall and Trivelpiece 1986,
+Golant et al. 1980, Rosenbluth and Sagdeev 1983).</p>
+<p>A fundamental result of this section is the fact that the collision
+operator <span class="math inline">\(\mathscr{K}^\alpha\)</span> appears
+as an operator acting on <span
+class="math inline">\(f^\alpha(\boldsymbol{q}, \boldsymbol{v} ;
+t)\)</span>, i.e. a functional of the distribution function at time
+<span class="math inline">\(t\)</span>. We have thus proved the
+existence of a kinetic regime. It appears as an asymptotic regime, valid
+for times much longer than the duration of a collision. A fuller
+discussion of the more fundamental aspects of this question can be found
+in the book by Balescu (1975). For our more restricted purpose, the main
+point is the existence of a closed kinetic equation for <span
+class="math inline">\(f^\alpha\)</span>.</p>
 
                 
             </div>
