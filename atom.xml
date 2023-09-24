@@ -6,7 +6,7 @@
   <link href="https://zhigangpu.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhigangpu.github.io/"/>
-  <updated>2023-09-20T01:21:53.904Z</updated>
+  <updated>2023-09-24T07:22:31.026Z</updated>
   <id>https://zhigangpu.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>From Landau to MHD</title>
+    <link href="https://zhigangpu.github.io/2023/09/24/MHD/"/>
+    <id>https://zhigangpu.github.io/2023/09/24/MHD/</id>
+    <published>2023-09-24T06:35:50.000Z</published>
+    <updated>2023-09-24T07:22:31.026Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;local-distribution-functions&quot;&gt;Local distribution functions&lt;/h1&gt;
+&lt;p&gt;A system is said to be homogeneous (or spatially uniform) when</summary>
+        
+      
+    
+    
+    
+    <category term="Kinetic theory" scheme="https://zhigangpu.github.io/categories/Kinetic-theory/"/>
+    
+    
+    <category term="Vlasov equation" scheme="https://zhigangpu.github.io/tags/Vlasov-equation/"/>
+    
+    <category term="Landau equation" scheme="https://zhigangpu.github.io/tags/Landau-equation/"/>
+    
+    <category term="Two fluid model" scheme="https://zhigangpu.github.io/tags/Two-fluid-model/"/>
+    
+    <category term="MHD" scheme="https://zhigangpu.github.io/tags/MHD/"/>
+    
+  </entry>
   
   <entry>
     <title>From Hamiltonian to Laudan Equation</title>

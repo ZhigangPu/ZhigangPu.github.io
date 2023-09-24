@@ -4,8 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Category: Kinetic theory, Ayron&#39;s blog">
-    <meta name="description" content="年华会酿造幸福的精髓哪会枉花">
+    <meta name="keywords" content="From Landau to MHD, Ayron&#39;s blog">
+    <meta name="description" content="Local distribution functions
+A system is said to be homogeneous (or spatially uniform) when all
+its local properties are">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Category: Kinetic theory | Ayron&#39;s blog</title>
+    <title>From Landau to MHD | Ayron&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -331,217 +333,621 @@
 
 </header>
 
-    <div class="bg-cover pd-header about-cover">
-    <div class="container">
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">From Landau to MHD</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
     <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                杯酒逍遥
-                
-            </div>
-
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <script src="/libs/typed/typed.js"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: [ 
-                            
-                                "年華會釀製幸福的精髓哪會枉花",
-                            
-                        ],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
-                </script>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
-</script>
-<script>
-    
-      var bannerUrl = "/medias/featureimages/" + Math.floor(Math.random() * 10) + '.jpg';
-    
-    $('.bg-cover.about-cover').css('background-image', 'url(' + bannerUrl + ')');
-
-</script>
-
-
-    </div>
-</div>
-
-<main class="content">
-
-    
-
-<div id="category-cloud" class="container chip-container">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
     <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">
-                <i class="fas fa-bookmark"></i>&nbsp;&nbsp;Post Categories
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Vlasov-equation/">
+                                <span class="chip bg-color">Vlasov equation</span>
+                            </a>
+                        
+                            <a href="/tags/Landau-equation/">
+                                <span class="chip bg-color">Landau equation</span>
+                            </a>
+                        
+                            <a href="/tags/Two-fluid-model/">
+                                <span class="chip bg-color">Two fluid model</span>
+                            </a>
+                        
+                            <a href="/tags/MHD/">
+                                <span class="chip bg-color">MHD</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Kinetic-theory/" class="post-category">
+                                Kinetic theory
+                            </a>
+                        
+                    </div>
+                    
+                </div>
             </div>
-            <div class="tag-chips">
+
+            <div class="post-info">
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2023-09-24
+                </div>
                 
+
                 
-                <a href="/categories/Kinetic-theory/" title="Kinetic theory: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            style="background-color: #F9EBEA;">Kinetic theory
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
+
                 
+
+                
+
                 
             </div>
         </div>
-    </div>
-</div>
+        <hr class="clearfix">
 
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="local-distribution-functions">Local distribution functions</h1>
+<p>A system is said to be homogeneous (or spatially uniform) when all
+its local properties are the same at all points in space. In other
+words, a homogeneous system is invariant under spatial transformations.
+It is then easily shown that the one-particle distribution function
+<span
+class="math inline">\(f^{\alpha}(\boldsymbol{q},\boldsymbol{v};t)\)</span>
+must be independent of the <span
+class="math inline">\(\boldsymbol{q}\)</span> of the particle in a
+homogeneous system. They can then always be written in the form</p>
+<p><span class="math display">\[
+f^{\alpha}(\boldsymbol{q},\boldsymbol{v};t) = n_{\alpha}
+\phi(\boldsymbol{v};t)
+\]</span></p>
+<p>where <span class="math inline">\(n_\alpha=N_\alpha/V\)</span>
+denotes the constant number density of the particles of species <span
+class="math inline">\(\alpha\)</span>. <span
+class="math inline">\(\phi(\boldsymbol{v};t)\)</span> is the velocity
+distribution of the particles of the species <span
+class="math inline">\(\alpha\)</span> which follows:</p>
+<p><span class="math display">\[
+\int d \boldsymbol{v}\phi(\boldsymbol{v};t) = 1
+\]</span></p>
+<p>If the system is not only homogeneous but also isotropic in velocity
+space, the velocity distribution function only depends on the magnitude
+of the vector <span class="math inline">\(\boldsymbol{v}\)</span>:</p>
+<p><span class="math display">\[
+\phi(\boldsymbol{v};t) = \phi(v;t)
+\]</span></p>
+<p>Finally, the system is said to be in a stationary state whenever its
+distribution functions are independent of time.</p>
+<p>To each microscopic dynamical function <span
+class="math inline">\(b^{\alpha}(\boldsymbol{q},\boldsymbol{v};t)\)</span>
+corresponds a macroscopic dynamical function <span
+class="math inline">\(B(\boldsymbol{x},t)\)</span>, obtained by
+statistical averaging,</p>
+<p><span class="math display">\[
+B(\boldsymbol{x},t) = \int d \boldsymbol{q} d \boldsymbol{v}
+b^{\alpha}(\boldsymbol{q},\boldsymbol{v};t)
+f^{\alpha}(\boldsymbol{q},\boldsymbol{v};t)
+\]</span></p>
+<p>Usually, such microscopic functions have a common characterisitc
+structure</p>
+<p><span class="math display">\[
+b^{\alpha}(\boldsymbol{q},\boldsymbol{v};t) =
+\beta^{\alpha}(\boldsymbol{v}) \delta(\boldsymbol{q} - \boldsymbol{x})
+\]</span></p>
+<p>Actually this looks like a coordinate transformation from microscopic
+particle coordinate to macroscopic Euler coordinate.</p>
+<p>Therefore, we have <span class="math display">\[
+B(\boldsymbol{x},t) = \int d \boldsymbol{q} d \boldsymbol{v}
+\beta^{\alpha}(\boldsymbol{v}) \delta(\boldsymbol{q} - \boldsymbol{x})
+f^{\alpha}(\boldsymbol{q},\boldsymbol{v};t)
+\]</span></p>
+<p>Denote local velocity distribution function,</p>
+<p><span class="math display">\[
+f^{\alpha}(\boldsymbol{v};\boldsymbol{x},t) = \int d
+\boldsymbol{q}\delta(\boldsymbol{q} -
+\boldsymbol{x})f^{\alpha}(\boldsymbol{q},\boldsymbol{v};t)
+\]</span></p>
+<p>Then we have <span class="math display">\[
+B(\boldsymbol{x},t) = \int d \boldsymbol{v}
+\beta^{\alpha}(\boldsymbol{v})
+f^{\alpha}(\boldsymbol{v};\boldsymbol{x},t)
+\]</span></p>
+<p>It may be said that <span
+class="math inline">\(f^{\alpha}(\boldsymbol{v};\boldsymbol{x},t)\)</span>
+is a functional field: to each point in space and to each time it
+assigns a function of <span
+class="math inline">\(\boldsymbol{v}\)</span>. Although the difference
+between ordinary and localized distribution functions may seem trivial
+in this case, it is worth insisting on their difference nature.</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Ayron</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://zhigangpu.github.io/2023/09/24/MHD/">https://zhigangpu.github.io/2023/09/24/MHD/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint policy. If reproduced, please indicate source
+                    <a href="/about" target="_blank">Ayron</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Vlasov-equation/">
+                                    <span class="chip bg-color">Vlasov equation</span>
+                                </a>
+                            
+                                <a href="/tags/Landau-equation/">
+                                    <span class="chip bg-color">Landau equation</span>
+                                </a>
+                            
+                                <a href="/tags/Two-fluid-model/">
+                                    <span class="chip bg-color">Two fluid model</span>
+                                </a>
+                            
+                                <a href="/tags/MHD/">
+                                    <span class="chip bg-color">MHD</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
 
     
 
-    <article id="articles" class="container articles">
-        <div class="row tags-posts">
+</div>
+
+                </div>
+            </div>
             
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/09/24/MHD/">
-                        <div class="card-image tag-image">
+        </div>
+    </div>
+
+    
+
+    
+
+    
+        <div class="disqus-card card" data-aos="fade-up">
+    <div id="disqus_thread" class="card-content">
+        <noscript>Please enable JavaScript to view the
+            <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+    </div>
+</div>
+
+<script type="text/javascript">
+    disqus_config = function () {
+        this.page.url = 'https://zhigangpu.github.io/2023/09/24/MHD/';
+        this.page.identifier = '/2023/09/24/MHD/';
+        this.page.title = 'From Landau to MHD';
+    };
+    let disqus_shortname = 'Ayron-blog';
+
+    (function () { // DON'T EDIT BELOW THIS LINE
+        let d = document, s = d.createElement('script');
+        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+ 
+<script>
+//   var disqus_shortname = 'Ayron-blog';
+  var disqus_config = function() {
+    this.page.url = 'https://zhigangpu.github.io/2023/09/24/MHD/';
+    this.page.identifier = '2023/09/24/MHD/';
+    this.page.title = 'From Landau to MHD';
+  };
+  (function() {
+    var dsq = document.createElement('script');
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.setAttribute('data-timestamp', '' + new Date());
+    (document.head || document.body).appendChild(dsq);
+  })();
+</script>
+ 
+<script
+  id="dsq-count-scr"
+  src="https://Ayron-blog.disqus.com/count.js"
+  async
+></script>
+ 
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
+            <div class="card">
+                <a href="/2023/09/24/MHD/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="From Landau to MHD">
+                        
+                        <span class="card-title">From Landau to MHD</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
                             
-                            
-                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="From Landau to MHD">
-                            
-                            <span class="card-title">From Landau to MHD</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Local distribution functions
-A system is said to be homogeneous (or spatially uniform) when all
-its local properties are
-                            
-                        </div>
-                        <div class="publish-info">
+                        
+                    </div>
+                    <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2023-09-24
                             </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Kinetic-theory/" class="post-category">
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Kinetic-theory/" class="post-category">
                                     Kinetic theory
                                 </a>
-                                
-                                
-                            </span>
-                        </div>
+                            
+                            
+                        </span>
                     </div>
+                </div>
 
+                
+                <div class="card-action article-tags">
                     
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Vlasov-equation/">
-                            <span class="chip bg-color">Vlasov equation</span>
-                        </a>
-                        
-                        <a href="/tags/Landau-equation/">
-                            <span class="chip bg-color">Landau equation</span>
-                        </a>
-                        
-                        <a href="/tags/Two-fluid-model/">
-                            <span class="chip bg-color">Two fluid model</span>
-                        </a>
-                        
-                        <a href="/tags/MHD/">
-                            <span class="chip bg-color">MHD</span>
-                        </a>
-                        
-                    </div>
+                    <a href="/tags/Vlasov-equation/">
+                        <span class="chip bg-color">Vlasov equation</span>
+                    </a>
+                    
+                    <a href="/tags/Landau-equation/">
+                        <span class="chip bg-color">Landau equation</span>
+                    </a>
+                    
+                    <a href="/tags/Two-fluid-model/">
+                        <span class="chip bg-color">Two fluid model</span>
+                    </a>
+                    
+                    <a href="/tags/MHD/">
+                        <span class="chip bg-color">MHD</span>
+                    </a>
                     
                 </div>
+                
             </div>
-            
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/09/17/Liouville/">
-                        <div class="card-image tag-image">
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/09/17/Liouville/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="From Hamiltonian to Laudan Equation">
+                        
+                        <span class="card-title">From Hamiltonian to Laudan Equation</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
                             
-                            
-                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="From Hamiltonian to Laudan Equation">
-                            
-                            <span class="card-title">From Hamiltonian to Laudan Equation</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Preface
-The well-known equations for fully ionized plasma are Vlasov
-equation, Landau equation in kinetic regime and two
-                            
-                        </div>
-                        <div class="publish-info">
+                        
+                    </div>
+                    <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2023-09-17
                             </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Kinetic-theory/" class="post-category">
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Kinetic-theory/" class="post-category">
                                     Kinetic theory
                                 </a>
-                                
-                                
-                            </span>
-                        </div>
+                            
+                            
+                        </span>
                     </div>
-
+                </div>
+                
+                <div class="card-action article-tags">
                     
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Liouville-equation/">
-                            <span class="chip bg-color">Liouville equation</span>
-                        </a>
-                        
-                        <a href="/tags/Vlasov-equation/">
-                            <span class="chip bg-color">Vlasov equation</span>
-                        </a>
-                        
-                        <a href="/tags/Lie-algebra/">
-                            <span class="chip bg-color">Lie algebra</span>
-                        </a>
-                        
-                        <a href="/tags/BBGKY/">
-                            <span class="chip bg-color">BBGKY</span>
-                        </a>
-                        
-                    </div>
+                    <a href="/tags/Liouville-equation/">
+                        <span class="chip bg-color">Liouville equation</span>
+                    </a>
+                    
+                    <a href="/tags/Vlasov-equation/">
+                        <span class="chip bg-color">Vlasov equation</span>
+                    </a>
+                    
+                    <a href="/tags/Lie-algebra/">
+                        <span class="chip bg-color">Lie algebra</span>
+                    </a>
+                    
+                    <a href="/tags/BBGKY/">
+                        <span class="chip bg-color">BBGKY</span>
+                    </a>
                     
                 </div>
+                
             </div>
-            
         </div>
-    </article>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + 'From: Ayron&#39;s blog<br />'
+            + 'Author: Ayron<br />'
+            + 'Link: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('2'),
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
 </main>
 
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.8/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
 
 
 
@@ -888,9 +1294,9 @@ $(function () {
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://zhigangpu.github.io/categories/Kinetic-theory/index.html';
-        this.page.identifier = '/categories/Kinetic-theory/index.html';
-        this.page.title = '';
+        this.page.url = 'https://zhigangpu.github.io/2023/09/24/MHD/';
+        this.page.identifier = '/2023/09/24/MHD/';
+        this.page.title = 'From Landau to MHD';
     };
     let disqus_shortname = 'Ayron-blog';
 
@@ -903,7 +1309,23 @@ $(function () {
     })();
 </script>
 
-  
+ 
+<script>
+//   var disqus_shortname = 'Ayron-blog';
+  var disqus_config = function() {
+    this.page.url = 'https://zhigangpu.github.io/2023/09/24/MHD/';
+    this.page.identifier = '2023/09/24/MHD/';
+    this.page.title = 'From Landau to MHD';
+  };
+  (function() {
+    var dsq = document.createElement('script');
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.setAttribute('data-timestamp', '' + new Date());
+    (document.head || document.body).appendChild(dsq);
+  })();
+</script>
+ 
 <script
   id="dsq-count-scr"
   src="https://Ayron-blog.disqus.com/count.js"
