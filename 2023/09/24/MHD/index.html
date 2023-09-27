@@ -511,6 +511,164 @@ distribution function.</p>
 quantities in a table.</p>
 <p><img src="/images/MHD_micro2macro1.png" /> <img
 src="/images/MHD_micro2macro2.png" /></p>
+<h1 id="the-hermitian-moment-representation">The Hermitian moment
+representation</h1>
+<p>In order to construct the transport theory, i.e. in order to obtain
+closed hydrodynamical and electrodynamical equations, we need to solve
+the kinetic equation to get high order moments. Because of its
+complexity, an exact solution is practically impossible; therefore, we
+need approximation methods, valid in various conceivable regimes. A clue
+as to the choice of approximation methods is provided by an analysis of
+the various characteristic times involved in the kinetic equation. By a
+trivial dimensional argument, each term on the R.H.S of the kinetic
+equation must have a dimension <span
+class="math inline">\(f^\alpha/T\)</span>, where <span
+class="math inline">\(T\)</span> is some characteristic time, but the
+time is different for each term.</p>
+<p>The free flow term introduces a characteristic time <span
+class="math inline">\(\tau_H^\alpha\)</span> which may be called the
+hydrodynamical time. It is related to the spatial variation of the local
+distribution function. It is can be estimated as</p>
+<p><span class="math display">\[
+\frac{1}{\tau_H^\alpha} \sim \frac{V_{\tau_\alpha}}{L_H}
+\]</span></p>
+<p>where <span class="math inline">\(V_{\tau_\alpha}\)</span> is the
+thermal velocity of species <span
+class="math inline">\(\alpha\)</span>(the reason to choose thermal
+velocity as characteristic velocity is because <span
+class="math inline">\(v\)</span> in kinetic equation stands for velocity
+of moleculars, which has characterist velocity as thermal velocity), and
+<span class="math inline">\(L_H\)</span> is the length of the gradient
+of the density, the velocity or the temperature, whichever is
+shorter:</p>
+<p><span class="math display">\[
+\frac{1}{L_H} = max(\frac{|\nabla A(x)|}{|A(x)|})
+\]</span></p>
+<p>In most situations of interest, the gradients are due to some
+experimental preparation obtained by a macroscopic device, such that the
+length of the gradients is very large compared to molecular dimensions.
+It follows that <span class="math inline">\(\tau_H^\alpha\)</span> can
+be considered as a very long time, and therefore the characteristic
+variations related to the free-flow term are slow.</p>
+<p>However, the Vlasov term of the kinetic equation poses some
+complicated problems. In the first place, there may be external
+high-frequency fields present (such as those produced by a laser, or by
+an RF source used for heating a tokamak, etc). Such fields will induce
+fast motions of the electrons. But even in the absence of external
+fields, there is a possibility of fast internal motions. Indeed, any
+fluctuations producing a local charge separation leads to a force on the
+electrons. The latter start oscillating with the well-knowing plasma
+frequency <span class="math inline">\(\omega_{pe}\)</span>, which is in
+general a high frequency wave. <strong>The problem of the coupling of
+the fast (electrodynamic) motions with the slow (hydrodynamic) motions
+is a quite interesting, but rather difficult problem</strong>. Here, we
+first consider slowly varying electromagnetic fields: the influence of
+high-frequency phenomena is left for later discussion. So here, we also
+assume that <span class="math inline">\(L_H, \tau_H\)</span> are also
+the characteristic length and time scales of the electric field <span
+class="math inline">\(\boldsymbol{E}\)</span> and of the magnetic field
+<span class="math inline">\(\boldsymbol{B}\)</span>.</p>
+<p>This approximation may seem incorrect because of the existence, even
+in the absence of the external high-frequency fields. However, in a
+linear theory, these effects do not influence the slow plasma motions in
+which we are interested here. This can be understood from the following
+schematic argument.</p>
+<p>All the hydrodynamic quantities as well as the electromagnetic fields
+may be split into a slow varying part <span
+class="math inline">\(A_s\)</span> and a rapidly varying part <span
+class="math inline">\(A_f\)</span>: <span class="math inline">\(A = A_s
++ A_f\)</span> (imagine it can be decomposed to a slow varying wave and
+a fast varying wave). There equation of evolution can be written as</p>
+<p><span class="math display">\[
+\partial_t A_s = \Phi_s(A_s, A_f) \quad \partial_t A_f = \Phi_f(A_s,
+A_f)
+\]</span></p>
+<p><span class="math inline">\(\Phi(A)\)</span> represents some,
+generally non-linear, combinations of both the slow and fast part and of
+their gradients. If these equations are linearized as in classical
+transport theory, it is clear that the slow(fast) variables can only be
+determined by the slow(fast) variables in the R.H.S.(ignore the
+nonlinear interaction between slow and fast part.) The evolution of the
+slow variables can then be studied independently of the fast ones, as
+will indeed be done here. If however, non-linear effects become
+important (e.g. when the amplitude of the fast electromagnetic fields is
+high, as for instance in the presence of an intense laser beam or of an
+intense RF heating beam in a tokamak), two high-frequency components may
+couple and produce a low-frequency beat-wave, which influences the slow
+motions. This type of nonlinear coupling will be studied later.(This is
+an another excellent example illustrating the meaning of linear and
+non-linear).</p>
+<p>If the main assumption is accepted, the well-known pre-Maxwell
+approximation follow very easily. Indeed, the Maxwell equation leads to
+the following estimate of the ratio of the electric and magnetic
+fields:</p>
+<p><span class="math display">\[
+\frac{|E|}{L_H} \approx \frac{1}{c}\frac{|B|}{\tau_H}
+\]</span></p>
+<p>On the other hand,</p>
+<p><span class="math display">\[
+\frac{|B|}{L_H} \approx \frac{1}{c}\frac{|E|}{\tau_H} + \frac{4\pi}{c}j
+\]</span></p>
+<p>Combining these two equations, we find that the displacement current
+term is of order <span class="math inline">\(L_H^2/\tau_H^2c^2\)</span>
+compared to the L.H.S. As <span
+class="math inline">\(L_H/\tau_H\)</span> is of the order of the
+hydrodynamic velocity, we may conclude</p>
+<p><span class="math display">\[
+|\frac{1}{c}\partial_t E| \approx \frac{u^2}{c^2} |\nabla\times B|
+\]</span></p>
+<p>Hence, whenever the motion of the plasma is non-relativisitic, the
+displacement current can be neglected and the slow varying field obey
+the pre-Maxwell equation. In this form, take divergence at Amphere's
+Law, the current density obeys the constraint:</p>
+<p><span class="math display">\[
+\nabla\cdot\boldsymbol{J} \approx 0
+\]</span></p>
+<p>But the charge balance is valid whatever condition.In order to ensure
+the mutual compatibility of these conditions, we necessarily must
+have</p>
+<p><span class="math display">\[
+\partial_t \sigma \approx 0
+\]</span></p>
+<p>However, the above equaton should not be considered as an exact
+equation; it only means that the charge density is a slowly varying
+function. As for the size of this quantity, it may be estimated from the
+following argument. It is well known that a plasma cannot support large
+local charge separations. It is therefore almost always true that, in
+all points <span class="math inline">\(x\)</span> and at all times <span
+class="math inline">\(t\)</span>,</p>
+<p><span class="math display">\[
+|n_e(x,t) - n_i(x,t)| \ll \frac{1}{2} (n_e(x,t) + n_i(x,t))
+\]</span></p>
+<p>This will be called the local quasi-neutrality condition. It
+implies,</p>
+<p><span class="math display">\[
+\sigma(x,t) \ll \frac{e}{m_e}\rho_e(x,t) = en_e(x,t)
+\]</span> <span class="math display">\[
+\sigma(x,t) \ll \frac{Ze}{m_i}\rho_i(x,t) = en_i(x,t)
+\]</span></p>
+<p>As a result, the charge density can be neglected in all the
+hydrodynamical equations, except for the term <span
+class="math inline">\(\sigma\boldsymbol{E}\)</span> in momentum
+equation. This term is, however, negligible for a different reason. A
+similar dimensional argument leads to the estimate:</p>
+<p><span class="math display">\[
+\frac{\sigma E}{c^{-1}|J\times B|} \approx \frac{(\nabla\cdot
+E)E}{(\nabla\times B)B} \approx \frac{L_H^{-1}E^2}{L_H^{-1}B^2} \approx
+\frac{u^2}{c^2}
+\]</span></p>
+<p>So in non-relativisitc regime, the contribution from electric force
+is negligible. The only place where <span
+class="math inline">\(\sigma\)</span> cannot be neglected is the Poisson
+equation. This equation, however, acquires a different status. Indeed,
+the generalized Ohm law can be used for completely determining the
+electric field. Hence the Poisson equation becomes superfluous: it only
+serves for defining the charge density - a quantity which does not
+influence the motion of the plasma in the present approximation.</p>
+<p>Finally, the time scale for last collision term is called relaxation
+time <span class="math inline">\(\tau_\alpha\)</span>. The relaxation
+time is an internal, molecular parameter, whose values depends on the
+state of the plasma (density and temperature).</p>
 
                 
             </div>
