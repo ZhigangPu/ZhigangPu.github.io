@@ -697,6 +697,370 @@ time scale involved is of the same order as the slow time scales related
 to the free-flow and the electromagnetic processes. Thus, in a sense,
 the unlike-particle collisions must be treated on the sam footing as the
 slow processes.</p>
+<h1 id="the-hermitian-moment-expansion">The Hermitian moment
+expansion</h1>
+<p>In collision dominated plasma, after a short transition time, the
+state of plasma remains close to the local plasma equilibrium. For this
+reason, the local plasma equilibrium will be called a reference state.
+The distribution functions can then conveniently be written in the
+form</p>
+<p><span class="math display">\[
+f^\alpha(\boldsymbol{v};\boldsymbol{x},t) = f^{\alpha
+0}(\boldsymbol{v};\boldsymbol{x},t)[1 +
+\hat\chi^\alpha(\boldsymbol{v};\boldsymbol{x},t) ]
+\]</span></p>
+<p>The functions <span
+class="math inline">\(\hat\chi^\alpha(\boldsymbol{v};\boldsymbol{x},t)\)</span>
+measure the deviation of the local distribution function <span
+class="math inline">\(f^\alpha\)</span> from the reference state. It is
+clear that the whole information about the real state of the plasma is
+contained in <span
+class="math inline">\(\hat\chi^\alpha(\boldsymbol{v};\boldsymbol{x},t)\)</span>.</p>
+<p>We now introduce a condition which is very useful in providing an
+unambiguous interpretation of the results. Here we construct the above
+representation in such a way that the parameters <span
+class="math inline">\(n_\alpha,u_r^\alpha,T_\alpha\)</span> entering the
+definition of the reference state do coincide with the exact value of
+the density, velocity and teperature of each species. (It means that the
+<span class="math inline">\(n_\alpha,u_r^\alpha,T_\alpha\)</span> in
+reference state is just the macroscopic quantities, although I think it
+should be so hhh). Then we can have constraints on the deviations:</p>
+<p><span class="math display">\[
+\int d \boldsymbol{v} f^{\alpha0}\hat\chi^\alpha = 0 \quad \int d
+\boldsymbol{v} f^{\alpha0}v_r\hat\chi^\alpha = 0 \quad
+\int d \boldsymbol{v} f^{\alpha0}v^2\hat\chi^\alpha = 0
+\]</span></p>
+<p>Before continuing, it is convenient to note that the distribution
+functions <span class="math inline">\(f^{\alpha 0}\)</span> depend on
+the velocity <span class="math inline">\(v\)</span> only through the
+dimensionless variable <span class="math display">\[
+\boldsymbol{c}=\left(\frac{m_\alpha}{T_\alpha(\boldsymbol{x},
+t)}\right)^{1 /
+2}\left[\boldsymbol{v}-\boldsymbol{u}^\alpha(\boldsymbol{x}, t)\right] .
+\]</span> As most of the important quantities are averages of powers of
+the relative velocities <span
+class="math inline">\(\boldsymbol{v}-\boldsymbol{u}^\alpha\)</span>, it
+is clear that <span class="math inline">\(\boldsymbol{c}\)</span> is a
+quite convenient variable. We shall therefore express all functions in
+terms of it. Clearly, some care must be taken by noting that the passage
+from <span class="math inline">\(v\)</span> to <span
+class="math inline">\(c\)</span> is different for the electrons and for
+the ions, and that the coefficients of the transformation depend on
+<span class="math inline">\(x\)</span> and <span
+class="math inline">\(t\)</span>. We now write the local plasma
+equilibrium distribution as <span class="math display">\[
+f^{\alpha 0}(\boldsymbol{v} ; \boldsymbol{x},
+t)=n_\alpha(\boldsymbol{x},
+t)\left(\frac{m_\alpha}{T_\alpha(\boldsymbol{x}, t)}\right)^{3 / 2}
+\phi^{\alpha 0}(\boldsymbol{c} ; \boldsymbol{x}, t),
+\]</span> where <span class="math display">\[
+\phi^{\alpha 0}(c ; x, t) \equiv \phi^0(c)=(2 \pi)^{-3 / 2} \exp
+\left(-c^2\right)
+\]</span></p>
+<p>We note the very important fact that the reference state <span
+class="math inline">\(\phi^{\alpha 0}\)</span>, when expressed in terms
+of the variables <span class="math inline">\(c\)</span>, is a
+stationary, homogeneous and isotropic state, whereas considered as a
+function of the original variable <span
+class="math inline">\(v\)</span>, it has none of these properties.
+Moreover, <span class="math inline">\(\phi^{\alpha 0}(c)\)</span> is the
+same function for the electrons and for the ions, it is therefore
+independent of the superscript <span
+class="math inline">\(\alpha\)</span>. The dimensionless reference
+distribution function is normalized as <span class="math display">\[
+\int \mathrm{d} c \phi^0(c)=1
+\]</span> We now express the complete distribution functions as <span
+class="math display">\[
+\begin{aligned}
+f^\alpha(\boldsymbol{v} ; \boldsymbol{x}, t) &amp;
+=n_\alpha(\boldsymbol{x},
+t)\left(\frac{m_\alpha}{T_\alpha(\boldsymbol{x}, t)}\right)^{3 / 2}
+\phi^\alpha(\boldsymbol{c} ; \boldsymbol{x}, t) \\
+&amp; =n_\alpha(\boldsymbol{x},
+t)\left(\frac{m_\alpha}{T_\alpha(\boldsymbol{x}, t)}\right)^{3 / 2}
+\phi^0(c)\left[1+\chi^\alpha(c ; \boldsymbol{x}, t)\right] .
+\end{aligned}
+\]</span> The constraints, expressed in the new variables, are <span
+class="math display">\[
+\int \mathrm{d} c \phi^0 \chi^\alpha=0, \quad \int \mathrm{d} c \phi^0
+c_r \chi^\alpha=0, \quad \int \mathrm{d} c \phi^0 c^2 \chi^\alpha=0 .
+\]</span> We now start the investigation of our main problem, which
+consists of finding an approximate solution for the unknown functions
+<span class="math inline">\(\chi^\alpha\)</span>. (It is different from
+methods from textbook like global expansion with a small parameter <span
+class="math inline">\(\epsilon\)</span>, it just directly let you to
+find a new function, it is harder I think.) Several methods have been
+developed for this purpose. The most ancient and celebrated one is the
+Chapman-Enskog method, developed independently by these authors already
+in 1916 (Chapman and Cowling 1952). Grad's (1949) moment method has also
+been widely used. Finally, Résibois's (1970) more recent projection
+operator method is quite elegant and useful in the linear domain. All
+these methods, in various versions, have been applied to the problem of
+transport in plasmas. Here, we start directly with a method which has -
+in our opinion - the advantage of clarity and simplicity. It is close in
+spirit to Grad's method but has features in common with the two others
+as well.</p>
+<p>The general idea is quite straightforward. Adopting a technique
+widely used in quantum mechanics, we start by expanding the unknown
+functions <span class="math inline">\(\chi^\alpha\)</span> in a series
+of orthogonal polynomials. The determination of the coefficients of this
+series is equivalent to the determination of <span
+class="math inline">\(\chi^\alpha\)</span>. The kinetic equation
+provides an infinite set of equations for these coefficients. If we are
+clever (lucky?) the series will rapidly converge. A truncated set of
+equations will then be sufficient for the determination of the transport
+properties with the required precision. The first step consists of
+choosing an adequate set of orthogonal polynomials. We want an expansion
+of <span class="math inline">\(\chi^\alpha(\boldsymbol{c} ;
+\boldsymbol{x}, t)\)</span>, considered as a function of <span
+class="math inline">\(\boldsymbol{c}\)</span>, i.e. o the three scalar
+variables <span class="math inline">\(c_x, c_y, c_z\)</span>. As the
+local equilibrium distribution obviously plays a crucial role in the
+theory, a very natural basis is provided by the Hermite polynomials,
+which are orthogonal with respect to a Gaussian weight function(Since
+reference state also has exponetial function, it is natrual to let <span
+class="math inline">\(\chi\)</span> also has such form, it is a
+guess).</p>
+<p>The Hermite polynomials are given by</p>
+<p><span class="math display">\[
+H_n(x)=(-1)^n e^{x^2} \frac{d^n}{d x^n} e^{-x^2}
+\]</span></p>
+<p>The first eleven physicist's Hermite polynomials are: <span
+class="math display">\[
+\begin{aligned}
+H_0(x) &amp; =1 \\
+H_1(x) &amp; =2 x \\
+H_2(x) &amp; =4 x^2-2 \\
+H_3(x) &amp; =8 x^3-12 x \\
+H_4(x) &amp; =16 x^4-48 x^2+12 \\
+H_5(x) &amp; =32 x^5-160 x^3+120 x \\
+H_6(x) &amp; =64 x^6-480 x^4+720 x^2-120 \\
+H_7(x) &amp; =128 x^7-1344 x^5+3360 x^3-1680 x \\
+H_8(x) &amp; =256 x^8-3584 x^6+13440 x^4-13440 x^2+1680 \\
+H_9(x) &amp; =512 x^9-9216 x^7+48384 x^5-80640 x^3+30240 x \\
+H_{10}(x) &amp; =1024 x^{10}-23040 x^8+161280 x^6-403200 x^4+302400 x^2
+- 30240
+\end{aligned}
+\]</span></p>
+<p>The picture is:</p>
+<p><img src="/images/Hermite_poly.png" /></p>
+<p>As we are considering here functions of three variables, we need to
+use the so-called tensorial Hermite polynomials, a generalization of the
+well-known one-dimensional Hermite polynomials. But even at this level,
+we still have a choice. It is found tha the use of the straightforward
+three-dimensional generalization of the Hermite polynomials ("reducible
+tensorial Hermite polynomials") (as was done by Grad 1949) leads to a
+rather untransparent expansion.</p>
+<p>It turns out that a representation in which the various types of
+anisotropy of the distribution function are clearly exhibited, is the
+most convenient guide for reasonable truncation approximations. Such a
+representation would be of the form <span class="math display">\[
+\begin{aligned}
+\chi^\alpha(\boldsymbol{c} ; \boldsymbol{x}, t)= &amp; A^\alpha(c ;
+\boldsymbol{x}, t)+c_r B_r^\alpha(c ; \boldsymbol{x}, t) \\
+&amp; +\left(c_r c_s-\frac{1}{3} c^2 \delta_{r s}\right) C_{r
+s}^\alpha(c ; \boldsymbol{x}, t)+\cdots,
+\end{aligned}
+\]</span> where <span class="math inline">\(A^\alpha\)</span> is a
+scalar function, <span class="math inline">\(B_r^\alpha\)</span> a
+vector function, <span class="math inline">\(C_{r s}^\alpha\)</span> a
+symmetric traceless tensor function, etc. All of these depend only on
+the absolute value of the variable <span
+class="math inline">\(\boldsymbol{c}\)</span>, as well as on the
+variables <span class="math inline">\(\boldsymbol{x}\)</span> and <span
+class="math inline">\(t\)</span>. These functions are sometimes called
+"anisotropies" of successive orders. The above wepresentation is taken
+as a basic Ansatz in the Chapman-Enskog method (Chapman and Cowling
+1952, Braginskii 1965, Ferziger and Kaper 1972). In that method, the
+functions <span class="math inline">\(A^\alpha\)</span>, <span
+class="math inline">\(B_r^\alpha, C_{r s}^\alpha\)</span> are then
+further expanded in series of Laguerre-Sonine polynomials of the single
+variable <span class="math inline">\(c\)</span>, and each of them is
+truncated at some appropriate level. (The CE expansion is more
+complicated for full Boltzmann equation than BGK approximation).</p>
+<p>The reason for the usefulness of such a representation is clear. Our
+main use of the functions <span
+class="math inline">\(\chi^\alpha\)</span> will be in the calculation of
+the relevant fluxes appearing in the hydrodynamical balance equations,
+such as the heat flux <span class="math inline">\(q_r^\alpha\)</span>
+and the pressure tensor <span class="math inline">\(\pi_{r
+s}^\alpha\)</span>. In a linear theory (no interaction between vector
+and tensor part), the former will be entirely determined by the vector
+part of <span class="math inline">\(\chi^\alpha\)</span>, i.e. by <span
+class="math inline">\(B_r^\alpha\)</span>, whereas the pressure tensor
+involves only the tensor part of <span
+class="math inline">\(\chi^\alpha\)</span>. Even in a non-linear theory,
+the explicit exhibition of the anisotropies helps considerably in the
+calculations.</p>
+<p>It is found that the most convenient expansion, which exhibits
+explicitly the anisotropies, is obtained by using the irreducible
+tensorial Hermite polynomials, <span class="math inline">\(H_{r_1 \ldots
+r_s}^{(m)}(c)\)</span>, <span class="math display">\[
+\begin{aligned}
+\chi^\alpha(c ; x, t)= &amp; \sum_{n=0}^{\infty} h^{\alpha(2 n)}(x, t)
+H^{(2 n)}(c) \\
+&amp; +\sum_{n=0}^{\infty} h_r^{\alpha(2 n+1)}(x, t) H_r^{(2 n+1)}(c) \\
+&amp; +\sum_{n=1}^{\infty} h_{t s}^{\alpha(2 n)}(x, t) H_{r s}^{(2
+n)}(c)+\cdots
+\end{aligned}
+\]</span> The function <span
+class="math inline">\(\chi^\alpha(c)\)</span> of the continuous vector
+variable <span class="math inline">\(c\)</span> is thus represented by a
+denumerable infinite set of coefficients <span
+class="math inline">\(h^{\alpha(m)}\)</span> called the (irreducible)
+Hermitian moments of the distribution function; these, in turn, are
+classified as scalar Hermitian moments <span
+class="math inline">\(h^{\alpha(2 n)}\)</span>, vector Hermitian moments
+<span class="math inline">\(h_r^{\alpha(2 n+1)}\)</span>, traceless
+tensor Hermitian moments <span class="math inline">\(h_{r s}^{\alpha(2
+n)}\)</span>, etc. The moments are related to the original function as
+<span class="math display">\[
+h_{r_1 \ldots r_q}^{\alpha(m)}(x, t)=\int \mathrm{d} c \phi^0(c) H_{r_1
+\ldots r_q}^{(m)}(c) \chi^\alpha(c ; x, t)
+\]</span> Alternatively, the moment <span class="math inline">\(h_{r_1
+\ldots r_q}^{\alpha(m)}\)</span> (for <span class="math inline">\(m \neq
+0\)</span> ) can also be interpreted as the average value of the Hermite
+polynomial <span class="math inline">\(H_{r_1 \ldots
+r_q}^{(m)}(c)\)</span>, calculated with the full (dimensionless)
+distribution function <span
+class="math inline">\(\phi^\alpha(\boldsymbol{c} ; \boldsymbol{x},
+t)\)</span>, eq. (3.8), <span class="math display">\[
+h_{r_1 \ldots r_q}^{\alpha(m)}(x, t)=\int \mathrm{d} c
+\phi^0(c)\left[1+\chi^\alpha(c ; x, t)\right] H_{r_1 \ldots
+r_q}^{(m)}(c), \quad m \neq 0 .
+\]</span> Indeed, the orthogonality of any polynomial <span
+class="math inline">\(H_{\ldots}^{(m)}\)</span> to <span
+class="math inline">\(H^{(0)} \equiv 1\)</span> implies <span
+class="math display">\[
+(2 \pi)^{-3 / 2} \int \mathrm{d} c \exp \left(-\frac{1}{2} c^2\right)
+H_{r_1 \cdots r_q}^{(m)}(c)=\delta_{m, 0} .
+\]</span> Hence, in the local equilibrium state, the average value of
+all Hermite polynomials of non-zero degree is identically zero.</p>
+<p>It is seen that the tensorial polynomials are of the form <span
+class="math display">\[
+\begin{aligned}
+&amp; H_r^{(2 n+1)}(c)=c_r f^{(2 n+1)}(c), \\
+&amp; H_{r s}^{(2 n)}(c)=\left(c_r c_s-\frac{1}{3} c^2 \delta_{r
+s}\right) g^{(2 n)}(c),
+\end{aligned}
+\]</span> where <span class="math inline">\(f^{(2 n+1)}(c), g^{(2
+n)}(c)\)</span> are functions of the absolute value of the vector <span
+class="math inline">\(c\)</span>.</p>
+<p>Next, we must be sure that the constraints are satisfied. Because of
+the orthogonality of the Hermite polynomials, the constraints take a
+very simple form. They amount to requiring that three Hermitian moments
+by identically zero for every acceptable deviation <span
+class="math inline">\(\chi^\alpha\)</span> : <span
+class="math display">\[
+h^{\alpha(0)} \equiv 0(density), \quad h^{\alpha(2)} \equiv 0(energy),
+\quad h_r^{\alpha(1)} \equiv 0 (momentum).
+\]</span> Finally, we note that the moments <span
+class="math inline">\(h_{r s}^{\alpha(2)}\)</span>(stress tensor) and
+<span class="math inline">\(h_r^{\alpha(3)}\)</span>(heat flux) have a
+very important physical meaning. Using table 3.2.1, we have <span
+class="math display">\[
+\begin{aligned}
+\pi_{r s}^\alpha &amp; =m_\alpha \int \mathrm{d}
+v\left[\left(v_r-u_r^\alpha\right)\left(v_s-u_s^\alpha\right)-\frac{1}{3}\left|v-\boldsymbol{u}^\alpha\right|{
+}^2 \delta_{r s}\right] f^\alpha \\
+&amp; =m_\alpha \frac{T_\alpha}{m_\alpha} n_\alpha \int \mathrm{d}
+c\left[c_r c_s-\frac{1}{3} c^2 \delta_{r s}\right]
+\phi^0\left[1+\chi^\alpha\right] \\
+&amp; =T_\alpha n_\alpha \sqrt{2} \int \mathrm{d} c H_{r s}^{(2)} \phi^0
+\chi^\alpha .
+\end{aligned}
+\]</span> Hence, we find a very simple relation between the pressure
+tensor and the second-order tensor Hermitian moment: <span
+class="math display">\[
+\pi_{r s}^\alpha=\sqrt{2} n_\alpha T_\alpha h_{r s}^{\alpha(2)} .
+\]</span> We easily derive a similar relation between the heat flux and
+the third-order vector Hermitian moment: <span class="math display">\[
+q_r^\alpha=\sqrt{\frac{5}{2}}
+m_\alpha\left(\frac{T_\alpha}{m_\alpha}\right)^{3 / 2} n_\alpha
+h_r^{\alpha(3)}
+\]</span></p>
+<p>We have now achieved the desired series expansion, exhibiting the
+tensorial symmetries explicitly. For calculational purposes, these
+series must be truncated. This truncation process is done in two stages.
+As said before, in a linear theory we shall only need the vector and
+traceless second-rank tensor parts (no higher order tensor). In
+particular, it is found that the scalars and the anisotropies of order
+three and higher give rigorously no contribution to the entropy
+production (in the linear regime). We thus neglect all other
+anisotropies and write <span class="math display">\[
+\chi^\alpha(\boldsymbol{c} ; \boldsymbol{x}, t) \approx c_r B_r^\alpha(c
+; \boldsymbol{x}, t)+\left(c_r c_s-\frac{1}{3} c^2 \delta_{r s}\right)
+C_{r s}^\alpha(c ; \boldsymbol{x}, t) .
+\]</span> The series for <span class="math inline">\(B_r^\alpha\)</span>
+and <span class="math inline">\(C_{r s}^\alpha\)</span> can then be
+truncated at various levels. We consider here three successive
+approximations. (A) The thirteen moment <span class="math inline">\((13
+\mathrm{M})\)</span> approximation *: <span class="math display">\[
+\begin{aligned}
+&amp; c_r B_r^\alpha(c ; \boldsymbol{x},
+t)=h_r^{\alpha(3)}(\boldsymbol{x}, t) H_r^{(3)}(\boldsymbol{c}), \\
+&amp; \left(c_r c_s-\frac{1}{3} c^2 \delta_{r s}\right) C_{r s}^\alpha(c
+; \boldsymbol{x}, t)=h_{r s}^{\alpha(2)}(\boldsymbol{x}, t) H_{r
+s}^{(2)}(\boldsymbol{c}) .
+\end{aligned}
+\]</span> (B) The twenty-one moment (21 M) approximation: <span
+class="math display">\[
+\begin{aligned}
+&amp; c_r B_r^\alpha(c ; x, t)=h_r^{\alpha(3)}(x, t)
+H_r^{(3)}(c)+h_r^{\alpha(5)}(x, t) H_r^{(5)}(c), \\
+&amp; \left(c_r c_s-\frac{1}{3} c^2 \delta_{r s}\right) C_{r
+s}^\alpha(\boldsymbol{c} ; \boldsymbol{x}, t)=h_{r
+s}^{\alpha(2)}(\boldsymbol{x}, t) H_{r s}^{(2)}(\boldsymbol{c})+h_{r
+s}^{\alpha(4)}(\boldsymbol{x}, t) H_{r s}^{(4)}(\boldsymbol{c}) .
+\end{aligned}
+\]</span> (C) The twenty-nine moment (29 M) approximation: <span
+class="math display">\[
+\begin{aligned}
+&amp; c_r B_r^\alpha(c ; x, t)=h_r^{\alpha(3)}(x, t)
+H_r^{(3)}(\boldsymbol{c})+h_r^{\alpha(5)}(\boldsymbol{x}, t)
+H_r^{(5)}(c) \\
+&amp; \quad+h_r^{\alpha(7)}(\boldsymbol{x}, t) H_r^{(7)}(c), \\
+&amp; \left(c_r c_s-\frac{1}{3} c^2 \delta_{r s}\right) C_{r
+s}^\alpha(\boldsymbol{c} ; \boldsymbol{x}, t) \\
+&amp; =h_{r s}^{\alpha(2)}(\boldsymbol{x}, t) H_{r
+s}^{(2)}(\boldsymbol{c})+h_{r s}^{\alpha(4)}(\boldsymbol{x}, t) H_{r
+s}^{(4)}(\boldsymbol{c})+h_{r s}^{\alpha(6)}(\boldsymbol{x}, t) H_{r
+s}^{(6)}(\boldsymbol{c}) .
+\end{aligned}
+\]</span></p>
+<p>This is just like what we've done in small parameter expansion, but
+here the latter term means high frequency (maybe?) but not higher
+derivative (maybe there is connection, after all they are all high order
+quantities.)</p>
+<p>So now, we have gone through the whole process of the Hermite
+expansion. Compared to order balance in classical perturbation methods,
+here we directly choose a base to represent the analytical form of the
+perturbation function. Then the convergence relies on whether the basis
+are enough to fit the unknown function (but I haven't learned about how
+to analyze such approximation methods, it is something more like
+numerical methods.) Beside, here, tensorial Hermite polynomials are
+employed, which can express anisotropy more natrually. Therefore, here
+we have two types of truncation. The first type is choosing the order of
+tensor, it is found that second order is enough. The second type is
+truncation of basis. It is just like choose Fourier mode. Here, three
+successful approximation are introduced, i.e. 13M, 21M and 29M, among
+which 21M behaves best.</p>
+<p>The thirteen moment (13M) approximation just keeps the five
+plasmadynamical moments <span class="math inline">\(n_\alpha,
+\mathbf{u}_\alpha, T_\alpha\)</span>, the three components of the heat
+flow vector <span class="math inline">\(\mathbf{h}_\alpha\)</span>, and
+the five independent components of the anisotropic pressure tensor <span
+class="math inline">\(\pi_\alpha\)</span>. The <span
+class="math inline">\(21 \mathrm{M}\)</span> approximation adds the
+three components of the fifth order Hermitian moment <span
+class="math inline">\(\overline{\mathbf{h}}_\alpha^{(5)}\)</span> and
+the five components of the fourth order Hermitian moment <span
+class="math inline">\(\overline{\mathbf{h}}_\alpha^{(4)}\)</span>, etc.
+Balescu demonstrates that the classical transport coefficients in the
+<span class="math inline">\(21 \mathrm{M}\)</span> approximation agree
+to within <span class="math inline">\(1 \%\)</span> with the ones
+obtained much earlier by Braginskii by a very different representation,
+but it deviates in some important aspects of the interpretation.</p>
 
                 
             </div>
