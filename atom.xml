@@ -6,7 +6,7 @@
   <link href="https://zhigangpu.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhigangpu.github.io/"/>
-  <updated>2023-09-28T03:32:11.386Z</updated>
+  <updated>2023-10-03T07:15:08.679Z</updated>
   <id>https://zhigangpu.github.io/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Dielectric plasma</title>
+    <link href="https://zhigangpu.github.io/2023/10/03/Dielectric-plasma/"/>
+    <id>https://zhigangpu.github.io/2023/10/03/Dielectric-plasma/</id>
+    <published>2023-10-03T07:04:26.000Z</published>
+    <updated>2023-10-03T07:15:08.679Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;preface&quot;&gt;Preface&lt;/h1&gt;
+&lt;p&gt;A plasma is inherently capable of sustaining a rich class of
+electromagnetic phenomena. A proper</summary>
+        
+      
+    
+    
+    
+    <category term="Linear response theory" scheme="https://zhigangpu.github.io/categories/Linear-response-theory/"/>
+    
+    
+    <category term="Plasma" scheme="https://zhigangpu.github.io/tags/Plasma/"/>
+    
+    <category term="Dielectric media" scheme="https://zhigangpu.github.io/tags/Dielectric-media/"/>
+    
+  </entry>
+  
+  <entry>
     <title>From Landau to MHD</title>
     <link href="https://zhigangpu.github.io/2023/09/24/MHD/"/>
     <id>https://zhigangpu.github.io/2023/09/24/MHD/</id>
     <published>2023-09-24T06:35:50.000Z</published>
-    <updated>2023-09-28T03:32:11.386Z</updated>
+    <updated>2023-09-28T07:51:49.492Z</updated>
     
     
       
