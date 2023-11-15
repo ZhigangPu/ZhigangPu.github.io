@@ -514,6 +514,7 @@ class="math display">\[
 &amp;\frac{\partial v}{\partial t} + v\frac{\partial v}{\partial x} =
 -\frac{\partial\Phi}{\partial x}
 \end{aligned}
+\tag{1}
 \]</span></p>
 <p>The above equation reproduces the usual ion sound wave dispersion
 relation <span class="math inline">\(\omega^2 =
@@ -626,6 +627,52 @@ the theory, the "streched" variables <span class="math display">\[\xi =
 in carrying out a nonlinear expansion.</p>
 <h2 id="the-kdv-equation-for-nonlinear-ion-sound-waves">The KdV equation
 for nonlinear ion sound waves</h2>
+<p>We assume that <span class="math inline">\(n,\Phi\)</span> and <span
+class="math inline">\(v\)</span> have power series expansions in <span
+class="math inline">\(\epsilon\)</span> about a homogeneous field-free
+equilibrium, i.e., <span class="math display">\[
+\begin{aligned}
+    &amp;n = 1 + \epsilon n^{(1)} + \epsilon^2 n^{(2)} + \cdots\\
+    &amp;\Phi = \epsilon \Phi^{(1)} + \epsilon^2 \Phi^{(2)} + \cdots\\
+    &amp;v = \epsilon v^{(1)} + \epsilon^2 v^{(2)} + \cdots
+\end{aligned}
+\]</span></p>
+<p>Furthermore, we transform the <span class="math inline">\(x\)</span>
+and <span class="math inline">\(t\)</span> variables with: <span
+class="math display">\[
+\partial/\partial x = \epsilon^{1/2}(\partial/\partial \xi) \quad
+\partial/\partial t = \epsilon^{3/2}(\partial/\partial \tau) -
+\epsilon^{1/2}(\partial/\partial \xi)
+\]</span></p>
+<p>In lowest order, Eqs.(1) become <span class="math display">\[
+\Phi^{(1)} = n^{(1)},\quad \partial n^{(1)} /\partial \xi =  \partial
+v^{(1)} /\partial \xi, \quad \partial v^{(1)} /\partial \xi = \partial
+\Phi^{(1)} /\partial \xi
+\]</span> which gives: <span class="math display">\[
+\Phi^{(1)} = n^{(1)} = v^{(1)}
+\]</span> for localized disturbances. To next order in <span
+class="math inline">\(\epsilon\)</span>, Eqs.(1) become <span
+class="math display">\[
+\begin{aligned}
+&amp;\frac{\partial^2 \Phi^{(1)} }{\partial \xi^2} = \Phi^{(2)} +
+\frac{(\Phi^{(1)})^2}{2} - n^{(2)}\\
+&amp;-\frac{\partial n^{(2)} }{\partial \xi} + \frac{\partial n^{(1)}
+}{\partial \tau} + \frac{\partial (n^{(1)} v^{(1)})}{\partial \xi} +
+\frac{\partial v^{(2)} }{\partial \xi}  = 0\\
+&amp;-\frac{\partial v^{(2)} }{\partial \xi} + \frac{\partial v^{(1)}
+}{\partial \tau} + v^{(1)}\frac{\partial v^{(1)}}{\partial \xi}
+=-\frac{\partial \Phi^{(2)} }{\partial \xi}
+\end{aligned}
+\]</span> Eliminating <span class="math inline">\(n^{(2)}\)</span> and
+<span class="math inline">\(v^{(2)}\)</span> and making use of result of
+<span class="math inline">\(\mathcal{O}(\epsilon)\)</span>, we find that
+<span class="math inline">\(n^{(1)}\)</span> evolves according to <span
+class="math display">\[
+\frac{\partial n^{(1)} }{\partial \tau} + n^{(1)} \frac{\partial
+n^{(1)}}{\partial \xi} + \frac{1}{2}\frac{\partial^3 n^{(1)}}{\partial
+\xi^3} = 0
+\]</span> which is just the KdV equation with <span
+class="math inline">\(a=1, b=1/2\)</span>.</p>
 
                 
             </div>
