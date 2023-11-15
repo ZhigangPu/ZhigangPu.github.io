@@ -455,6 +455,7 @@ term, i.e. <span class="math display">\[
 <h1
 id="derivation-of-the-kdv-equation-for-nonlinear-ion-sound-waves">Derivation
 of the KdV equation for nonlinear ion sound waves</h1>
+<h2 id="ion-sound-wave-model">Ion sound wave model</h2>
 <p>We now derive the Korteweg-de Vries equation for the case of ion
 sound wave disturbances moving with Mach number (defined relative to the
 ion sound speed) slightly greater than unity in a uniform, magnetic
@@ -475,7 +476,78 @@ n_0\exp(e\phi/k_B T_e)\)</span>, where <span
 class="math inline">\(n_0\)</span> is the uniform background electron
 density.(Just use the method of separation here). From this equation, we
 can directly knows number density of electrons by the local electric
-potential there.</p>
+potential there. The Poisson equation then becomes <span
+class="math display">\[
+\partial^2\phi/\partial x^{&#39;2} = 4\pi(e{n_0\exp(e\phi/k_B T_e)-n_i})
+\]</span> For the ions, we have <span class="math display">\[
+\begin{aligned}
+&amp;\frac{\partial n_i}{\partial t^{&#39;}} + \frac{\partial
+n_iv_i}{\partial x^{&#39;}} = 0 \\
+&amp;\frac{\partial v_i}{\partial t^{&#39;}} + v_i\frac{\partial
+v_i}{\partial x^{&#39;}} = -\frac{e}{m_i}\frac{\partial\phi}{\partial
+x^{&#39;}}
+\end{aligned}
+\]</span></p>
+<p>Introduce such dimensionless quantities where <span
+class="math display">\[x \equiv \frac{x^{&#39;}}{(k_BT_e/4\pi
+n_0e^2)^{1/2}} \equiv \frac{x^{&#39;}}{\lambda_D}\]</span> <span
+class="math display">\[
+t\equiv t^{&#39;}(\frac{4\pi n_0 e^2}{m_i})^{1/2}\equiv
+t^{&#39;}\omega_i
+\]</span> <span class="math display">\[
+\Phi \equiv \frac{e\phi}{k_BT_e}
+\]</span> <span class="math display">\[
+n \equiv n_i/n_0
+\]</span> <span class="math display">\[
+v \equiv \frac{v_i}{(k_BT_e/m_i)^{1/2}}\equiv v_i/v_{th}
+\]</span></p>
+<p>Then all the above equation can be rewritten as <span
+class="math display">\[
+\begin{aligned}
+&amp;\partial^2\Phi/\partial x^{2} = {\exp(\Phi)-n}\\
+&amp;\frac{\partial n}{\partial t} + \frac{\partial nv}{\partial x} = 0
+\\
+&amp;\frac{\partial v}{\partial t} + v\frac{\partial v}{\partial x} =
+-\frac{\partial\Phi}{\partial x}
+\end{aligned}
+\]</span></p>
+<p>The above equation reproduces the usual ion sound wave dispersion
+relation <span class="math inline">\(\omega^2 =
+(1+(1/k^2))^{-1}\)</span> for perturbations with <span
+class="math inline">\(x\)</span> and <span
+class="math inline">\(t\)</span> variation of the form <span
+class="math inline">\(\exp(i(kx-\omega t))\)</span>. It should also be
+pointed out that a meaningful nonlinear analysis of the above equations
+must include the effects of charge separation through the term
+$<sup>2/x</sup>{2} $. If we assume charge neutrality, <span
+class="math inline">\({n=\exp(\Phi)}\)</span>, then we have <span
+class="math display">\[
+\frac{\partial v}{\partial t} + v\frac{\partial v}{\partial x} =
+-\frac{1}{n}\frac{\partial n}{\partial x}
+\]</span> which is merely momentum equation of ideal gas dynamics. When
+the spatial gradients become large, however, it is no longer permisible
+to neglect $<sup>2/x</sup>{2} $. It is the dispersive effect of
+deviations from charge neutrality which eventually limits the buildup of
+short-wavelength components to the disturbance.</p>
+<h2 id="solitary-wave-solution">Solitary wave solution</h2>
+<p>To establish the proper amplitude and variable scaling for deriving
+the KdV equation, it is useful to first consider the solitary wave
+solutions associated with the dimensionless equations above. We look for
+solutions depend on <span class="math inline">\(x\)</span> and <span
+class="math inline">\(t\)</span> through the variable <span
+class="math inline">\(x-Mt\)</span> (<span
+class="math inline">\(M\)</span> is Mach number <span
+class="math inline">\(=V_0/c_s\)</span> = pulse speed /
+ion-sound-speed). The appropriate boundary conditions for an isolated
+pulselike solution are <span class="math inline">\(\Phi\rightarrow 0,
+v\rightarrow 0, n\rightarrow 0,\Phi^{&#39;}\rightarrow 0,
+v^{&#39;}\rightarrow 0, n^{&#39;}\rightarrow 0,\)</span> as <span
+class="math inline">\(|x-Mt|\rightarrow \infty\)</span>, where primes
+denote differetiation with respect to the variable <span
+class="math inline">\(x-Mt\)</span>. <span
+class="math inline">\(|x-Mt|\rightarrow \infty\)</span> actually means
+<span class="math inline">\(x_0 = x-Mt \rightarrow \infty\)</span>,
+which is the boundary at infinitely distance point.</p>
 
                 
             </div>
