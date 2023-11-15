@@ -6,7 +6,7 @@
   <link href="https://zhigangpu.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhigangpu.github.io/"/>
-  <updated>2023-11-15T05:49:10.807Z</updated>
+  <updated>2023-11-15T08:10:25.442Z</updated>
   <id>https://zhigangpu.github.io/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Black body radiation</title>
+    <link href="https://zhigangpu.github.io/2023/11/15/Black-body-radiation/"/>
+    <id>https://zhigangpu.github.io/2023/11/15/Black-body-radiation/</id>
+    <published>2023-11-15T07:25:31.000Z</published>
+    <updated>2023-11-15T08:10:25.442Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;In physics, electromagnetic radiation (EMR) consists of waves of the
+electromagnetic (EM) field,</summary>
+        
+      
+    
+    
+    
+    <category term="Statistical physics" scheme="https://zhigangpu.github.io/categories/Statistical-physics/"/>
+    
+    
+    <category term="Radiation" scheme="https://zhigangpu.github.io/tags/Radiation/"/>
+    
+  </entry>
+  
+  <entry>
     <title>KdV in Plasma</title>
     <link href="https://zhigangpu.github.io/2023/11/14/KdV-in-Plasma/"/>
     <id>https://zhigangpu.github.io/2023/11/14/KdV-in-Plasma/</id>
     <published>2023-11-14T07:31:13.000Z</published>
-    <updated>2023-11-15T05:49:10.807Z</updated>
+    <updated>2023-11-15T07:25:35.682Z</updated>
     
     
       
