@@ -554,14 +554,52 @@ class="math inline">\(|y|=\infty\)</span> has been enforced. Substitute
 the above relation into the Poisson equation, multiplying by <span
 class="math inline">\(\Phi^{&#39;}\)</span> and integrateing, we find
 <span class="math display">\[
-\frac{1}{2}(\Phi^{&#39;2}) = e^{\Phi} + M(M^2-2\Phi)^{1/2} - (M^2+1)
+\frac{1}{2}(\Phi^{&#39;})^2 = e^{\Phi} + M(M^2-2\Phi)^{1/2} - (M^2+1)
 \]</span> where the boundary condition has been enforced also. Now the
 above equation is a first order nonlinear ODE. The compressive solitary
 wave solutions to it exist for Mach numbers in the range <span
 class="math inline">\(1&lt;M\leq1.6\)</span> with corresponding peak
 potential <span class="math inline">\(\Phi_M\)</span> in the range <span
-class="math inline">\(0&lt;\Phi_M\leq 1.3\)</span>.</p>
-<p><img src="/images/kdv_compressive_solitary_wave.jpg" /></p>
+class="math inline">\(0&lt;\Phi_M\leq 1.3\)</span>. <img
+src="/images/kdv_compressive_solitary_wave.jpg" /> For present purposes,
+we are interested in Mach number slightly greater than unity, <span
+class="math display">\[
+0 &lt; \delta M \equiv M-1 \ll 1
+\]</span> which corresponds to a small-amplitude solitary wave with
+<span class="math inline">\(\Phi_M\ll 1\)</span>. Expanding in <span
+class="math inline">\(\Phi\)</span> and <span
+class="math inline">\(\delta M\)</span> and retaining leading-order
+terms, we find, <span class="math display">\[
+(\Phi^{&#39;})^2 = \frac{2}{3}\Phi^2(3\delta M-\Phi)
+\]</span> which may be integrated to give <span class="math display">\[
+\Phi = 3\delta M sech^2((\frac{1}{2}\delta M)^{1/2}(x-Mt))
+\]</span> We see from the above equation that the maximum pulse
+amplitude is <span class="math inline">\(\Phi_M = 3\delta M\)</span>,
+and that the width of the solitary wave is of order <span
+class="math inline">\(\delta M^{-1/2}\)</span>.</p>
+<p>Here is the Taylor expansion of the hyperbolic function, <span
+class="math display">\[
+\begin{aligned}
+&amp; \sinh x=x+\frac{x^3}{3 !}+\frac{x^5}{5 !}+\frac{x^7}{7
+!}+\cdots=\sum_{n=0}^{\infty} \frac{x^{2 n+1}}{(2 n+1) !} \\
+&amp; \cosh x=1+\frac{x^2}{2 !}+\frac{x^4}{4 !}+\frac{x^6}{6
+!}+\cdots=\sum_{n=0}^{\infty} \frac{x^{2 n}}{(2 n) !} \\
+&amp; \tanh x=x-\frac{x^3}{3}+\frac{2 x^5}{15}-\frac{17
+x^7}{315}+\cdots=\sum_{n=1}^{\infty} \frac{2^{2 n}\left(2^{2 n}-1\right)
+B_{2 n} x^{2 n-1}}{(2 n) !},|x|&lt;\frac{\pi}{2} \\
+&amp; \operatorname{coth}
+x=\frac{1}{x}+\frac{x}{3}-\frac{x^3}{45}+\frac{2
+x^5}{945}+\cdots=\frac{1}{x}+\sum_{n=1}^{\infty} \frac{2^{2 n} B_{2 n}
+x^{2 n-1}}{(2 n) !}, 0&lt;|x|&lt;\pi \text { (罗朗级数) } \\
+&amp; \operatorname{sech} x=1-\frac{x^2}{2}+\frac{5 x^4}{24}-\frac{61
+x^6}{720}+\cdots=\sum_{n=0}^{\infty} \frac{E_{2 n} x^{2 n}}{(2 n)
+!},|x|&lt;\frac{\pi}{2} \\
+&amp; \operatorname{csch} x=\frac{1}{x}-\frac{x}{6}+\frac{7
+x^3}{360}-\frac{31 x^5}{15120}+\cdots=\frac{1}{x}+\sum_{n=1}^{\infty}
+\frac{2\left(1-2^{2 n-1}\right) B_{2 n} x^{2 n-1}}{(2 n) !},
+0&lt;|x|&lt;\pi (罗朗级数)
+\end{aligned}
+\]</span></p>
 
                 
             </div>
