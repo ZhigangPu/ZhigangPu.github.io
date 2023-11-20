@@ -6,7 +6,7 @@
   <link href="https://zhigangpu.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhigangpu.github.io/"/>
-  <updated>2023-11-16T07:48:24.848Z</updated>
+  <updated>2023-11-20T02:59:55.935Z</updated>
   <id>https://zhigangpu.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hybrid-kinetic approach for space physics</title>
+    <link href="https://zhigangpu.github.io/2023/11/20/Hybrid-kinetic-approach-for-space-physics/"/>
+    <id>https://zhigangpu.github.io/2023/11/20/Hybrid-kinetic-approach-for-space-physics/</id>
+    <published>2023-11-20T02:57:36.000Z</published>
+    <updated>2023-11-20T02:59:55.935Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Hybrid-kinetic approaches are widely used to model ion-scale
+phenomena in space plasmas. Hybrid</summary>
+        
+      
+    
+    
+    
+    <category term="Space Physics" scheme="https://zhigangpu.github.io/categories/Space-Physics/"/>
+    
+    
+    <category term="Space Physics" scheme="https://zhigangpu.github.io/tags/Space-Physics/"/>
+    
+    <category term="Hybrid methods" scheme="https://zhigangpu.github.io/tags/Hybrid-methods/"/>
+    
+  </entry>
   
   <entry>
     <title>Introduction to Space Physics</title>
