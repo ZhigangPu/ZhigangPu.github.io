@@ -509,6 +509,39 @@ class="math inline">\(\lambda_{De}= v{the}/\omega_{pe}, \delta_{e} =
 c/\omega_{pe}\)</span>,
 所谓的惯性尺度就是趋肤深度，即电磁波能够扩散的尺度，如果这个尺度趋于0，那么不存在磁扩散，磁场frozen在等离子体中。退一步讲，如果电子的skin
 length趋于0，而离子不为0，则磁场frozen在电子上，而不是在离子上，离子与电子解耦。)</p>
+<p>Implicit methods prevent unresolved scales from producing numerical
+instabilities that become a source of unphysical energy. Provided
+stability is ensured, using an implicit method is like using a reduced
+model that eliminates a physical process but with one critical
+difference: if one desires to reintroduce the process, one just need to
+increase the resolution.This approach then allows the user to conduct
+convergence studies varying the domain size and the time interval. It is
+an instrument of great power that needs to be used with experience,
+properly selecting the scales resolved.(没看懂在讲什么)</p>
+<h2 id="temporal-adaptation">Temporal Adaptation</h2>
+<p>Time is discretized in steps. We consider here some general
+properties applicable to a vast class of methods if not all.Time
+discretization can be either explicit,when one time step is directly
+computed from the previous time step without requiring iterations or
+solution of linear or nonlinear coupled sets of equations, or implicit,
+when the time step to be calculated appears in the calculation and an
+iteration (either linear or nonlinear) is needed. We review below the
+two methods and consider their advantages.</p>
+<h2 id="model-adaptation">Model adaptation</h2>
+<p>The most critical aspect of coupling fluid and kinetic models is the
+strategy for handling the interface conditions. Fluid models are
+structurally incapable of receiving the information from the kinetic
+models: for example, they can’t handle waves that are not present in the
+fluid models or can’t handle high-energy particle beams. We then use two
+types of boundary conditions, semi-open or linked with fluid. The
+semi-open boundary conditions are based on the perfectly matched layer
+[26, 83] approach where a damping term is added to the Maxwell’s
+equations to absorb outgoing
+waves.(这个做法挺有意思的，因为如果所有的域都需要解Maxwell
+equation的话，那么永远都会有光速的限制，怎么样拿掉光速的限制，或者怎么样处理EM波到MHD波的变化，是很重要的。在Two-fluid方法里面Hakim他们也求解了Maxwell
+equation，但是如何过渡到MHD regime，不需要去求解Maxwell
+equation呢？Lepenta的方法似乎是做domain
+interface，然后在不同的domain求解不同的方程，然后尝试求解好界面上的过度。)</p>
 
                 
             </div>
