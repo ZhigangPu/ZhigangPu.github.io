@@ -423,8 +423,65 @@ particle-in-cell (PIC) codes in that the electrons are modeled as a
 fluid that can be considered even massless, while the electric field is
 not advanced in time, but instead calculated at the new time level from
 the advanced ion quantities and the magnetic field. (Electric field is
-quasistatic, <span
-class="math inline">\(\omega_p\ll\omega_c\)</span>)</p>
+quasistatic, <span class="math inline">\(\omega_p\ll\omega_c\)</span>).
+In this article, we concentrate on such hybrid models with massless
+electrons, beginning with a discussion of the basics of a simple hybrid
+code algorithm. We then show examples of recent use of hybrid codes for
+large-scale space plasma simulations of structures formed at planetary
+bow shock—foreshock systems, magnetic reconnection at the magnetopause,
+and complex phenomena in the magnetosheath due to the interaction of
+kinetic processes associated with the bow shock, magnetic reconnection,
+and turbulence.</p>
+<p>A hybrid code in the context of plasma physics generally refers to a
+computational model in which some of the plasma species are treated
+kinetically and others as fluids, while the electric and magnetic fields
+can be considered as either electrostatic or electromagnetic. Most often
+in hybrid codes employed in space plasmas all the different ion species
+are treated kinetically using particle-in-cell methods, the electrons
+are modeled as a fluid with massless electrons, and Maxwell’s equations
+are solved in the radiation-free (i.e., no light waves) limit. Even in
+this limited space, there is still freedom in how to treat the fast
+phenomena associated with electron dynamics.</p>
+<p>In space plasmas in particular, hybrid codes occupy a unique niche,
+intermediate between fluid codes that are most useful for modeling large
+portions of the solar wind or the interaction of the solar wind with the
+Earth’s magnetosphere and fully kinetic treatment of all the plasma
+components, i.e., all ion species and electrons, that are resolved down
+to the smallest electron scales. Instead, hybrid codes model a portion
+of the solar wind-magnetosphere boundary or a small region in the solar
+wind or the magnetosphere on spatial and temporal scales on which ion
+dynamics dominates. The effects of the larger fluid scales can be
+modeled through boundary conditions, while the small-scale effects of
+electrons are added in through models for the electron pressure tensor,
+and high-frequency (e.g., electronion lower-hybrid or higher
+electron-electron) wave effects are included through a resistivity or
+other transport coefficients. But as computers have become larger and
+faster, fully kinetic codes can now model system sizes and time scales
+that previously were only accessible to hybrid codes, and hybrid codes
+in turn can now model systems large enough that could once only be
+studied by fluid models.</p>
+<p>With larger computational domains, longer times, and more realistic
+initial/boundary conditions, the emphasis is now on investigating the
+interactions between various physical processes, rather than focusing on
+a single physics issue.(这就是multiscal的相比于hybrid
+code不一样的地方，multiscale可以比较方便的描述不同scale的physical
+process的交互，而hybrid code只能够描述单尺度的问题。) This has been
+motivated in part by the existence of better spacecraft data, involving
+very high-resolution simultaneous data from multiple satellites. One
+example is the MMS (Magnetosphere Multi-Scale) mission [2] whose four
+closely-spaced satellites have fully resolved ion and have begun to
+explore electron scales related to magnetic reconnection layers. In
+addition, extended hybrid models that include electron inertia effects,
+new quasi-neutral models, and better Vlasov methods have become more
+prevalent, which allow investigating short-scale electron processes that
+are now becoming accessible in space and laboratory observations of
+magnetic reconnection.</p>
+<p>This article on hybrid codes has several purposes. The first purpose
+is to serve as a tutorial for newcomers to the field of computational
+space plasma physics by providing a brief introduction to hybrid code
+methodology. It includes a review of the basics of the hybrid physics
+model, the underlying fundamental equations that are used, and a simple
+example of the physics implementation into a working algorithm.</p>
 
                 
             </div>
