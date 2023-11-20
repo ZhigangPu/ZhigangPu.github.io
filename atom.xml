@@ -6,7 +6,7 @@
   <link href="https://zhigangpu.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhigangpu.github.io/"/>
-  <updated>2023-11-20T03:14:44.505Z</updated>
+  <updated>2023-11-20T03:18:25.925Z</updated>
   <id>https://zhigangpu.github.io/</id>
   
   <author>
@@ -17,20 +17,20 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hybrid-kinetic approach for space physics</title>
-    <link href="https://zhigangpu.github.io/2023/11/20/Hybrid-kinetic-approach-for-space-physics/"/>
-    <id>https://zhigangpu.github.io/2023/11/20/Hybrid-kinetic-approach-for-space-physics/</id>
+    <title>Numerical simulation for space physics</title>
+    <link href="https://zhigangpu.github.io/2023/11/20/Numerical-space-physics/"/>
+    <id>https://zhigangpu.github.io/2023/11/20/Numerical-space-physics/</id>
     <published>2023-11-20T02:57:36.000Z</published>
-    <updated>2023-11-20T03:14:44.505Z</updated>
+    <updated>2023-11-20T03:18:25.925Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+    <summary type="html">&lt;h1 id=&quot;hybrid-approach&quot;&gt;Hybrid approach&lt;/h1&gt;
 &lt;p&gt;Hybrid-kinetic approaches are widely used to model ion-scale
-phenomena in space plasmas. Hybrid</summary>
+phenomena in space plasmas.</summary>
         
       
     
