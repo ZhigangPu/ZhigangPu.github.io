@@ -485,10 +485,12 @@ class="math display">\[
 <p>The dispersion relation is, therefore, <span class="math display">\[
 1=\frac{\omega_p^2}{k^2} \int_{-\infty}^{\infty} \frac{\partial
 \hat{f}_0\left(v_x\right) / \partial v_x}{v_x-(\omega / k)}
-\]</span> Since we are dealing with a one-dimensional problem we may
-drop the subscript <span class="math inline">\(x\)</span>, being careful
-not to confuse <span class="math inline">\(v\)</span> (which is really
-<span class="math inline">\(v_x\)</span> ) with the total velocity <span
+\]</span>
+(这是一个积分区间在实轴，但是被积函数是复变函数的例子，这个时候应该将积分延拓到复数区间，然后想办法消去复数部分的积分，详见梁昆淼《数学物理方法》4.2节。)
+Since we are dealing with a one-dimensional problem we may drop the
+subscript <span class="math inline">\(x\)</span>, being careful not to
+confuse <span class="math inline">\(v\)</span> (which is really <span
+class="math inline">\(v_x\)</span> ) with the total velocity <span
 class="math inline">\(v\)</span> used earlier: <span
 class="math display">\[
 1=\frac{\omega_p^2}{k^2} \int_{-\infty}^{\infty} \frac{\partial
@@ -536,7 +538,8 @@ class="math inline">\(C_1\)</span> is the path along the real axis,
 <span class="math inline">\(C_2\)</span> is the semicircle at infinity,
 and <span class="math inline">\(R(\omega / k)\)</span> is the residue at
 <span class="math inline">\(\omega / k\)</span>. This works if the
-integral over <span class="math inline">\(C_2\)</span> vanishes.
+integral over <span class="math inline">\(C_2\)</span>
+vanishes.(如果C2的路径积分可以消失，那么就可以比较方便的得出实轴上的积分，但是很可惜，在Maxwell分布的前提下，虚部积分不能消去，这个时候Landau提出了另一种积分方法，详见Cairns的推导。按照Landau的方法，积分路径就不包含类似于C2的部分，只存在实轴的积分以及有限个靠近实轴的奇点，用留数定理就可以求解。)
 Unfortunately, this does not happen for a Maxwellian distribution, which
 contains the factor <span class="math display">\[
 \exp \left(-v^2 / v_{\mathrm{th}}^2\right)
@@ -563,10 +566,15 @@ Then Eq. (7.54) becomes <span class="math display">\[
 1=\frac{\omega_p^2}{k^2}\left[P \int_{-\infty}^{\infty} \frac{\partial
 \hat{f}_0 / \partial v}{v-(\omega / k)} d v+\left.i \pi \frac{\partial
 \hat{f}_0}{\partial v}\right|_{v=\omega / k}\right]
-\]</span> where <span class="math inline">\(P\)</span> stands for the
-Cauchy principal value. To evaluate this, we integrate along the real
-<span class="math inline">\(v\)</span> axis but stop just before
-encountering the pole. If the phase velocity <span
+\]</span></p>
+<p>此处，<span class="math inline">\(Res(f(z_0)) =
+\frac{P(z_0)}{Q^{&#39;}(z_0)} = \frac{\partial \hat{f}_0 / \partial
+v}{(v-(\omega / k))^{&#39;}}|_{v=v_{\phi}} = \frac{\partial \hat{f}_0
+}{\partial v}|_{v=v_{\phi}}\)</span>, 参考梁昆淼p53.</p>
+<p>where <span class="math inline">\(P\)</span> stands for the Cauchy
+principal value. To evaluate this, we integrate along the real <span
+class="math inline">\(v\)</span> axis but stop just before encountering
+the pole. If the phase velocity <span
 class="math inline">\(v_\phi=\omega / k\)</span> is sufficiently large,
 as we assume, there will not be much contribution from the neglected
 part of the contour, since both <span
@@ -612,8 +620,10 @@ relation (7.58) then becomes <span class="math display">\[
 \omega^2=\omega_p^2+\frac{\omega_p^2}{\omega^2} \frac{3 K T_e}{m} k^2
 \end{gathered}
 \]</span></p>
-<p>If the thermal correction is small, we may replace <span
-class="math inline">\(\omega^2\)</span> by <span
+<p>If the thermal correction is small(recall 在冷等离子体中<span
+class="math inline">\(\omega=\omega_p\)</span>, 不存在<span
+class="math inline">\(k\)</span>, 这就是这里不考虑热修正的意思), we may
+replace <span class="math inline">\(\omega^2\)</span> by <span
 class="math inline">\(\omega_p^2\)</span> in the second term. We then
 have <span class="math display">\[
 \omega^2=\omega_p^2+\frac{3 K T_e}{m} k^2
@@ -690,7 +700,8 @@ Instabilities of the gas of stars can cause spiral arms to form, but
 this process is limited by Landau damping.</p>
 <p>To see what is responsible for Landau damping, we first notice that
 <span class="math inline">\(\operatorname{Im}(\omega)\)</span> arises
-from the pole at <span class="math inline">\(v=v_\phi\)</span>.
+from the pole at <span
+class="math inline">\(v=v_\phi\)</span>(因为看色散关系可以看到，在奇点处，由留数贡献的虚部才比较显著).
 Consequently, the effect is connected with those particles in the
 distribution that have a velocity nearly equal to the phase velocity -
 the "resonant particles." These particles travel along with the wave and
