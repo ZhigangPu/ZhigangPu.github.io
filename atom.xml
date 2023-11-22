@@ -6,7 +6,7 @@
   <link href="https://zhigangpu.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhigangpu.github.io/"/>
-  <updated>2023-11-20T08:02:28.486Z</updated>
+  <updated>2023-11-22T02:55:43.540Z</updated>
   <id>https://zhigangpu.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Landau damping</title>
+    <link href="https://zhigangpu.github.io/2023/11/22/Landau-damping/"/>
+    <id>https://zhigangpu.github.io/2023/11/22/Landau-damping/</id>
+    <published>2023-11-22T02:48:16.000Z</published>
+    <updated>2023-11-22T02:55:43.540Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;contour-integral-by-landau&quot;&gt;Contour integral by Landau&lt;/h1&gt;
+&lt;p&gt;As an elementary illustration of the use of the Vlasov equation,</summary>
+        
+      
+    
+    
+    
+    <category term="Plasma" scheme="https://zhigangpu.github.io/categories/Plasma/"/>
+    
+    
+    <category term="Plasma" scheme="https://zhigangpu.github.io/tags/Plasma/"/>
+    
+    <category term="Kinetic theory" scheme="https://zhigangpu.github.io/tags/Kinetic-theory/"/>
+    
+  </entry>
   
   <entry>
     <title>Numerical simulation for space physics</title>

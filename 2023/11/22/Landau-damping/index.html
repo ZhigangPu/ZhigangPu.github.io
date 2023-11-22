@@ -4,10 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Numerical simulation for space physics, Ayron&#39;s blog">
-    <meta name="description" content="Hybrid approach
-Hybrid-kinetic approaches are widely used to model ion-scale
-phenomena in space plasmas. Hybrid codes di">
+    <meta name="keywords" content="Landau damping, Ayron&#39;s blog">
+    <meta name="description" content="Contour integral by Landau
+As an elementary illustration of the use of the Vlasov equation, we
+shall derive the dispersi">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +19,7 @@ phenomena in space plasmas. Hybrid codes di">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Numerical simulation for space physics | Ayron&#39;s blog</title>
+    <title>Landau damping | Ayron&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -342,7 +342,7 @@ phenomena in space plasmas. Hybrid codes di">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Numerical simulation for space physics</h1>
+                    <h1 class="description center-align post-title">Landau damping</h1>
                 </div>
             </div>
         </div>
@@ -366,12 +366,12 @@ phenomena in space plasmas. Hybrid codes di">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Space-Physics/">
-                                <span class="chip bg-color">Space Physics</span>
+                            <a href="/tags/Plasma/">
+                                <span class="chip bg-color">Plasma</span>
                             </a>
                         
-                            <a href="/tags/Hybrid-methods/">
-                                <span class="chip bg-color">Hybrid methods</span>
+                            <a href="/tags/Kinetic-theory/">
+                                <span class="chip bg-color">Kinetic theory</span>
                             </a>
                         
                     </div>
@@ -382,8 +382,8 @@ phenomena in space plasmas. Hybrid codes di">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Space-Physics/" class="post-category">
-                                Space Physics
+                            <a href="/categories/Plasma/" class="post-category">
+                                Plasma
                             </a>
                         
                     </div>
@@ -395,7 +395,7 @@ phenomena in space plasmas. Hybrid codes di">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2023-11-20
+                    2023-11-22
                 </div>
                 
 
@@ -416,132 +416,387 @@ phenomena in space plasmas. Hybrid codes di">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="hybrid-approach">Hybrid approach</h1>
-<p>Hybrid-kinetic approaches are widely used to model ion-scale
-phenomena in space plasmas. Hybrid codes differ from fully kinetic
-particle-in-cell (PIC) codes in that the electrons are modeled as a
-fluid that can be considered even massless, while the electric field is
-not advanced in time, but instead calculated at the new time level from
-the advanced ion quantities and the magnetic field. (Electric field is
-quasistatic, <span class="math inline">\(\omega_p\ll\omega_c\)</span>).
-In this article, we concentrate on such hybrid models with massless
-electrons, beginning with a discussion of the basics of a simple hybrid
-code algorithm. We then show examples of recent use of hybrid codes for
-large-scale space plasma simulations of structures formed at planetary
-bow shock—foreshock systems, magnetic reconnection at the magnetopause,
-and complex phenomena in the magnetosheath due to the interaction of
-kinetic processes associated with the bow shock, magnetic reconnection,
-and turbulence.</p>
-<p>A hybrid code in the context of plasma physics generally refers to a
-computational model in which some of the plasma species are treated
-kinetically and others as fluids, while the electric and magnetic fields
-can be considered as either electrostatic or electromagnetic. Most often
-in hybrid codes employed in space plasmas all the different ion species
-are treated kinetically using particle-in-cell methods, the electrons
-are modeled as a fluid with massless electrons, and Maxwell’s equations
-are solved in the radiation-free (i.e., no light waves) limit. Even in
-this limited space, there is still freedom in how to treat the fast
-phenomena associated with electron dynamics.</p>
-<p>In space plasmas in particular, hybrid codes occupy a unique niche,
-intermediate between fluid codes that are most useful for modeling large
-portions of the solar wind or the interaction of the solar wind with the
-Earth’s magnetosphere and fully kinetic treatment of all the plasma
-components, i.e., all ion species and electrons, that are resolved down
-to the smallest electron scales. Instead, hybrid codes model a portion
-of the solar wind-magnetosphere boundary or a small region in the solar
-wind or the magnetosphere on spatial and temporal scales on which ion
-dynamics dominates. The effects of the larger fluid scales can be
-modeled through boundary conditions, while the small-scale effects of
-electrons are added in through models for the electron pressure tensor,
-and high-frequency (e.g., electronion lower-hybrid or higher
-electron-electron) wave effects are included through a resistivity or
-other transport coefficients. But as computers have become larger and
-faster, fully kinetic codes can now model system sizes and time scales
-that previously were only accessible to hybrid codes, and hybrid codes
-in turn can now model systems large enough that could once only be
-studied by fluid models.</p>
-<p>With larger computational domains, longer times, and more realistic
-initial/boundary conditions, the emphasis is now on investigating the
-interactions between various physical processes, rather than focusing on
-a single physics issue.(这就是multiscal的相比于hybrid
-code不一样的地方，multiscale可以比较方便的描述不同scale的physical
-process的交互，而hybrid code只能够描述单尺度的问题。) This has been
-motivated in part by the existence of better spacecraft data, involving
-very high-resolution simultaneous data from multiple satellites. One
-example is the MMS (Magnetosphere Multi-Scale) mission [2] whose four
-closely-spaced satellites have fully resolved ion and have begun to
-explore electron scales related to magnetic reconnection layers. In
-addition, extended hybrid models that include electron inertia effects,
-new quasi-neutral models, and better Vlasov methods have become more
-prevalent, which allow investigating short-scale electron processes that
-are now becoming accessible in space and laboratory observations of
-magnetic reconnection.</p>
-<p>This article on hybrid codes has several purposes. The first purpose
-is to serve as a tutorial for newcomers to the field of computational
-space plasma physics by providing a brief introduction to hybrid code
-methodology. It includes a review of the basics of the hybrid physics
-model, the underlying fundamental equations that are used, and a simple
-example of the physics implementation into a working algorithm.</p>
-<h1 id="multiscale-approach">Multiscale approach</h1>
-<p>Plasmas are by their intrinsic nature multiscale and multi-physics.
-Electrons and ions respond on very different scales by virtue of their
-different masses, and even electron-positron plasmas might have multiple
-masses (in the laboratory frame) when relativistic velocities are
-present and the range of Lorentz factors is wide. Plasmas have many
-waves and eigenmodes, ranging many orders of magnitude in space and in
-time.For hydrogen plasmas, the mass ratio is 1836, and its square root
-determines the range of scales between election and ion inertial lengths
-and plasma
-frequencies.(质量比的开方是电子和离子的惯性尺度比以及静电振荡比)The
-cyclotron frequencies differ by the mass
-ratio(质量比是电子和离子的回旋频率比).The species beta <span
-class="math inline">\(\beta_s\)</span>, the ratio of the species’
-pressure with the magnetic energy, can also vary over orders of
-magnitude in different space and astrophysical plasmas, determining the
-ratio between a species inertial length and its gyro-radius or its
-cyclotron and plasma
-frequency.(从这里可以看出，等离子体的无量纲量很多，所以会出现很多不同的regime).
-In the case of the electrons, the Debye length is usually much smaller
-than the electron inertial length because of the low thermal speed
-compared with the speed of light: <span
-class="math inline">\(\lambda_{De}/d_e = v_{the}/c\)</span>.(<span
-class="math inline">\(\lambda_{De}= v{the}/\omega_{pe}, \delta_{e} =
-c/\omega_{pe}\)</span>,
-所谓的惯性尺度就是趋肤深度，即电磁波能够扩散的尺度，如果这个尺度趋于0，那么不存在磁扩散，磁场frozen在等离子体中。退一步讲，如果电子的skin
-length趋于0，而离子不为0，则磁场frozen在电子上，而不是在离子上，离子与电子解耦。)</p>
-<p>Implicit methods prevent unresolved scales from producing numerical
-instabilities that become a source of unphysical energy. Provided
-stability is ensured, using an implicit method is like using a reduced
-model that eliminates a physical process but with one critical
-difference: if one desires to reintroduce the process, one just need to
-increase the resolution.This approach then allows the user to conduct
-convergence studies varying the domain size and the time interval. It is
-an instrument of great power that needs to be used with experience,
-properly selecting the scales resolved.(没看懂在讲什么)</p>
-<h2 id="temporal-adaptation">Temporal Adaptation</h2>
-<p>Time is discretized in steps. We consider here some general
-properties applicable to a vast class of methods if not all.Time
-discretization can be either explicit,when one time step is directly
-computed from the previous time step without requiring iterations or
-solution of linear or nonlinear coupled sets of equations, or implicit,
-when the time step to be calculated appears in the calculation and an
-iteration (either linear or nonlinear) is needed. We review below the
-two methods and consider their advantages.</p>
-<h2 id="model-adaptation">Model adaptation</h2>
-<p>The most critical aspect of coupling fluid and kinetic models is the
-strategy for handling the interface conditions. Fluid models are
-structurally incapable of receiving the information from the kinetic
-models: for example, they can’t handle waves that are not present in the
-fluid models or can’t handle high-energy particle beams. We then use two
-types of boundary conditions, semi-open or linked with fluid. The
-semi-open boundary conditions are based on the perfectly matched layer
-[26, 83] approach where a damping term is added to the Maxwell’s
-equations to absorb outgoing
-waves.(这个做法挺有意思的，因为如果所有的域都需要解Maxwell
-equation的话，那么永远都会有光速的限制，怎么样拿掉光速的限制，或者怎么样处理EM波到MHD波的变化，是很重要的。在Two-fluid方法里面Hakim他们也求解了Maxwell
-equation，但是如何过渡到MHD regime，不需要去求解Maxwell
-equation呢？Lepenta的方法似乎是做domain
-interface，然后在不同的domain求解不同的方程，然后尝试求解好界面上的过度。)</p>
+                <h1 id="contour-integral-by-landau">Contour integral by Landau</h1>
+<p>As an elementary illustration of the use of the Vlasov equation, we
+shall derive the dispersion relation for electron plasma oscillations,
+which we treated from the fluid point of view in Sect. 4.3. This
+derivation will require a knowledge of contour integration. Those not
+familiar with this may skip to Sect. 7.5. A simpler but longer
+derivation not using the theory of complex variables appears in Sect.
+7.6.</p>
+<p>In zeroth order, we assume a uniform plasma with a distribution <span
+class="math inline">\(f_0(\mathbf{v})\)</span>, and we let <span
+class="math inline">\(\mathbf{B}_0=\mathbf{E}_0=0\)</span>. In first
+order, we denote the perturbation in <span
+class="math inline">\(f(\mathbf{r}, \mathbf{v}, t)\)</span> by <span
+class="math inline">\(f_1(\mathbf{r}, \mathbf{v}, t)\)</span> : <span
+class="math display">\[
+f(\mathbf{r}, \mathbf{v}, t)=f_0(\mathbf{v})+f_1(\mathbf{r}, \mathbf{v},
+t)
+\]</span></p>
+<p>Since <span class="math inline">\(\mathbf{v}\)</span> is now an
+independent variable and is not to be linearized, the first-order Vlasov
+equation for electrons is <span class="math display">\[
+\frac{\partial f_1}{\partial t}+\mathbf{v} \cdot \nabla f_1-\frac{e}{m}
+\mathbf{E}_1 \cdot \frac{\partial f_0}{\partial \mathbf{v}}=0
+\]</span></p>
+<p>As before, we assume the ions are massive and fixed and that the
+waves are plane waves in the <span class="math inline">\(x\)</span>
+direction <span class="math display">\[
+f_1 \propto e^{i(k x-\omega t)}
+\]</span></p>
+<p>Then Eq. (7.45) becomes <span class="math display">\[
+\begin{gathered}
+-i \omega f_1+i k v_x f_1=\frac{e}{m} E_x \frac{\partial f_0}{\partial
+v_x} \\
+f_1=\frac{i e E_x}{m} \frac{\partial f_0 / \partial v_x}{\omega-k v_x}
+\end{gathered}
+\]</span></p>
+<p>Poisson's equation gives <span class="math display">\[
+\varepsilon_0 \boldsymbol{\nabla} \cdot \mathbf{E}_1=i k \varepsilon_0
+E_x=-e n_1=-e \iiint f_1 d^3 v
+\]</span></p>
+<p>Substituting for <span class="math inline">\(f_1\)</span> and
+dividing by <span class="math inline">\(i k \varepsilon_0 E_x\)</span>,
+we have <span class="math display">\[
+1=-\frac{e^2}{k m \varepsilon_0} \iiint \frac{\partial f_0 / \partial
+v_x}{\omega-k v_x} d^3 v
+\]</span></p>
+<p>A factor <span class="math inline">\(n_0\)</span> can be factored out
+if we replace <span class="math inline">\(f_0\)</span> by a normalized
+function <span class="math inline">\(\hat{f}_0\)</span> : <span
+class="math display">\[
+1=-\frac{\omega_p^2}{k} \int_{-\infty}^{\infty} d v_z
+\int_{-\infty}^{\infty} d v_y \int_{-\infty}^{\infty} \frac{\partial
+\hat{f}_0\left(v_x, v_y, v_z\right) / \partial v_x}{\omega-k v_x}
+\partial v_x
+\]</span></p>
+<p>If <span class="math inline">\(f_0\)</span> is a Maxwellian or some
+other factorable distribution, the integrations over <span
+class="math inline">\(v_y\)</span> and <span
+class="math inline">\(v_z\)</span> can be carried out easily. What
+remains is the one-dimensional distribution <span
+class="math inline">\(\hat{f}_0\left(v_x\right)\)</span>. For instance,
+a one-dimensional Maxwellian distribution is <span
+class="math display">\[
+\hat{f}_m\left(v_x\right)=(m / 2 \pi K T)^{1 / 2} \exp \left(-m v_x^2 /
+2 K T\right)
+\]</span></p>
+<p>The dispersion relation is, therefore, <span class="math display">\[
+1=\frac{\omega_p^2}{k^2} \int_{-\infty}^{\infty} \frac{\partial
+\hat{f}_0\left(v_x\right) / \partial v_x}{v_x-(\omega / k)}
+\]</span> Since we are dealing with a one-dimensional problem we may
+drop the subscript <span class="math inline">\(x\)</span>, being careful
+not to confuse <span class="math inline">\(v\)</span> (which is really
+<span class="math inline">\(v_x\)</span> ) with the total velocity <span
+class="math inline">\(v\)</span> used earlier: <span
+class="math display">\[
+1=\frac{\omega_p^2}{k^2} \int_{-\infty}^{\infty} \frac{\partial
+\hat{f}_0 / \partial v}{v-(\omega / k)} d v
+\]</span></p>
+<p>Here, <span class="math inline">\(\hat{f}_0\)</span> is understood to
+be a one-dimensional distribution function, the integrations over <span
+class="math inline">\(v_y\)</span> and <span
+class="math inline">\(v_z\)</span> having been made. Equation (7.54)
+holds for any equilibrium distribution <span
+class="math inline">\(\hat{f}_0(v)\)</span>; in particular, if <span
+class="math inline">\(\hat{f}_0\)</span> is Maxwellian, Eq. (7.52) is to
+be used for it.</p>
+<p>The integral in Eq. (7.54) is not straightforward to evaluate because
+of the singularity at <span class="math inline">\(v=\omega / k\)</span>.
+One might think that the singularity would be of no concern, because in
+practice <span class="math inline">\(\omega\)</span> is almost never
+real; waves are usually slightly damped by collisions or are amplified
+by some instability mechanism. Since the velocity <span
+class="math inline">\(v\)</span> is a real quantity, the denominator in
+Eq. (7.54) never vanishes. Landau was the first to treat this equation
+properly. He found that even though the singularity lies off the path of
+integration, its presence introduces an important modification to the
+plasma wave dispersion relation - an effect not predicted by the fluid
+theory.</p>
+<p>Consider an initial value problem in which the plasma is given a
+sinusoidal perturbation, and therefore <span
+class="math inline">\(k\)</span> is real. If the perturbation grows or
+decays, <span class="math inline">\(\omega\)</span> will be complex. The
+integral in Eq. (7.54) must be treated as a contour integral in the
+complex <span class="math inline">\(v\)</span> plane. Possible contours
+are shown in Fig. 7.14 for (a) an unstable wave, with <span
+class="math inline">\(\operatorname{Im}(\omega)&gt;0\)</span>, and (b) a
+damped wave, with <span
+class="math inline">\(\operatorname{Im}(\omega)&lt;0\)</span>. Normally,
+one would evaluate the line integral along the real <span
+class="math inline">\(v\)</span> axis by the residue theorem: <span
+class="math display">\[
+\int_{C_1} G d v+\int_{C_2} G d v=2 \pi i R(\omega / k)
+\]</span></p>
+<p><img src="/images/LD-contour1.png" /> <img
+src="/images/LD-contour2.png" /></p>
+<p>where <span class="math inline">\(G\)</span> is the integrand, <span
+class="math inline">\(C_1\)</span> is the path along the real axis,
+<span class="math inline">\(C_2\)</span> is the semicircle at infinity,
+and <span class="math inline">\(R(\omega / k)\)</span> is the residue at
+<span class="math inline">\(\omega / k\)</span>. This works if the
+integral over <span class="math inline">\(C_2\)</span> vanishes.
+Unfortunately, this does not happen for a Maxwellian distribution, which
+contains the factor <span class="math display">\[
+\exp \left(-v^2 / v_{\mathrm{th}}^2\right)
+\]</span></p>
+<p>This factor becomes large for <span class="math inline">\(v
+\rightarrow \pm i \infty\)</span>, and the contribution from <span
+class="math inline">\(C_2\)</span> cannot be neglected. Landau showed
+that when the problem is properly treated as an initial value problem
+the correct contour to use is the curve <span
+class="math inline">\(C_1\)</span> passing below the singularity. This
+integral must in general be evaluated numerically, and Fried and Conte
+have provided tables for the case when <span
+class="math inline">\(\hat{f}_0\)</span> is a Maxwellian.</p>
+<p>Although an exact analysis of this problem is complicated, we can
+obtain an approximate dispersion relation for the case of large phase
+velocity and weak damping. In this case, the pole at <span
+class="math inline">\(\omega / k\)</span> lies near the real <span
+class="math inline">\(v\)</span> axis (Fig. 7.15). The contour
+prescribed by Landau is then a straight line along the <span
+class="math inline">\(\operatorname{Re}(v)\)</span> axis with a small
+semicircle around the pole. In going around the pole, one obtains <span
+class="math inline">\(2 \pi i\)</span> times half the residue there.
+Then Eq. (7.54) becomes <span class="math display">\[
+1=\frac{\omega_p^2}{k^2}\left[P \int_{-\infty}^{\infty} \frac{\partial
+\hat{f}_0 / \partial v}{v-(\omega / k)} d v+\left.i \pi \frac{\partial
+\hat{f}_0}{\partial v}\right|_{v=\omega / k}\right]
+\]</span> where <span class="math inline">\(P\)</span> stands for the
+Cauchy principal value. To evaluate this, we integrate along the real
+<span class="math inline">\(v\)</span> axis but stop just before
+encountering the pole. If the phase velocity <span
+class="math inline">\(v_\phi=\omega / k\)</span> is sufficiently large,
+as we assume, there will not be much contribution from the neglected
+part of the contour, since both <span
+class="math inline">\(\hat{f}_0\)</span> and <span
+class="math inline">\(\partial \hat{f}_0 / \partial v\)</span> are very
+small there (Fig. 7.16). The integral in Eq. (7.56) can be evaluated by
+integration by parts: <span class="math display">\[
+\int_{-\infty}^{\infty} \frac{\partial \hat{f}_0}{\partial v} \frac{d
+v}{v-v_\phi}=\left[\frac{\hat{f}_0}{v-v_\phi}\right]_{-\infty}^{\infty}-\int_{-\infty}^{\infty}
+\frac{-\hat{f}_0 d v}{\left(v-v_\phi\right)^2}=\int_{-\infty}^{\infty}
+\frac{\hat{f}_0 d v}{\left(v-v_\phi\right)^2}
+\]</span></p>
+<p>Since this is just an average of <span
+class="math inline">\(\left(v-v_\phi\right)^{-2}\)</span> over the
+distribution, the real part of the dispersion relation can be written
+<span class="math display">\[
+1=\frac{\omega_p^2}{k^2} \overline{\left(v-v_\phi\right)^{-2}}
+\]</span></p>
+<p>Since <span class="math inline">\(v_\phi \gg v\)</span> has been
+assumed, we can expand <span
+class="math inline">\(\left(v-v_\phi\right)^{-2}\)</span> : <span
+class="math display">\[
+\left(v-v_\phi\right)^{-2}=v_\phi^{-2}\left(1-\frac{v}{v_\phi}\right)^{-2}=v_\phi^{-2}\left(1+\frac{2
+v}{v_\phi}+\frac{3 v^2}{v_\phi^2}+\frac{4 v^3}{v_\phi^3}+\cdots\right)
+\]</span></p>
+<p>The odd terms vanish upon taking the average, and we have <span
+class="math display">\[
+\overline{\left(v-v_\phi\right)^{-2}} \approx v_\phi^{-2}\left(1+\frac{3
+\overline{v^2}}{v_\phi^2}\right)
+\]</span></p>
+<p>We now let <span class="math inline">\(\hat{f}_0\)</span> be
+Maxwellian and evaluate <span
+class="math inline">\(\overline{v^2}\)</span>. Remembering that <span
+class="math inline">\(v\)</span> here is an abbreviation for <span
+class="math inline">\(v_x\)</span>, we can write <span
+class="math display">\[
+\frac{1}{2} m \overline{v_x^2}=\frac{1}{2} K T_e
+\]</span> there being only one degree of freedom. The dispersion
+relation (7.58) then becomes <span class="math display">\[
+\begin{gathered}
+1=\frac{\omega_p^2}{k^2} \frac{k^2}{\omega^2}\left(1+3
+\frac{k^2}{\omega^2} \frac{K T_e}{m}\right) \\
+\omega^2=\omega_p^2+\frac{\omega_p^2}{\omega^2} \frac{3 K T_e}{m} k^2
+\end{gathered}
+\]</span></p>
+<p>If the thermal correction is small, we may replace <span
+class="math inline">\(\omega^2\)</span> by <span
+class="math inline">\(\omega_p^2\)</span> in the second term. We then
+have <span class="math display">\[
+\omega^2=\omega_p^2+\frac{3 K T_e}{m} k^2
+\]</span> which is the same as Eq. (4.30), obtained from the fluid
+equations with <span class="math inline">\(\gamma=3\)</span>. We now
+return to the imaginary term in Eq. (7.56). In evaluating this small
+term, it will be sufficiently accurate to neglect the thermal correction
+to the real part of <span class="math inline">\(\omega\)</span> and let
+<span class="math inline">\(\omega^2 \approx \omega_p^2\)</span>. From
+Eqs. (7.57) and (7.60), we see that the principal value of the integral
+in Eq. (7.56) is approximately <span class="math inline">\(k^2 /
+\omega^2\)</span>. Equation (7.56) now becomes <span
+class="math display">\[
+\begin{gathered}
+1=\frac{\omega_p^2}{\omega^2}+\left.i \pi \frac{\omega_p^2}{k^2}
+\frac{\partial \hat{f}_0}{\partial v}\right|_{v=v_\phi} \\
+\omega^2\left(1-i \pi \frac{\omega_p^2}{k^2}\left[\frac{\partial
+\hat{f}_0}{\partial v}\right]_{v=v_\phi}\right)=\omega_p^2
+\end{gathered}
+\]</span></p>
+<p>Treating the imaginary term as small, we can bring it to the
+right-hand side and take the square root by Taylor series expansion. We
+then obtain <span class="math display">\[
+\omega=\omega_p\left(1+i \frac{\pi}{2}
+\frac{\omega_p^2}{k^2}\left[\frac{\partial \hat{f}_0}{\partial
+v}\right]_{v=v_\phi}\right)
+\]</span></p>
+<p>If <span class="math inline">\(\hat{f}_0\)</span> is a
+one-dimensional Maxwellian, we have <span class="math display">\[
+\frac{\partial \hat{f}_0}{\partial v}=\left(\pi
+v_{\mathrm{th}}^2\right)^{-1 / 2}\left(\frac{-2
+v}{v_{\mathrm{th}}^2}\right) \exp
+\left(\frac{-v^2}{v_{\mathrm{th}}^2}\right)=-\frac{2 v}{\sqrt{\pi}
+v_{\mathrm{th}}^3} \exp \left(\frac{-v^2}{v_{\mathrm{th}}^2}\right)
+\]</span></p>
+<p>We may approximate <span class="math inline">\(v_\phi\)</span> by
+<span class="math inline">\(\omega_p / k\)</span> in the coefficient,
+but in the exponent we must keep the thermal correction in Eq. (7.64).
+The damping is then given by <span class="math display">\[
+\begin{aligned}
+\operatorname{Im}(\omega) &amp; =-\frac{\pi}{2} \frac{\omega_p^3}{k^2}
+\frac{2 \omega_p}{k \sqrt{\pi}} \frac{1}{v_{\mathrm{th}}^3} \exp
+\left(\frac{-\omega^2}{k^2 v_{\mathrm{th}}^2}\right) \\
+&amp; =-\sqrt{\pi} \omega_p\left(\frac{\omega_p}{k
+v_{\mathrm{th}}}\right)^3 \exp \left(\frac{-\omega_p^2}{k^2
+v_{\mathrm{th}}^2}\right) \exp \left(\frac{-3}{2}\right) \\
+\operatorname{Im}\left(\frac{\omega}{\omega_p}\right) &amp; =-0.22
+\sqrt{\pi}\left(\frac{\omega_p}{k v_{\mathrm{th}}}\right)^3 \exp
+\left(\frac{-1}{2 k^2 \lambda_{\mathrm{D}}^2}\right)
+\end{aligned}
+\]</span></p>
+<p>Since <span class="math inline">\(\operatorname{Im}(\omega)\)</span>
+is negative, there is a collisionless damping of plasma waves; this is
+called Landau damping. As is evident from Eq. (7.70), this damping is
+extremely small for small <span class="math inline">\(k
+\lambda_{\mathrm{D}}\)</span>, but becomes important for <span
+class="math inline">\(k \lambda_{\mathrm{D}}=O(1)\)</span>. This effect
+is connected with <span class="math inline">\(f_1\)</span>, the
+distortion of the distribution function caused by the wave.</p>
+<h1 id="the-meaning-of-landau-damping">The meaning of Landau
+Damping</h1>
+<p>The theoretical discovery of wave damping without energy dissipation
+by collisions is perhaps the most astounding result of plasma physics
+research. That this is a real effect has been demonstrated in the
+laboratory. Although a simple physical explanation for this damping is
+now available, it is a triumph of applied mathematics that this
+unexpected effect was first discovered purely mathematically in the
+course of a careful analysis of a contour integral. Landau damping is a
+characteristic of collisionless plasmas, but it may also have
+application in other fields. For instance, in the kinetic treatment of
+galaxy formation, stars can be considered as atoms of a plasma
+interacting via gravitational rather than electromagnetic forces.
+Instabilities of the gas of stars can cause spiral arms to form, but
+this process is limited by Landau damping.</p>
+<p>To see what is responsible for Landau damping, we first notice that
+<span class="math inline">\(\operatorname{Im}(\omega)\)</span> arises
+from the pole at <span class="math inline">\(v=v_\phi\)</span>.
+Consequently, the effect is connected with those particles in the
+distribution that have a velocity nearly equal to the phase velocity -
+the "resonant particles." These particles travel along with the wave and
+do not see a rapidly fluctuating electric field: They can, therefore,
+exchange energy with the wave effectively. The easiest way to understand
+this exchange of energy is to picture a surfer trying to catch an ocean
+wave (Fig. 7.17). (Warning: this picture is only for directing our
+thinking along the right lines; it does not correctly explain Eq.
+(7.70).) If the surfboard is not moving, it merely bobs up and down as
+the wave goes by and does not gain any energy on the average. Similarly,
+a boat propelled much faster than the wave cannot exchange much energy
+with the wave. However, if the surfboard has almost the same velocity as
+the wave, it can be caught and pushed along by the wave; this is, after
+all, the main purpose of the exercise. In that case, the surfboard gains
+energy, and therefore the wave must lose energy and is damped. On the
+other hand, if the surfboard should be moving slightly faster than the
+wave, it would push on the wave as it moves uphill; then the wave could
+gain energy. In a</p>
+<p><img src="/images/LD-surf.png" /></p>
+<p>plasma, there are electrons both faster and slower than the wave. A
+Maxwellian distribution, however, has more slow electrons than fast ones
+(Fig. 7.18). Consequently, there are more particles taking energy from
+the wave than vice versa, and the wave is damped. As particles with
+<span class="math inline">\(v \approx v_\phi\)</span> are trapped in the
+wave, <span class="math inline">\(f(v)\)</span> is flattened near the
+phase velocity. This distortion is <span
+class="math inline">\(f_1(v)\)</span> which we calculated. As seen in
+Fig. 7.18, the perturbed distribution function contains the same number
+of particles but has gained total energy (at the expense of the
+wave).</p>
+<p>From this discussion, one can surmise that if <span
+class="math inline">\(f_0(v)\)</span> contained more fast particles than
+slow particles, a wave can be excited. Indeed, from Eq. (7.67), it is
+apparent that <span
+class="math inline">\(\operatorname{Im}(\omega)\)</span> is positive if
+<span class="math inline">\(\partial \hat{f}_0 / \partial v\)</span> is
+positive at <span class="math inline">\(v=v_\phi\)</span>. Such a
+distribution is shown in Fig. 7.19. Waves with <span
+class="math inline">\(v_\phi\)</span> in the region of positive slope
+will be unstable, gaining energy at the expense of the particles. This
+is just the finite-temperature analogy of the two-stream instability.
+When there are two cold <span class="math inline">\((K T=0)\)</span>
+electron streams in motion, <span class="math inline">\(f_0(v)\)</span>
+consists of two <span class="math inline">\(\delta\)</span>-functions.
+This is clearly unstable because <span class="math inline">\(\partial
+f_0 / \partial v\)</span> is infinite; and, indeed, we found the
+instability from fluid theory. When the streams have finite temperature,
+kinetic theory tells us that the relative densities and temperatures of
+the two streams must be such as to have a region of positive <span
+class="math inline">\(\partial f_0 /\)</span> <span
+class="math inline">\(\partial v\)</span> between them; more precisely,
+the total distribution function must have a minimum for instability.</p>
+<p>The physical picture of a surfer catching waves is very appealing,
+but it is not precise enough to give us a real understanding of Landau
+damping. There are actually two kinds of Landau damping: linear Landau
+damping, and nonlinear Landau damping. Both kinds are independent of
+dissipative collisional mechanisms. If a particle is caught in the
+potential well of a wave, the phenomenon is called "trapping." As in the
+case of the surfer, particles can indeed gain or lose energy in
+trapping. However, trapping does not lie within the purview of the
+linear theory. That this is true can be seen from the equation of motion
+<span class="math display">\[
+m d^2 x / d t^2=q E(x)
+\]</span></p>
+<p>If one evaluates <span class="math inline">\(E(x)\)</span> by
+inserting the exact value of <span class="math inline">\(x\)</span>, the
+equation would be nonlinear, since <span
+class="math inline">\(E(x)\)</span> is something like <span
+class="math inline">\(\sin k x\)</span>. What is done in linear theory
+is to use for <span class="math inline">\(x\)</span> the unperturbed
+orbit; i.e., <span class="math inline">\(x=x_0+v_0 t\)</span>. Then Eq.
+(7.71) is linear. This approximation, however, is no longer valid when a
+particle is trapped. When it encounters a potential hill large enough to
+reflect it, its velocity and position are, of course, greatly affected
+by the wave and are not close to their unperturbed values. In fluid
+theory, the equation of motion is <span class="math display">\[
+m\left[\frac{\partial \mathbf{v}}{\partial t}+(\mathbf{v} \cdot \nabla)
+\mathbf{v}\right]=q \mathbf{E}(x)
+\]</span></p>
+<p>Here, <span class="math inline">\(\mathbf{E}(x)\)</span> is to be
+evaluated in the laboratory frame, which is easy; but to make up for it,
+there is the <span class="math inline">\((\mathbf{v} \cdot \nabla)
+\mathbf{v}\)</span> term. The neglect of <span
+class="math inline">\(\left(\mathbf{v}_1 \cdot \nabla\right)
+\mathbf{v}_1\)</span> in linear theory amounts to the same thing as
+using unperturbed orbits. In kinetic theory, the nonlinear term that is
+neglected is, from Eq. (7.45), <span class="math display">\[
+\frac{q}{m} E_1 \frac{\partial f_1}{\partial v}
+\]</span></p>
+<p>When particles are trapped, they reverse their direction of travel
+relative to the wave, so the distribution function <span
+class="math inline">\(f(v)\)</span> is greatly disturbed near <span
+class="math inline">\(v=\omega / k\)</span>. This means that <span
+class="math inline">\(\partial f_1 / \partial v\)</span> is comparable
+to <span class="math inline">\(\partial f_0 / \partial v\)</span>, and
+the term (7.73) is not negligible. Hence, trapping is not in the linear
+theory.</p>
+<p>When a wave grows to a large amplitude, collisionless damping with
+trapping does occur. One then finds that the wave does not decay
+monotonically; rather, the amplitude fluctuates during the decay as the
+trapped particles bounce back and forth in the potential wells. This is
+nonlinear Landau damping. Since the result of Eq. (7.67) was derived
+from a linear theory, it must arise from a different physical effect.
+The question is: Can untrapped electrons moving close to the phase
+velocity of the wave exchange energy with the wave? Before giving the
+answer, let us examine the energy of such electrons.</p>
 
                 
             </div>
@@ -568,7 +823,7 @@ interface，然后在不同的domain求解不同的方程，然后尝试求解�
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zhigangpu.github.io/2023/11/20/Numerical-space-physics/">https://zhigangpu.github.io/2023/11/20/Numerical-space-physics/</a>
+                    <a href="https://zhigangpu.github.io/2023/11/22/Landau-damping/">https://zhigangpu.github.io/2023/11/22/Landau-damping/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -606,12 +861,12 @@ interface，然后在不同的domain求解不同的方程，然后尝试求解�
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Space-Physics/">
-                                    <span class="chip bg-color">Space Physics</span>
+                                <a href="/tags/Plasma/">
+                                    <span class="chip bg-color">Plasma</span>
                                 </a>
                             
-                                <a href="/tags/Hybrid-methods/">
-                                    <span class="chip bg-color">Hybrid methods</span>
+                                <a href="/tags/Kinetic-theory/">
+                                    <span class="chip bg-color">Kinetic theory</span>
                                 </a>
                             
                         </div>
@@ -651,9 +906,9 @@ interface，然后在不同的domain求解不同的方程，然后尝试求解�
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://zhigangpu.github.io/2023/11/20/Numerical-space-physics/';
-        this.page.identifier = '/2023/11/20/Numerical-space-physics/';
-        this.page.title = 'Numerical simulation for space physics';
+        this.page.url = 'https://zhigangpu.github.io/2023/11/22/Landau-damping/';
+        this.page.identifier = '/2023/11/22/Landau-damping/';
+        this.page.title = 'Landau damping';
     };
     let disqus_shortname = 'Ayron-blog';
 
@@ -670,9 +925,9 @@ interface，然后在不同的domain求解不同的方程，然后尝试求解�
 <script>
 //   var disqus_shortname = 'Ayron-blog';
   var disqus_config = function() {
-    this.page.url = 'https://zhigangpu.github.io/2023/11/20/Numerical-space-physics/';
-    this.page.identifier = '2023/11/20/Numerical-space-physics/';
-    this.page.title = 'Numerical simulation for space physics';
+    this.page.url = 'https://zhigangpu.github.io/2023/11/22/Landau-damping/';
+    this.page.identifier = '2023/11/22/Landau-damping/';
+    this.page.title = 'Landau damping';
   };
   (function() {
     var dsq = document.createElement('script');
@@ -707,9 +962,10 @@ interface，然后在不同的domain求解不同的方程，然后尝试求解�
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2023/11/22/Landau-damping/">
                     <div class="card-image">
@@ -727,9 +983,9 @@ interface，然后在不同的domain求解不同的方程，然后尝试求解�
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -742,6 +998,7 @@ interface，然后在不同的domain求解不同的方程，然后尝试求解�
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -764,13 +1021,13 @@ interface，然后在不同的domain求解不同的方程，然后尝试求解�
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/11/16/Introduction-to-Space-Physics/">
+                <a href="/2023/11/20/Numerical-space-physics/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Introduction to Space Physics">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Numerical simulation for space physics">
                         
-                        <span class="card-title">Introduction to Space Physics</span>
+                        <span class="card-title">Numerical simulation for space physics</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -781,7 +1038,7 @@ interface，然后在不同的domain求解不同的方程，然后尝试求解�
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-20
                             </span>
                         <span class="publish-author">
                             
@@ -800,6 +1057,10 @@ interface，然后在不同的domain求解不同的方程，然后尝试求解�
                     
                     <a href="/tags/Space-Physics/">
                         <span class="chip bg-color">Space Physics</span>
+                    </a>
+                    
+                    <a href="/tags/Hybrid-methods/">
+                        <span class="chip bg-color">Hybrid methods</span>
                     </a>
                     
                 </div>
@@ -1310,9 +1571,9 @@ $(function () {
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://zhigangpu.github.io/2023/11/20/Numerical-space-physics/';
-        this.page.identifier = '/2023/11/20/Numerical-space-physics/';
-        this.page.title = 'Numerical simulation for space physics';
+        this.page.url = 'https://zhigangpu.github.io/2023/11/22/Landau-damping/';
+        this.page.identifier = '/2023/11/22/Landau-damping/';
+        this.page.title = 'Landau damping';
     };
     let disqus_shortname = 'Ayron-blog';
 
@@ -1329,9 +1590,9 @@ $(function () {
 <script>
 //   var disqus_shortname = 'Ayron-blog';
   var disqus_config = function() {
-    this.page.url = 'https://zhigangpu.github.io/2023/11/20/Numerical-space-physics/';
-    this.page.identifier = '2023/11/20/Numerical-space-physics/';
-    this.page.title = 'Numerical simulation for space physics';
+    this.page.url = 'https://zhigangpu.github.io/2023/11/22/Landau-damping/';
+    this.page.identifier = '2023/11/22/Landau-damping/';
+    this.page.title = 'Landau damping';
   };
   (function() {
     var dsq = document.createElement('script');
