@@ -4,10 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="KdV in Plasma, Ayron&#39;s blog">
+    <meta name="keywords" content="GSC-ABE - An Automatical Bibtex Extracter of Google Scholar Citation, Ayron&#39;s blog">
     <meta name="description" content="Introduction
-Most interesting problems in continuum mechanics are nonlinear.
-Plasma problems are perhaps the most nonlin">
+A comprehensive database consisting of a vast collection of papers
+and books in a particular field undeniab">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +19,7 @@ Plasma problems are perhaps the most nonlin">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>KdV in Plasma | Ayron&#39;s blog</title>
+    <title>GSC-ABE - An Automatical Bibtex Extracter of Google Scholar Citation | Ayron&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -337,12 +337,12 @@ Plasma problems are perhaps the most nonlin">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">KdV in Plasma</h1>
+                    <h1 class="description center-align post-title">GSC-ABE - An Automatical Bibtex Extracter of Google Scholar Citation</h1>
                 </div>
             </div>
         </div>
@@ -366,12 +366,20 @@ Plasma problems are perhaps the most nonlin">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Plasma/">
-                                <span class="chip bg-color">Plasma</span>
+                            <a href="/tags/Google-scholar/">
+                                <span class="chip bg-color">Google scholar</span>
                             </a>
                         
-                            <a href="/tags/KdV/">
-                                <span class="chip bg-color">KdV</span>
+                            <a href="/tags/Bibtex/">
+                                <span class="chip bg-color">Bibtex</span>
+                            </a>
+                        
+                            <a href="/tags/Zotero/">
+                                <span class="chip bg-color">Zotero</span>
+                            </a>
+                        
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
                             </a>
                         
                     </div>
@@ -382,8 +390,8 @@ Plasma problems are perhaps the most nonlin">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Nonlinear-plasma-theory/" class="post-category">
-                                Nonlinear plasma theory
+                            <a href="/categories/Automation/" class="post-category">
+                                Automation
                             </a>
                         
                     </div>
@@ -395,7 +403,7 @@ Plasma problems are perhaps the most nonlin">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2023-11-14
+                    2024-02-19
                 </div>
                 
 
@@ -417,274 +425,152 @@ Plasma problems are perhaps the most nonlin">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="introduction">Introduction</h1>
-<p>Most interesting problems in continuum mechanics are nonlinear.
-Plasma problems are perhaps the most nonlinear of all, involving
-classical mechanics and electromagnetism on an approximately equal
-footing. This guarantees an abundance of intriguing effects to work on,
-but also means that solutions are often limited to rather specific
-situations, involving less generality than modern physicists are trained
-to expect.</p>
-<p>Two of the most important properties characteristic of a plasma are
-nonlinearity and dispersion. Korteweg de Vries (KdV) equation is a
-simple model for both of these two phenomena. The KdV equation is given
-by <span class="math display">\[
-\frac{\partial U}{\partial \tau} + aU\frac{\partial U}{\partial \xi} +
-b\frac{\partial^3 U}{\partial \xi^3} = 0
-\]</span> where <span class="math inline">\(\xi\)</span> and <span
-class="math inline">\(\tau\)</span> are independent variables and <span
-class="math inline">\(a\)</span> and <span
-class="math inline">\(b\)</span> are real, nonzero constants. The
-nonlinear term is convective term <span
-class="math inline">\(U\frac{\partial U}{\partial \xi}\)</span> and
-dispersive term is <span class="math inline">\(\frac{\partial^3
-U}{\partial \xi^3}\)</span> term. It was first derived by Korteweg and
-de Vries for long surface wave in water. Later, Gardner and Morikawa
-derived it from a cold-plasma hydromagnetic model describing the
-long-time behavior of disturbances propagating perpendicular to a
-magnetic field iwth velocity near the Alfven velocity. Moreover, Washimi
-and Taniuti have shown that this equation gives a weakly nonlinear
-description of one-dimensional ion sound wave disturbances traveling
-near the ion sound speed. In this regard, Su and Gardner have shown that
-this equation arises in a broad class of weakly nonlinear dispersive
-systems, just as Burgers' equation arises in a broad class of weakly
-nonlinear dissipative systems.</p>
-<p><img src="/images/KdV_surface_wave.jpeg" /></p>
-<p>Rescale <span class="math inline">\(\xi\rightarrow\xi
-b^{1/3}\)</span> and <span class="math inline">\(U\rightarrow
-U/ab^{-1/3}\)</span> to give coefficients of unity in front of each
-term, i.e. <span class="math display">\[
-\frac{\partial U}{\partial \tau} + U\frac{\partial U}{\partial \xi} +
-\frac{\partial^3 U}{\partial \xi^3} = 0
-\]</span></p>
-<h1
-id="derivation-of-the-kdv-equation-for-nonlinear-ion-sound-waves">Derivation
-of the KdV equation for nonlinear ion sound waves</h1>
-<h2 id="ion-sound-wave-model">Ion sound wave model</h2>
-<p>We now derive the Korteweg-de Vries equation for the case of ion
-sound wave disturbances moving with Mach number (defined relative to the
-ion sound speed) slightly greater than unity in a uniform, magnetic
-field-free, plasma background. The ions are assumed cold and nondrifting
-relative to the electrons (<span class="math inline">\(T_i\ll
-T_e\)</span>), and a one-dimensional macroscopic description is used.
-Moreover, electron inertia effects are neglected (<span
-class="math inline">\(m_e\rightarrow 0\)</span>) and the isothermal
-equation of state, <span class="math inline">\(P_e = n_e k_B
-T_e\)</span> (<span class="math inline">\(T_e=const\)</span>), is
-adopted for the electrons. We then find,</p>
-<p><span class="math display">\[
-0 = n_e e \frac{\partial\phi}{\partial x^{&#39;}} - k_BT_e\frac{\partial
-n_e}{\partial x^{&#39;}}
-\]</span> which merely describes balance of preesure and electric force.
-Then we have the Boltzmann relation <span class="math inline">\(n_e =
-n_0\exp(e\phi/k_B T_e)\)</span>, where <span
-class="math inline">\(n_0\)</span> is the uniform background electron
-density.(Just use the method of separation here). From this equation, we
-can directly knows number density of electrons by the local electric
-potential there. The Poisson equation then becomes <span
-class="math display">\[
-\partial^2\phi/\partial x^{&#39;2} = 4\pi(e{n_0\exp(e\phi/k_B T_e)-n_i})
-\]</span> For the ions, we have <span class="math display">\[
-\begin{aligned}
-&amp;\frac{\partial n_i}{\partial t^{&#39;}} + \frac{\partial
-n_iv_i}{\partial x^{&#39;}} = 0 \\
-&amp;\frac{\partial v_i}{\partial t^{&#39;}} + v_i\frac{\partial
-v_i}{\partial x^{&#39;}} = -\frac{e}{m_i}\frac{\partial\phi}{\partial
-x^{&#39;}}
-\end{aligned}
-\]</span></p>
-<p>Introduce such dimensionless quantities where <span
-class="math display">\[x \equiv \frac{x^{&#39;}}{(k_BT_e/4\pi
-n_0e^2)^{1/2}} \equiv \frac{x^{&#39;}}{\lambda_D}\]</span> <span
-class="math display">\[
-t\equiv t^{&#39;}(\frac{4\pi n_0 e^2}{m_i})^{1/2}\equiv
-t^{&#39;}\omega_i
-\]</span> <span class="math display">\[
-\Phi \equiv \frac{e\phi}{k_BT_e}
-\]</span> <span class="math display">\[
-n \equiv n_i/n_0
-\]</span> <span class="math display">\[
-v \equiv \frac{v_i}{(k_BT_e/m_i)^{1/2}}\equiv v_i/v_{th}
-\]</span></p>
-<p>Then all the above equation can be rewritten as <span
-class="math display">\[
-\begin{aligned}
-&amp;\partial^2\Phi/\partial x^{2} = {\exp(\Phi)-n}\\
-&amp;\frac{\partial n}{\partial t} + \frac{\partial nv}{\partial x} = 0
-\\
-&amp;\frac{\partial v}{\partial t} + v\frac{\partial v}{\partial x} =
--\frac{\partial\Phi}{\partial x}
-\end{aligned}
-\tag{1}
-\]</span></p>
-<p>The above equation reproduces the usual ion sound wave dispersion
-relation <span class="math inline">\(\omega^2 =
-(1+(1/k^2))^{-1}\)</span> for perturbations with <span
-class="math inline">\(x\)</span> and <span
-class="math inline">\(t\)</span> variation of the form <span
-class="math inline">\(\exp(i(kx-\omega t))\)</span>. It should also be
-pointed out that a meaningful nonlinear analysis of the above equations
-must include the effects of charge separation through the term
-$<sup>2/x</sup>{2} $. If we assume charge neutrality, <span
-class="math inline">\({n=\exp(\Phi)}\)</span>, then we have <span
-class="math display">\[
-\frac{\partial v}{\partial t} + v\frac{\partial v}{\partial x} =
--\frac{1}{n}\frac{\partial n}{\partial x}
-\]</span> which is merely momentum equation of ideal gas dynamics. When
-the spatial gradients become large, however, it is no longer permisible
-to neglect $<sup>2/x</sup>{2} $. It is the dispersive effect of
-deviations from charge neutrality which eventually limits the buildup of
-short-wavelength components to the disturbance.</p>
-<h2 id="solitary-wave-solution">Solitary wave solution</h2>
-<p>To establish the proper amplitude and variable scaling for deriving
-the KdV equation, it is useful to first consider the solitary wave
-solutions associated with the dimensionless equations above. We look for
-solutions depend on <span class="math inline">\(x\)</span> and <span
-class="math inline">\(t\)</span> through the variable <span
-class="math inline">\(x-Mt\)</span> (<span
-class="math inline">\(M\)</span> is Mach number <span
-class="math inline">\(=V_0/c_s\)</span> = pulse speed /
-ion-sound-speed). The appropriate boundary conditions for an isolated
-pulselike solution are <span class="math inline">\(\Phi\rightarrow 0,
-v\rightarrow 0, n\rightarrow 0,\Phi^{&#39;}\rightarrow 0,
-v^{&#39;}\rightarrow 0, n^{&#39;}\rightarrow 0,\)</span> as <span
-class="math inline">\(|x-Mt|\rightarrow \infty\)</span>, where primes
-denote differetiation with respect to the variable <span
-class="math inline">\(x-Mt\)</span>. <span
-class="math inline">\(|x-Mt|\rightarrow \infty\)</span> actually means
-<span class="math inline">\(x_0 = x-Mt \rightarrow \infty\)</span>,
-which is the boundary at infinitely distance point.</p>
-<p>Integrate the continuity and momentum equation above with respect to
-<span class="math inline">\(y=x-Mt\)</span>, we have, <span
-class="math display">\[
-n=M/(M-v) \quad (M-v)^2 = (M^2 - 2\Phi)
-\]</span> whre the boundary condtion at <span
-class="math inline">\(|y|=\infty\)</span> has been enforced. Substitute
-the above relation into the Poisson equation, multiplying by <span
-class="math inline">\(\Phi^{&#39;}\)</span> and integrateing, we find
-<span class="math display">\[
-\frac{1}{2}(\Phi^{&#39;})^2 = e^{\Phi} + M(M^2-2\Phi)^{1/2} - (M^2+1)
-\]</span> where the boundary condition has been enforced also. Now the
-above equation is a first order nonlinear ODE. The compressive solitary
-wave solutions to it exist for Mach numbers in the range <span
-class="math inline">\(1&lt;M\leq1.6\)</span> with corresponding peak
-potential <span class="math inline">\(\Phi_M\)</span> in the range <span
-class="math inline">\(0&lt;\Phi_M\leq 1.3\)</span>. <img
-src="/images/kdv_compressive_solitary_wave.jpg" /> For present purposes,
-we are interested in Mach number slightly greater than unity, <span
-class="math display">\[
-0 &lt; \delta M \equiv M-1 \ll 1
-\]</span> which corresponds to a small-amplitude solitary wave with
-<span class="math inline">\(\Phi_M\ll 1\)</span>. Expanding in <span
-class="math inline">\(\Phi\)</span> and <span
-class="math inline">\(\delta M\)</span> and retaining leading-order
-terms, we find, <span class="math display">\[
-(\Phi^{&#39;})^2 = \frac{2}{3}\Phi^2(3\delta M-\Phi)
-\]</span> which may be integrated to give <span class="math display">\[
-\Phi = 3\delta M sech^2((\frac{1}{2}\delta M)^{1/2}(x-Mt))
-\]</span> We see from the above equation that the maximum pulse
-amplitude is <span class="math inline">\(\Phi_M = 3\delta M\)</span>,
-and that the width of the solitary wave is of order <span
-class="math inline">\(\delta M^{-1/2}\)</span>.</p>
-<p>Here is the Taylor expansion of the hyperbolic function, <span
-class="math display">\[
-\begin{aligned}
-&amp; \sinh x=x+\frac{x^3}{3 !}+\frac{x^5}{5 !}+\frac{x^7}{7
-!}+\cdots=\sum_{n=0}^{\infty} \frac{x^{2 n+1}}{(2 n+1) !} \\
-&amp; \cosh x=1+\frac{x^2}{2 !}+\frac{x^4}{4 !}+\frac{x^6}{6
-!}+\cdots=\sum_{n=0}^{\infty} \frac{x^{2 n}}{(2 n) !} \\
-&amp; \tanh x=x-\frac{x^3}{3}+\frac{2 x^5}{15}-\frac{17
-x^7}{315}+\cdots=\sum_{n=1}^{\infty} \frac{2^{2 n}\left(2^{2 n}-1\right)
-B_{2 n} x^{2 n-1}}{(2 n) !},|x|&lt;\frac{\pi}{2} \\
-&amp; \operatorname{coth}
-x=\frac{1}{x}+\frac{x}{3}-\frac{x^3}{45}+\frac{2
-x^5}{945}+\cdots=\frac{1}{x}+\sum_{n=1}^{\infty} \frac{2^{2 n} B_{2 n}
-x^{2 n-1}}{(2 n) !}, 0&lt;|x|&lt;\pi \text { (罗朗级数) } \\
-&amp; \operatorname{sech} x=1-\frac{x^2}{2}+\frac{5 x^4}{24}-\frac{61
-x^6}{720}+\cdots=\sum_{n=0}^{\infty} \frac{E_{2 n} x^{2 n}}{(2 n)
-!},|x|&lt;\frac{\pi}{2} \\
-&amp; \operatorname{csch} x=\frac{1}{x}-\frac{x}{6}+\frac{7
-x^3}{360}-\frac{31 x^5}{15120}+\cdots=\frac{1}{x}+\sum_{n=1}^{\infty}
-\frac{2\left(1-2^{2 n-1}\right) B_{2 n} x^{2 n-1}}{(2 n) !},
-0&lt;|x|&lt;\pi (罗朗级数)
-\end{aligned}
-\]</span></p>
-<p>For <span class="math inline">\(f(x)=sech(ax)\)</span>, the larger
-<span class="math inline">\(a\)</span> is, the narrower the pulse is.
-Introducing <span class="math inline">\(\epsilon\equiv\delta M\)</span>,
-which is a measure of the pulse amplitude, the argument in the above
-equation can be expressied as <span class="math display">\[
-(1/\sqrt{2})(\epsilon^{1/2}(x-t)-\epsilon^{3/2}t)
-\]</span> This gives the appropriate scaling (in a frame moving with
-<span class="math inline">\(M=1\)</span>) of the space and time
-variables that is required to obtain the KdV equation. It should be kept
-in mind that the present goal is to construct a weakly nonlinear theory
-of ion sound waves which describes the evolution of small but finite
-amplitude disturbances which are traveling near <span
-class="math inline">\(M=1\)</span>. In order to reconver the solitary
-wave solution as a special case, which is the minimum demand we make of
-the theory, the "streched" variables <span class="math display">\[\xi =
-\epsilon^{1/2}(x-t), \quad \tau =\epsilon^{3/2}t\]</span> are introduced
-in carrying out a nonlinear expansion.</p>
-<h2 id="the-kdv-equation-for-nonlinear-ion-sound-waves">The KdV equation
-for nonlinear ion sound waves</h2>
-<p>We assume that <span class="math inline">\(n,\Phi\)</span> and <span
-class="math inline">\(v\)</span> have power series expansions in <span
-class="math inline">\(\epsilon\)</span> about a homogeneous field-free
-equilibrium, i.e., <span class="math display">\[
-\begin{aligned}
-    &amp;n = 1 + \epsilon n^{(1)} + \epsilon^2 n^{(2)} + \cdots\\
-    &amp;\Phi = \epsilon \Phi^{(1)} + \epsilon^2 \Phi^{(2)} + \cdots\\
-    &amp;v = \epsilon v^{(1)} + \epsilon^2 v^{(2)} + \cdots
-\end{aligned}
-\]</span></p>
-<p>Furthermore, we transform the <span class="math inline">\(x\)</span>
-and <span class="math inline">\(t\)</span> variables with: <span
-class="math display">\[
-\partial/\partial x = \epsilon^{1/2}(\partial/\partial \xi) \quad
-\partial/\partial t = \epsilon^{3/2}(\partial/\partial \tau) -
-\epsilon^{1/2}(\partial/\partial \xi)
-\]</span></p>
-<p>In lowest order, Eqs.(1) become <span class="math display">\[
-\Phi^{(1)} = n^{(1)},\quad \partial n^{(1)} /\partial \xi =  \partial
-v^{(1)} /\partial \xi, \quad \partial v^{(1)} /\partial \xi = \partial
-\Phi^{(1)} /\partial \xi
-\]</span> which gives: <span class="math display">\[
-\Phi^{(1)} = n^{(1)} = v^{(1)}
-\]</span> for localized disturbances. To next order in <span
-class="math inline">\(\epsilon\)</span>, Eqs.(1) become <span
-class="math display">\[
-\begin{aligned}
-&amp;\frac{\partial^2 \Phi^{(1)} }{\partial \xi^2} = \Phi^{(2)} +
-\frac{(\Phi^{(1)})^2}{2} - n^{(2)}\\
-&amp;-\frac{\partial n^{(2)} }{\partial \xi} + \frac{\partial n^{(1)}
-}{\partial \tau} + \frac{\partial (n^{(1)} v^{(1)})}{\partial \xi} +
-\frac{\partial v^{(2)} }{\partial \xi}  = 0\\
-&amp;-\frac{\partial v^{(2)} }{\partial \xi} + \frac{\partial v^{(1)}
-}{\partial \tau} + v^{(1)}\frac{\partial v^{(1)}}{\partial \xi}
-=-\frac{\partial \Phi^{(2)} }{\partial \xi}
-\end{aligned}
-\]</span> Eliminating <span class="math inline">\(n^{(2)}\)</span> and
-<span class="math inline">\(v^{(2)}\)</span> and making use of result of
-<span class="math inline">\(\mathcal{O}(\epsilon)\)</span>, we find that
-<span class="math inline">\(n^{(1)}\)</span> evolves according to <span
-class="math display">\[
-\frac{\partial n^{(1)} }{\partial \tau} + n^{(1)} \frac{\partial
-n^{(1)}}{\partial \xi} + \frac{1}{2}\frac{\partial^3 n^{(1)}}{\partial
-\xi^3} = 0
-\]</span> which is just the KdV equation with <span
-class="math inline">\(a=1, b=1/2\)</span>. By virtue of <span
-class="math inline">\(\mathcal{O}(\epsilon)\)</span> result, the
-equations for <span class="math inline">\(v^{(1)}\)</span> and <span
-class="math inline">\(\Phi^{(1)}\)</span> are identiacal to the above
-equation. It describes the evolution of arbitrary initial disturbances
-moving near <span class="math inline">\(M=1\)</span> within the
-framework of the present macroscopic ion sound wave model. Of course,
-this equation will be modified if dissipative processes, e.g. Landau
-damping, play a significant role. Such modification have been considered
-by Ott and Sudan in relation to the present example, and are summarized
-later. The origins of the various terms in the above equation are clear.
-The nonlinear term arises from convection, and the dispersive term
-arises from deviation from exact charge neutrality.</p>
+<p>A comprehensive database consisting of a vast collection of papers
+and books in a particular field undeniably holds great significance for
+subsequent research, including:</p>
+<ol type="1">
+<li><p>Laying a good foundation to facilitate subsequent
+analysis.</p></li>
+<li><p>Constructing a foundational knowledge structure about the field.
+This entails acquiring a fundamental understanding of the key concepts,
+theories, and principles that underlie the subject matter.</p></li>
+<li><p>Conducting exploratory data analysis (EDA) to gain initial
+insights into the field. By performing EDA, researchers can
+<strong>identify prominent authors</strong>, <strong>discern publication
+trends</strong>, <strong>identify highly influential papers</strong>,
+and determine the <strong>most frequently cited journals</strong> in the
+field. These findings provide a preliminary grasp of the field's
+landscape and its significant contributors.</p></li>
+</ol>
+<p>Collecting all related papers in a specific field manually can be a
+laborious task. Fortunately, there are open source programs available
+that can automate this process. One such popular tool is <a
+target="_blank" rel="noopener" href="https://github.com/scholarly-python-package/scholarly">Scholarly</a>,
+which has gained significant popularity on GitHub with over 1.2k stars.
+Scholarly is a Python-based program that enables users to retrieve
+author and publication information from Google Scholar in a
+user-friendly and Pythonic manner, eliminating the need to solve
+CAPTCHAs. However, there is one drawback to using Scholarly. When using
+the scholarly.search_pubs() function, users are required to set up
+proxies, which may not be user-friendly, especially for new users who
+are unfamiliar with proxy setup.</p>
+<p>One effective approach to circumvent this issue is to conduct
+literature searches in a semi-automatic manner. <a
+target="_blank" rel="noopener" href="https://selenium-python.readthedocs.io/">Selenium</a>, a browser
+automation framework primarily used for browser testing, can be utilized
+for this purpose. By leveraging Selenium, manual actions such as
+clicking and submitting can be automated through programming.
+Additionally, when encountering CAPTCHAs, users can manually solve them,
+while the program handles the extraction of information from the
+webpages. This approach allows the program to assist humans in a
+collaborative manner, significantly speeding up the process compared to
+manual searching and eliminating the need for proxy settings. However,
+it's important to note that this approach is not fully automated and
+requires human attention and involvement.</p>
+<p>This article presents an innovative semi-automatic program called
+GSC-ABE, which aims to streamline the literature search process. The
+algorithm, key components, and various challenges associated with
+GSC-ABE will be discussed in the following sections.</p>
+<h1 id="basic-pipeline">Basic pipeline</h1>
+<p>GSC-ABE serves as an integral component within a larger database
+building work pipeline. To provide context, let's outline the general
+workflow of this pipeline.</p>
+<p>Initially, I employ a literature search engine such as Google Scholar
+or the search engine provided on the official website of relevant
+journals to gather a set of initial articles, which I refer to as
+"article seeds." This selection is primarily based on my existing
+knowledge of the subject matter. Typically, this yields tens of papers
+that I proceed to read in order to gain a preliminary understanding of
+the field. However, at this stage, I lack a comprehensive overview of
+the field, making it challenging to discern the most significant papers
+or authors. Consequently, identifying the truly crucial problems within
+this field proves difficult.</p>
+<p>After gathering the "article seeds," the next step is exporting them
+as a CSV file using Zotero. This CSV file is then fed into the program
+GSC-ABE. GSC-ABE operates by reading each item within the file line by
+line, extracting the corresponding article titles, and conducting a
+Google search for each article. By doing so, GSC-ABE identifies papers
+that cite the aforementioned articles on the Google Scholar platform.
+Specifically, papers with a moderate number of citations, such as 15,
+are recorded and ultimately exported to a separate file.</p>
+<p>The resulting file from the previous step is imported into Zotero,
+where a new folder is created to store these articles. Within Zotero,
+further processing of these article items takes place. Firstly, each
+article item is assigned its corresponding DOI. Using the DOI,
+information such as the citation count and availability of the SciHub
+PDF version is retrieved. Following this post-processing stage, a new
+CSV file can be exported for subsequent analysis. This analysis may
+involve determining the number of appearances by each author, examining
+the publication year distribution, and other relevant factors.</p>
+<h1 id="key-parts">Key parts</h1>
+<h2 id="html-elements">HTML elements</h2>
+<p>The crucial HTML elements are defined within the header section of
+the code.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">GOOGLE_HOMEPAGE_SEARCH_BOX_TAG = <span class="string">&#x27;//*[@name=&quot;q&quot;]&#x27;</span></span><br><span class="line">GOOGLE_HOMEPAGE_SEARCH_BTN_TAG = <span class="string">&#x27;//*[@name=&quot;btnG&quot;]&#x27;</span></span><br><span class="line">GOOGLE_SEARCH_RESULT_BLOCK_TAG = <span class="string">&#x27;//div[@class=&quot;gs_r gs_or gs_scl&quot;]&#x27;</span></span><br><span class="line">GOOGLE_SEARCH_RESULT_CITI_TAG = <span class="string">&#x27;.//*[@class=&quot;gs_or_cit gs_or_btn gs_nph&quot;]&#x27;</span></span><br><span class="line">GOOGLE_SEARCH_RESULT_CITI_FRMAE = <span class="string">&#x27;//*[@class=&quot;gs_citi&quot;]&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="wait-function"><code>Wait</code> function</h2>
+<p>These days, most of the web apps are using AJAX techniques. When a
+page is loaded by the browser, the elements within that page may load at
+different time intervals. This makes locating elements difficult: if an
+element is not yet present in the DOM, a locate function will raise an
+<code>ElementNotVisibleException</code> exception. Using waits, we can
+solve this issue. Waiting provides some slack between actions performed
+- mostly locating an element or any other operation with the
+element.</p>
+<p>Selenium Webdriver provides two types of waits - implicit &amp;
+explicit. An explicit wait makes WebDriver wait for a certain condition
+to occur before proceeding further with execution. An implicit wait
+makes WebDriver poll the DOM for a certain amount of time when trying to
+locate an element.</p>
+<p>In GSC-ABE, we use a combination of explicit and implicit wait. Two
+examples are
+<code>wait.until(EC.presence_of_element_located((By.NAME, 'q')))</code>
+and
+<code>wait.until(EC.element_to_be_clickable((By.XPATH, GOOGLE_SEARCH_RESULT_CITI_FRMAE)))</code>
+which waits for the presence of a element and waits for the element to
+be clickable. <code>browser.implicitly_wait(0.5)</code> is used in
+waiting CAPTCHAs.</p>
+<h2 id="captcha-test">CAPTCHA test</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">is_bot_test</span>(<span class="params">browser</span>):</span><br><span class="line">    browser.implicitly_wait(<span class="number">0.5</span>)</span><br><span class="line">    <span class="keyword">if</span> browser.find_elements_by_xpath(<span class="string">&#x27;//form[@id=&quot;captcha-form&quot;]&#x27;</span>) <span class="keyword">or</span> browser.find_elements_by_xpath(<span class="string">&#x27;//form[@id=&quot;gs_captcha_f&quot;]&#x27;</span>) :</span><br><span class="line">        <span class="built_in">input</span>(<span class="string">&quot;robot test...&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>A CAPTCHA test is employed whenever the browser attempts to open a
+new page or click on an element that triggers the opening of a frame.
+The determination within the <code>if</code> statement is achieved
+through a trial-and-error approach. Remarkably, this method proves to be
+highly effective, even with a relatively short wait time set at only 0.5
+seconds.</p>
+<p>It is worth mentioning that even if you successfully pass the CAPTCHA
+test each time, Google may still block your IP address. To overcome this
+issue, a strategy that proves to be simple yet effective is to restart
+the browser. By restarting the browser, you can evade the IP blocking
+imposed by Google.</p>
+<h1 id="some-challenges">Some challenges</h1>
+<p>However, there are a few challenges that should be noted:</p>
+<ol type="1">
+<li><p>Despite the overall functionality of the program, there may still
+be some errors that have not been addressed. While these errors may
+require further refinement, they do not significantly impact the
+program's daily usage.</p></li>
+<li><p>In the event of an error, the program will skip the current
+article item and save it into a separate list of failed items.
+Consequently, running the program twice may be necessary to obtain a
+complete and accurate result.</p></li>
+<li><p>Utilizing proxies can transform the program into a fully
+automated tool. By implementing proxies, the program can enhance its
+capabilities and automate the process even further.</p></li>
+</ol>
+<h1 id="conclusions">Conclusions</h1>
+<p>The decision to replace the proxy-based automatic searcher with a
+proxy-free, Selenium-based semi-automatic searcher has proven to be a
+wise choice. With proper handling of the wait function and CAPTCHA
+tests, the tool operates seamlessly. Its functionality allows new
+researchers to swiftly gain a fundamental understanding of the research
+field and establish a database for future investigations. Looking ahead,
+there are plans to further enhance the tool by developing a proxy-based
+automatic version. This update will enable the tool to automate the
+search process while utilizing proxies.</p>
+<h1 id="links">Links</h1>
+<ol type="1">
+<li><a target="_blank" rel="noopener" href="https://github.com/ZhigangPu/GSC-ABE">Source Code</a></li>
+</ol>
 
                 
             </div>
@@ -711,7 +597,7 @@ arises from deviation from exact charge neutrality.</p>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zhigangpu.github.io/2023/11/14/KdV-in-Plasma/">https://zhigangpu.github.io/2023/11/14/KdV-in-Plasma/</a>
+                    <a href="https://zhigangpu.github.io/2024/02/19/GSC-ABE/">https://zhigangpu.github.io/2024/02/19/GSC-ABE/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -749,12 +635,20 @@ arises from deviation from exact charge neutrality.</p>
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Plasma/">
-                                    <span class="chip bg-color">Plasma</span>
+                                <a href="/tags/Google-scholar/">
+                                    <span class="chip bg-color">Google scholar</span>
                                 </a>
                             
-                                <a href="/tags/KdV/">
-                                    <span class="chip bg-color">KdV</span>
+                                <a href="/tags/Bibtex/">
+                                    <span class="chip bg-color">Bibtex</span>
+                                </a>
+                            
+                                <a href="/tags/Zotero/">
+                                    <span class="chip bg-color">Zotero</span>
+                                </a>
+                            
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
                                 </a>
                             
                         </div>
@@ -794,9 +688,9 @@ arises from deviation from exact charge neutrality.</p>
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://zhigangpu.github.io/2023/11/14/KdV-in-Plasma/';
-        this.page.identifier = '/2023/11/14/KdV-in-Plasma/';
-        this.page.title = 'KdV in Plasma';
+        this.page.url = 'https://zhigangpu.github.io/2024/02/19/GSC-ABE/';
+        this.page.identifier = '/2024/02/19/GSC-ABE/';
+        this.page.title = 'GSC-ABE - An Automatical Bibtex Extracter of Google Scholar Citation';
     };
     let disqus_shortname = 'Ayron-blog';
 
@@ -813,9 +707,9 @@ arises from deviation from exact charge neutrality.</p>
 <script>
 //   var disqus_shortname = 'Ayron-blog';
   var disqus_config = function() {
-    this.page.url = 'https://zhigangpu.github.io/2023/11/14/KdV-in-Plasma/';
-    this.page.identifier = '2023/11/14/KdV-in-Plasma/';
-    this.page.title = 'KdV in Plasma';
+    this.page.url = 'https://zhigangpu.github.io/2024/02/19/GSC-ABE/';
+    this.page.identifier = '2024/02/19/GSC-ABE/';
+    this.page.title = 'GSC-ABE - An Automatical Bibtex Extracter of Google Scholar Citation';
   };
   (function() {
     var dsq = document.createElement('script');
@@ -850,17 +744,18 @@ arises from deviation from exact charge neutrality.</p>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2023/11/15/Black-body-radiation/">
+                <a href="/2024/02/19/GSC-ABE/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Black body radiation">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="GSC-ABE - An Automatical Bibtex Extracter of Google Scholar Citation">
                         
-                        <span class="card-title">Black body radiation</span>
+                        <span class="card-title">GSC-ABE - An Automatical Bibtex Extracter of Google Scholar Citation</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -870,26 +765,39 @@ arises from deviation from exact charge neutrality.</p>
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-02-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Statistical-physics/" class="post-category">
-                                    Statistical physics
+                            <a href="/categories/Automation/" class="post-category">
+                                    Automation
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Radiation/">
-                        <span class="chip bg-color">Radiation</span>
+                    <a href="/tags/Google-scholar/">
+                        <span class="chip bg-color">Google scholar</span>
+                    </a>
+                    
+                    <a href="/tags/Bibtex/">
+                        <span class="chip bg-color">Bibtex</span>
+                    </a>
+                    
+                    <a href="/tags/Zotero/">
+                        <span class="chip bg-color">Zotero</span>
+                    </a>
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>
@@ -903,13 +811,13 @@ arises from deviation from exact charge neutrality.</p>
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/10/03/Dielectric-plasma/">
+                <a href="/2023/11/22/Landau-damping/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Dielectric plasma">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Landau damping">
                         
-                        <span class="card-title">Dielectric plasma</span>
+                        <span class="card-title">Landau damping</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -920,14 +828,14 @@ arises from deviation from exact charge neutrality.</p>
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Linear-response-theory/" class="post-category">
-                                    Linear response theory
+                            <a href="/categories/Plasma/" class="post-category">
+                                    Plasma
                                 </a>
                             
                             
@@ -941,8 +849,8 @@ arises from deviation from exact charge neutrality.</p>
                         <span class="chip bg-color">Plasma</span>
                     </a>
                     
-                    <a href="/tags/Dielectric-media/">
-                        <span class="chip bg-color">Dielectric media</span>
+                    <a href="/tags/Kinetic-theory/">
+                        <span class="chip bg-color">Kinetic theory</span>
                     </a>
                     
                 </div>
@@ -1453,9 +1361,9 @@ $(function () {
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://zhigangpu.github.io/2023/11/14/KdV-in-Plasma/';
-        this.page.identifier = '/2023/11/14/KdV-in-Plasma/';
-        this.page.title = 'KdV in Plasma';
+        this.page.url = 'https://zhigangpu.github.io/2024/02/19/GSC-ABE/';
+        this.page.identifier = '/2024/02/19/GSC-ABE/';
+        this.page.title = 'GSC-ABE - An Automatical Bibtex Extracter of Google Scholar Citation';
     };
     let disqus_shortname = 'Ayron-blog';
 
@@ -1472,9 +1380,9 @@ $(function () {
 <script>
 //   var disqus_shortname = 'Ayron-blog';
   var disqus_config = function() {
-    this.page.url = 'https://zhigangpu.github.io/2023/11/14/KdV-in-Plasma/';
-    this.page.identifier = '2023/11/14/KdV-in-Plasma/';
-    this.page.title = 'KdV in Plasma';
+    this.page.url = 'https://zhigangpu.github.io/2024/02/19/GSC-ABE/';
+    this.page.identifier = '2024/02/19/GSC-ABE/';
+    this.page.title = 'GSC-ABE - An Automatical Bibtex Extracter of Google Scholar Citation';
   };
   (function() {
     var dsq = document.createElement('script');
