@@ -50,11 +50,11 @@ and books in a particular</summary>
   </entry>
   
   <entry>
-    <title>Landau damping</title>
+    <title>Derivation of Landau Damping by Contour Integral</title>
     <link href="https://zhigangpu.github.io/2023/11/22/Landau-damping/"/>
     <id>https://zhigangpu.github.io/2023/11/22/Landau-damping/</id>
     <published>2023-11-22T02:48:16.000Z</published>
-    <updated>2023-11-22T03:07:29.250Z</updated>
+    <updated>2024-02-19T12:00:31.831Z</updated>
     
     
       
@@ -107,11 +107,11 @@ phenomena in space plasmas.</summary>
   </entry>
   
   <entry>
-    <title>Introduction to Space Physics</title>
+    <title>Early Days of Space Physics</title>
     <link href="https://zhigangpu.github.io/2023/11/16/Introduction-to-Space-Physics/"/>
     <id>https://zhigangpu.github.io/2023/11/16/Introduction-to-Space-Physics/</id>
     <published>2023-11-16T01:46:04.000Z</published>
-    <updated>2023-11-16T07:48:24.848Z</updated>
+    <updated>2024-02-19T12:00:31.831Z</updated>
     
     
       
@@ -134,11 +134,11 @@ interaction of energetic charged</summary>
   </entry>
   
   <entry>
-    <title>Black body radiation</title>
+    <title>Development of Wave-Particle Theory of Light - A Historial Perspective</title>
     <link href="https://zhigangpu.github.io/2023/11/15/Black-body-radiation/"/>
     <id>https://zhigangpu.github.io/2023/11/15/Black-body-radiation/</id>
     <published>2023-11-15T07:25:31.000Z</published>
-    <updated>2023-11-15T09:06:55.521Z</updated>
+    <updated>2024-02-19T12:00:31.831Z</updated>
     
     
       
@@ -161,11 +161,11 @@ electromagnetic (EM) field,</summary>
   </entry>
   
   <entry>
-    <title>KdV in Plasma</title>
+    <title>Derivation of KdV Equation in Plasma by Linear Analysis</title>
     <link href="https://zhigangpu.github.io/2023/11/14/KdV-in-Plasma/"/>
     <id>https://zhigangpu.github.io/2023/11/14/KdV-in-Plasma/</id>
     <published>2023-11-14T07:31:13.000Z</published>
-    <updated>2023-11-15T07:25:35.682Z</updated>
+    <updated>2024-02-19T12:00:31.831Z</updated>
     
     
       
@@ -190,40 +190,11 @@ Plasma problems are perhaps the</summary>
   </entry>
   
   <entry>
-    <title>Dielectric plasma</title>
-    <link href="https://zhigangpu.github.io/2023/10/03/Dielectric-plasma/"/>
-    <id>https://zhigangpu.github.io/2023/10/03/Dielectric-plasma/</id>
-    <published>2023-10-03T07:04:26.000Z</published>
-    <updated>2023-10-03T07:15:08.679Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;preface&quot;&gt;Preface&lt;/h1&gt;
-&lt;p&gt;A plasma is inherently capable of sustaining a rich class of
-electromagnetic phenomena. A proper</summary>
-        
-      
-    
-    
-    
-    <category term="Linear response theory" scheme="https://zhigangpu.github.io/categories/Linear-response-theory/"/>
-    
-    
-    <category term="Plasma" scheme="https://zhigangpu.github.io/tags/Plasma/"/>
-    
-    <category term="Dielectric media" scheme="https://zhigangpu.github.io/tags/Dielectric-media/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>From Landau to MHD</title>
+    <title>Derivation of MHD Equations - from Landau Kinetic Equation to Two-fluid Equations, MHD Equations</title>
     <link href="https://zhigangpu.github.io/2023/09/24/MHD/"/>
     <id>https://zhigangpu.github.io/2023/09/24/MHD/</id>
     <published>2023-09-24T06:35:50.000Z</published>
-    <updated>2023-09-28T07:51:49.492Z</updated>
+    <updated>2024-02-19T12:00:31.831Z</updated>
     
     
       
@@ -251,11 +222,11 @@ electromagnetic phenomena. A proper</summary>
   </entry>
   
   <entry>
-    <title>From Hamiltonian to Laudan Equation</title>
+    <title>Derivation of Landau Kinetic Equation - from Lie Algebra to Liouville Equation, BBGKY Hierarchy.</title>
     <link href="https://zhigangpu.github.io/2023/09/17/Liouville/"/>
     <id>https://zhigangpu.github.io/2023/09/17/Liouville/</id>
     <published>2023-09-17T09:29:26.000Z</published>
-    <updated>2023-09-20T01:21:53.904Z</updated>
+    <updated>2024-02-19T12:00:31.831Z</updated>
     
     
       
