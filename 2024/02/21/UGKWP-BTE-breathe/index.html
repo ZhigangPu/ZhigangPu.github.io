@@ -471,7 +471,7 @@ mode" under varying Knudsen numbers. Our primary focus is to examine the
 relationship between the Knudsen number and the relaxation time of the
 system.</p>
 <h1 id="numerical-setting">Numerical setting</h1>
-<h2 id="model-setting">Model setting</h2>
+<h2 id="kinetic-model">Kinetic model</h2>
 <p>The Boltzmann equation for single-component monatomic gas with
 external force is <span class="math display">\[
 \frac{\partial f}{\partial t}+\boldsymbol{u}\cdot \nabla_x
@@ -516,7 +516,104 @@ Q\equiv \frac{g-f}{\tau}
 \]</span></p>
 <p>where <span class="math inline">\(g\)</span> is the local equilibrium
 distribution function and <span class="math inline">\(\tau\)</span> is
-the relaxtion time.</p>
+the relaxtion time. The Maxwellian distribution for 1D problem is</p>
+<p><span class="math display">\[
+g =
+\rho\left(\frac{\lambda}{\pi}\right)^{\frac{K+1}{2}}e^{-\lambda((u-U)^2+\xi^2)},
+\]</span></p>
+<p>where <span class="math inline">\(\rho\)</span> is density, <span
+class="math inline">\(\lambda=m/2kT\)</span>, <span
+class="math inline">\(m\)</span> is molecule mass, <span
+class="math inline">\(k\)</span> is Boltzmann constant, <span
+class="math inline">\(U\)</span> is the macroscopic velocity, <span
+class="math inline">\(K\)</span> is the number of internal degree of
+freedom and <span
+class="math inline">\(\xi^2=\xi_1^2+\xi_2^2...+\xi_K^2\)</span>. For
+example, a monatomic gas at 1D problem has <span
+class="math inline">\(K=2\)</span> to account for the motion in <span
+class="math inline">\(y,z\)</span> direction, and <span
+class="math inline">\(\xi^2=v^2+w^2\)</span>, where <span
+class="math inline">\(v,w\)</span> are particle velocity in <span
+class="math inline">\(y,z\)</span> direction.</p>
+<p>The relation between <span class="math inline">\(K\)</span> and the
+ratio of specific heat is,</p>
+<p><span class="math display">\[
+\gamma = \frac{K+3}{K+1}.
+\]</span></p>
+<p>In this article, we calculate 1D problem using 3D framework, so <span
+class="math inline">\(K=0\)</span> and <span
+class="math inline">\(\gamma=5/3\)</span>.</p>
+<h2 id="viscosity-model">Viscosity model</h2>
+<p>The dynamic viscosity can be calculated from Sutherland's law or
+hard-sphere(HS)/variable hard-sphere model(VHS)[11],</p>
+<p><span class="math display">\[
+\mu = \mu_{ref}\left(\frac{T}{T_{ref}}\right)^\omega,
+\]</span></p>
+<p>where <span class="math inline">\(\mu_{ref}\)</span> is the reference
+viscosity and <span class="math inline">\(T_{ref}\)</span> is the
+reference temperature, <span class="math inline">\(\omega\)</span> is
+the index related to HS or VHS model. Here we use <span
+class="math inline">\(\omega=0.72\)</span>. <span
+class="math inline">\(T_{ref}=1\)</span> in our nondimensional model.
+The reference viscosity can be calculated through, <span
+class="math display">\[
+\mu_{ref} =
+\frac{5(\alpha+1)(\alpha+2)\sqrt{\pi}}{4\alpha(5-2\omega)(7-2\omega)}Kn
+\]</span> where <span class="math inline">\(\alpha\)</span> is
+coefficients related to the molecule model. Here we use <span
+class="math inline">\(\alpha=1.0\)</span>.</p>
+<p>The relaxation time can be calculate through the relation</p>
+<p><span class="math display">\[
+\tau = \frac{\mu}{p} =
+\frac{1}{p}\left(\frac{T}{T_{ref}}\right)^\omega\frac{5(\alpha+1)(\alpha+2)\sqrt{\pi}}{4\alpha(5-2\omega)(7-2\omega)}Kn
+\]</span></p>
+<p>In some literature, <span class="math inline">\(\tau = Kn\)</span> is
+used as simplified model between relaxation time and Knudsen number,
+here in our model, we use more collision model.</p>
+<h2 id="potential-model">Potential model</h2>
+<p>In this article, we employ an electrostatic potential to confine
+electrons. The ions in the system form a uniform background, resulting
+in a charge density denoted as <span class="math inline">\(\rho_0 = n_i
+e\)</span>, where <span class="math inline">\(n_i\)</span> represents
+the ion density and <span class="math inline">\(e\)</span> is the
+elementary charge. When <span class="math inline">\(\rho_0 &gt;
+0\)</span>, a positive potential emerges between the two boundaries.In
+our work, we consider <span class="math inline">\(n_i = 1\)</span> and
+<span class="math inline">\(e = 1\)</span>. By introducing a group of
+electrons into the domain with zero initial velocity,ignoring collisions
+and electrons influence on the electric field, the electrons feel
+harmonic forces and undergo periodic oscillations.</p>
+<p>Applying Gauss's law, we find that the Laplacian of the electrostatic
+potential, denoted as <span class="math inline">\(\phi\)</span>, is
+given by</p>
+<p><span class="math display">\[
+\nabla^2 \phi = -\frac{\rho_0}{\epsilon_0}
+\]</span></p>
+<p>where <span class="math inline">\(\epsilon_0\)</span> represents the
+vacuum permittivity. Additionally, the electric field <span
+class="math inline">\(\mathbf{E}\)</span> can be expressed as <span
+class="math inline">\(\mathbf{E} = -\nabla \phi\)</span>.</p>
+<p>Explicitly calculating the electric field, we obtain <span
+class="math inline">\(E = x\)</span>, resulting in the electrons
+experiencing a force of <span class="math inline">\(F = -q_eE =
+-x\)</span>, where <span class="math inline">\(q_e\)</span> represents
+the charge of an electron. In this study, we assume the electron mass
+<span class="math inline">\(m_e\)</span> to be equal to 1. Consequently,
+the equation of motion for the electrons can be written as</p>
+<p><span class="math display">\[
+m_e \frac{d^2x}{dt^2} = F\]</span></p>
+<p>which simplifies to <span class="math inline">\(\frac{d^2x}{dt^2} =
+-x\)</span>. Solving this second-order differential equation yields the
+solution</p>
+<p><span class="math display">\[
+x = c_1\cos(t) + c_2\sin(t) = c\sin(t+\phi)
+\]</span> where <span class="math inline">\(c_1\)</span> and <span
+class="math inline">\(c_2\)</span> depend on the initial conditions.</p>
+<p>From the solution, it is evident that the electrons undergo harmonic
+oscillations with frequency <span
+class="math inline">\(\omega=1\)</span>, with the amplitude and phase
+determined by the constants <span class="math inline">\(c\)</span> and
+<span class="math inline">\(\phi\)</span>, respectively.</p>
 <h2 id="numerical-method">Numerical method</h2>
 <h1 id="numerical-results">Numerical results</h1>
 <h2 id="collisionless-regime">Collisionless regime</h2>
@@ -558,6 +655,7 @@ multi-species gas mixture and plasma transport, Advances in Aerodynamics
 wave-particle methods V: Diatomic molecular flow, Journal of
 Computational Physics 442 (2021) 110496.
 https://doi.org/10.1016/j.jcp.2021.110496.</p>
+<p>[11] R.Wang, K.Xu, User’s Manual for UGKS1D and UGKS2D Codes</p>
 
                 
             </div>
