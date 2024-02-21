@@ -437,6 +437,47 @@ dissipative mechanism, primarily associated with the often neglected
 bulk viscosity, is at play. This mechanism eventually leads to the
 thermalization of the system, challenging the notion of the breath mode
 as a perpetual oscillation.</p>
+<p>In M.I.García de Soria's study, the researchers utilized molecular
+dynamics simulations to examine the long-term evolution of the system.
+They observed that, over time, the oscillation period undergoes slight
+changes. However, molecular dynamics, being a microscopic method, is too
+computationally expensive when the Knudsen number increases, indicating
+a large number of atoms and collisions in the system. In such cases, the
+use of an asymptotic preserving numerical method becomes essential. This
+numerical approach enables accurate determination of the relaxation time
+of the system when it reaches final thermodynamic equilibrium and
+establishes the relationship between the relaxation time and the Knudsen
+number. By employing such a method, we can obtain precise insights into
+the dynamics and behavior of the system.</p>
+<p>Unified Gas-Kinetic Wave-Particle(UGKWP) method is a recently
+developed multiscaled method with asymptotic perserving capability[7].
+UGKWP employs finite volume method and use solution to kinetic equation
+to calculate the flux across the cell interface. The solution is
+represented particles for nonequilibrium part contributed by nonlocal
+information and waves for equilibrium part for local field. In the
+collisionless regime, it has been validated against the Direct
+Simulation Monte Carlo(DSMC), being the benchmark method for rarefied
+gas. In the strong collisional regime, it has been compared to
+hydrodynamic solver, showing capability for multiscale modeling. Once
+published, UGKWP has been extended to many fields, such as photon
+transport, neutral transport and plasma transport and all get accurate
+results.</p>
+<p>The Unified Gas-Kinetic Wave-Particle (UGKWP) method is a recently
+developed multiscale approach that exhibits asymptotic preserving
+capabilities [7]. UGKWP utilizes a finite volume method and uses the
+solution to the kinetic equation to compute the flux across cell
+interfaces. The solution is represented partially by particles to
+capture the non-equilibrium contributions from nonlocal field, and
+partially by waves to represent the equilibrium part of the local
+field.In the collisionless regime, UGKWP has been rigorously validated
+against the Direct Simulation Monte Carlo (DSMC) method, which serves as
+a benchmark method for rarefied gas simulations. In the strong
+collisional regime, UGKWP has been compared to hydrodynamic solvers,
+demonstrating its effectiveness in capturing multiscale phenomena.
+Besides, UGKWP has been extended to various fields, including photon
+transport, neutral transport, and plasma transport, consistently
+delivering accurate results across these diverse
+applications[8,9,10].</p>
 <h1 id="reference">Reference</h1>
 <p>[1]. F. Hasenöhrl, L. Boltzmann, eds., Über die Aufstellung und
 Integration der Gleichungen, welche die Molekularbewegung in Gasen
@@ -459,6 +500,20 @@ Nature 440 (2006) 900–903. https://doi.org/10.1038/nature04693.</p>
 of Boltzmann’s Breathers: Stokes Hypothesis and Anomalous
 Thermalization, Phys. Rev. Lett. 132 (2024) 027101.
 https://doi.org/10.1103/PhysRevLett.132.027101.</p>
+<p>[7] C. Liu, Y. Zhu, K. Xu, Unified gas-kinetic wave-particle methods
+I: Continuum and rarefied gas flow, Journal of Computational Physics 401
+(2020) 108977. https://doi.org/10.1016/j.jcp.2019.108977.</p>
+<p>[8] W. Li, C. Liu, Y. Zhu, J. Zhang, K. Xu, Unified gas-kinetic
+wave-particle methods III: Multiscale photon transport, Journal of
+Computational Physics 408 (2020) 109280.
+https://doi.org/10.1016/j.jcp.2020.109280.</p>
+<p>[9] C. Liu, K. Xu, Unified gas-kinetic wave-particle methods IV:
+multi-species gas mixture and plasma transport, Advances in Aerodynamics
+3 (2021) 9. https://doi.org/10.1186/s42774-021-00062-1.</p>
+<p>[10] X. Xu, Y. Chen, C. Liu, Z. Li, K. Xu, Unified gas-kinetic
+wave-particle methods V: Diatomic molecular flow, Journal of
+Computational Physics 442 (2021) 110496.
+https://doi.org/10.1016/j.jcp.2021.110496.</p>
 
                 
             </div>
