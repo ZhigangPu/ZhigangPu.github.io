@@ -621,9 +621,31 @@ as <span class="math inline">\(m_e\)</span>, is equal to 1, and the
 angular frequency, represented by <span
 class="math inline">\(\omega\)</span>, is also equal to 1.</p>
 <h1 id="ugkwp-method">UGKWP method</h1>
-<p>The literature [7,12]outlines the general process of the UGKWP
-method. Here we just list key parameters in this method.</p>
-<h2 id="collisionless-regime">Collisionless regime</h2>
+<p>These papers [7,12] outlines the detailed process of the UGKWP
+method. In this article, we just add an external force. The general
+procedure of the algorithm is</p>
+<ol type="1">
+<li>Initalize simulation particles into the domain.</li>
+<li>Update conservative variables <span
+class="math inline">\(\mathbf{W}\)</span> to <span
+class="math inline">\(\mathbf{W}^{*}\)</span> considering net flux
+without force term by UGKWP acorss the cell interface.</li>
+<li>Incorporate the interaction between harmonic potential field and
+particles, and evolve <span
+class="math inline">\(\mathbf{W}^{*}\)</span> to <span
+class="math inline">\(\mathbf{W}^{n+1}\)</span></li>
+<li>Run until finish condition.</li>
+</ol>
+<p>Here we use the Leap-frog method to realize a second-order accuracy
+of motion.</p>
+<h1 id="results">Results</h1>
+<h2 id="prieodic-ocillation-in-the-collisionless-regime">Prieodic
+ocillation in the collisionless regime</h2>
+<p>As a verification of code, we first ignore the collision between
+particles to see whether we can get a periodic osicllation.</p>
+<p>(/images/UGKWP-BTE-breathe-collisionless-trajectory.png)</p>
+<p>Here is the video of the density of trapper particles.</p>
+<p>(/videos/UGKWP-BTE-breathe-collisionless-breathe.mp4)</p>
 <h2 id="collision-regime">Collision regime</h2>
 <h2 id="analysis">Analysis</h2>
 <h1 id="reference">Reference</h1>
