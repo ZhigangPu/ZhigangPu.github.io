@@ -470,6 +470,58 @@ applications[8,9,10].</p>
 mode" under varying Knudsen numbers. Our primary focus is to examine the
 relationship between the Knudsen number and the relaxation time of the
 system.</p>
+<h1 id="numerical-setting">Numerical setting</h1>
+<h2 id="model-setting">Model setting</h2>
+<p>The Boltzmann equation for single-component monatomic gas with
+external force is <span class="math display">\[
+\frac{\partial f}{\partial t}+\boldsymbol{u}\cdot \nabla_x
+f+\boldsymbol{a}\cdot \nabla_u f= Q(f,f), \\
+\]</span></p>
+<p>where <span class="math inline">\(f = f(t, \boldsymbol{x},
+\boldsymbol{u})\)</span> is the velocity distribution function at space
+and time <span class="math inline">\((\boldsymbol{x},t)\)</span> and
+microscopic translational velocity <span
+class="math inline">\(\boldsymbol{u}\)</span>. <span
+class="math inline">\(\boldsymbol{a}\)</span> is the external force. The
+binary collisions are described by the collision <span
+class="math inline">\(Q(f,f)\)</span>,</p>
+<p><span class="math display">\[
+Q(f, f)=\int_{\mathcal{R}^3} \int_{\mathcal{S}^2}\left(f_*^{\prime}
+f^{\prime}-f_* f\right)\left|\mathbf{u}_{\mathbf{r}}\right| \sigma d
+\Omega d \mathbf{u}_*
+\]</span></p>
+<p>Here the short hand notation <span
+class="math inline">\(f_*^{\prime}=f\left(\mathbf{x}, t,
+\mathbf{u}_*^{\prime}\right)\)</span> is used, similarly for <span
+class="math inline">\(f^{\prime}\)</span> and <span
+class="math inline">\(f_*\)</span>, where <span
+class="math inline">\(\mathbf{u}\)</span>, <span
+class="math inline">\(\mathbf{u}_*\)</span> are the pre-collision
+particle velocities and <span class="math inline">\(\mathbf{u}^{\prime},
+\mathbf{u}_*^{\prime}\)</span> are the corresponding post-collision
+velocities. <span class="math inline">\(\Omega\)</span> is a unit vector
+in <span class="math inline">\(\mathcal{S}^2\)</span> along the relative
+post-collision velocity <span
+class="math inline">\(\mathbf{u}^{\prime}-\mathbf{u}^{\prime}{
+}_*\)</span>. The differential cross section <span
+class="math inline">\(\sigma\)</span> measures the probability of
+collision which depends on the strength of relative velocity and
+deflection angle between pre-collision and post-collision
+velocities.</p>
+<p>In this article, kinetic model equations are proposed to simplify the
+Boltzmann equation, in which the colision terms are modeled by a
+relaxation-type BGK operator,</p>
+<p><span class="math display">\[
+Q\equiv \frac{g-f}{\tau}
+\]</span></p>
+<p>where <span class="math inline">\(g\)</span> is the local equilibrium
+distribution function and <span class="math inline">\(\tau\)</span> is
+the relaxtion time.</p>
+<h2 id="numerical-method">Numerical method</h2>
+<h1 id="numerical-results">Numerical results</h1>
+<h2 id="collisionless-regime">Collisionless regime</h2>
+<h2 id="collision-regime">Collision regime</h2>
+<h2 id="analysis">Analysis</h2>
 <h1 id="reference">Reference</h1>
 <p>[1]. F. Hasenöhrl, L. Boltzmann, eds., Über die Aufstellung und
 Integration der Gleichungen, welche die Molekularbewegung in Gasen
