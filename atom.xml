@@ -6,7 +6,7 @@
   <link href="https://zhigangpu.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhigangpu.github.io/"/>
-  <updated>2024-02-19T09:17:40.591Z</updated>
+  <updated>2024-02-21T04:10:43.974Z</updated>
   <id>https://zhigangpu.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Asymptotic Kinetic Simulation of Boltzmann&#39;s Breathers - Unraveling the Long-Term Evolution</title>
+    <link href="https://zhigangpu.github.io/2024/02/21/UGKWP-BTE-breathe/"/>
+    <id>https://zhigangpu.github.io/2024/02/21/UGKWP-BTE-breathe/</id>
+    <published>2024-02-21T03:04:26.000Z</published>
+    <updated>2024-02-21T04:10:43.974Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;In Boltzmann&#39;s groundbreaking work, he discovered a fascinating
+phenomenon known as the &quot;breath</summary>
+        
+      
+    
+    
+    
+    <category term="Kinetic theory" scheme="https://zhigangpu.github.io/categories/Kinetic-theory/"/>
+    
+    
+    <category term="UGKWP" scheme="https://zhigangpu.github.io/tags/UGKWP/"/>
+    
+    <category term="Numerical simulation" scheme="https://zhigangpu.github.io/tags/Numerical-simulation/"/>
+    
+  </entry>
   
   <entry>
     <title>GSC-ABE - An Automatical Bibtex Extracter of Google Scholar Citation</title>
