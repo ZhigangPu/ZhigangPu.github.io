@@ -656,6 +656,45 @@ damping.Here is the video of the density of trapper particles.</p>
 controls=""><a
 href="/videos/UGKWP-BTE-breathe-collisionless-breathe.mp4">Video</a></video></p>
 <h2 id="collision-regime">Collision regime</h2>
+<p>For convenience of modeling, here we set <span
+class="math inline">\(n_i = 0.01\)</span>, so that <span
+class="math inline">\(\omega = 0.1\)</span>. The domain length is <span
+class="math inline">\(4\pi\)</span>, and the boundary condition is
+periodic boundary. The density equilibrium distribution is</p>
+<p><span class="math display">\[
+n = n_0 e^{-\frac{m\omega^2 r^2}{2k_B T}} = n_0 e^{-\lambda \omega^2
+r^2}
+\]</span></p>
+<p>Here <span class="math inline">\(\lambda = 3/2\)</span>. Here the
+result at <span class="math inline">\(Kn=0.01\)</span>,</p>
+<p>For modeling convenience, we set the ion density <span
+class="math inline">\(n_i\)</span> to be 0.01, resulting in an angular
+frequency <span class="math inline">\(\omega\)</span> of 0.1. The
+computational domain has a length of <span
+class="math inline">\(4\pi\)</span> units, and we impose periodic
+boundary conditions.</p>
+<p>The equilibrium density distribution in the system can be described
+by the expression <span class="math display">\[
+n = n_0 e^{-\frac{m\omega^2 r^2}{2k_B T}}
+\]</span>, where <span class="math inline">\(n_0\)</span> represents the
+normalized reference density and <span
+class="math inline">\(k_B\)</span> is the Boltzmann constant. In this
+particular case, we have <span class="math inline">\(\lambda =
+\frac{3}{2}\)</span>, indicating that the density decays exponentially
+with <span class="math inline">\(\omega^2 r^2\)</span>.</p>
+<p>The specific results obtained at a Knudsen number of 0.01 are as
+follows:</p>
+<p><video src="/videos/UGKWP-BTE-breathe-collisional-breathe-kn0.01.mp4"
+controls=""><a
+href="/videos/UGKWP-BTE-breathe-collisional-breathe-kn0.01.mp4">Video</a></video></p>
+<p>The provided image illustrates the variation of density over time at
+the center point of the system.</p>
+<p><img
+src="/images/UGKWP-BTE-breathe-collisional-decay-kn0.01.png" /></p>
+<p>From the image and accompanying video, it is apparent that the system
+eventually reaches an equilibrium state. However, it is important to
+note that the convergence is not uniform throughout the entire
+system.</p>
 <h2 id="analysis">Analysis</h2>
 <h1 id="reference">Reference</h1>
 <p>[1]. F. Hasenöhrl, L. Boltzmann, eds., Über die Aufstellung und
