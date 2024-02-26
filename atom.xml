@@ -6,7 +6,7 @@
   <link href="https://zhigangpu.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhigangpu.github.io/"/>
-  <updated>2024-02-24T02:42:19.620Z</updated>
+  <updated>2024-02-26T02:24:53.249Z</updated>
   <id>https://zhigangpu.github.io/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Derivation of Unified Gas-Kinetic Wave-Particle methods</title>
+    <link href="https://zhigangpu.github.io/2024/02/26/UGKWP/"/>
+    <id>https://zhigangpu.github.io/2024/02/26/UGKWP/</id>
+    <published>2024-02-26T01:04:26.000Z</published>
+    <updated>2024-02-26T02:24:53.249Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Fluid dynamics encompasses a wide range of phenomena, and while in
+our daily lives we often</summary>
+        
+      
+    
+    
+    
+    <category term="Kinetic theory" scheme="https://zhigangpu.github.io/categories/Kinetic-theory/"/>
+    
+    
+    <category term="UGKWP" scheme="https://zhigangpu.github.io/tags/UGKWP/"/>
+    
+    <category term="Numerical simulation" scheme="https://zhigangpu.github.io/tags/Numerical-simulation/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Asymptotic Kinetic Simulation of Boltzmann&#39;s Breathers - Unraveling the Long-Term Evolution</title>
     <link href="https://zhigangpu.github.io/2024/02/21/UGKWP-BTE-breathe/"/>
     <id>https://zhigangpu.github.io/2024/02/21/UGKWP-BTE-breathe/</id>
     <published>2024-02-21T03:04:26.000Z</published>
-    <updated>2024-02-24T02:42:19.620Z</updated>
+    <updated>2024-02-26T01:28:06.369Z</updated>
     
     
       
