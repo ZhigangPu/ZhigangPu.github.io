@@ -469,12 +469,79 @@ SD7003 airfoil computed by the full 6-dimensional Boltzmann equation
 with 88 billion degrees of freedom[2]
 </figcaption>
 </figure>
+<p>Multiscale phenomena in fluid mechanics indeed present significant
+challenges in modeling and numerical methods. In the continuum regime,
+fluid motion can be effectively described by the well-known
+Navier-Stokes equations, for which numerous numerical schemes have been
+developed. Among these schemes, the Riemann solver stands out as one of
+the most physically reliable methods.In the rarefied regime, where the
+fluid is sparse and the simple degrees of freedom provided by the
+continuum assumptions are no longer applicable, the Boltzmann equation
+becomes a crucial tool for describing nonequilibrium gas flow. To
+simulate such flows, there are primarily two types of numerical methods
+used.</p>
+<p>The first type is the stochastic particle method, which employs
+discrete particles to capture statistical behavior of rarefied gas on a
+macroscopic level. This method relies on random sampling techniques and
+statistical analysis to approximate the solution of the Boltzmann
+equation. The direct simulation Monte Carlo (DSMC) method [4] is the
+most successful particle simulation method. The particle method requires
+low compuational memory and is highly efficient in rarefied flow
+computations since it can be regarded as the best adaptive strategy in
+phase space, especially for high-speed flows in multidimensional
+cases[3]. However, as a stochastic method, DSMC suffers statistical
+noise problem and may require additional computational resources to
+achieve accurate result by averaging. Besides, the DSMC method is
+limited by the mesh size, which is restricted by spatial scale of
+molecular mean free path. In the continuum regime where mean free path
+is extremely small, this constraint poses greate computational
+challenge. Significant efforts have been dedicated to mitigate
+statistical errors and address the stiffness problem encountered in the
+continuum regimes.The information preservation (IP) method, the low
+variance deviational simulation Monte Carlo(LVDSMC) method, and the
+momente guided Monte Carlo method have been developed to reduce the
+statistical error. The asymptotic preserving (AP) Monte Carlo methods
+have been developed so the the Ruler solution can be obtained in the
+hydrodynamic limit without the requirement on the time step and the mesh
+size as that in the traditional DSMC method [3].</p>
+<p>The second type of numerical method for solving the Boltzmann
+equation is the deterministic method, which aims to discretize and
+directly solve the equation. Unlike the stochastic nature of the DSMC
+method, the deterministic method does not suffer from statistical noise.
+The deterministic method also demonstrates high computational
+efficiency, thanks to various acceleration techniques that can be
+employed. These techniques include implicit schemes, which allow for
+larger time steps and improved stability, and memory reduction methods,
+which optimize the memory usage during the simulation. Additionally,
+adaptive refinement methods can be implemented to dynamically adjust the
+mesh resolution based on the flow properties, enhancing both accuracy
+and efficiency.To overcome the stiffness problem associated with the
+collision term in the continuum regime, asymptotic preserving schemes
+have been developed. Most of them use implicit or semi-implicit method
+for the collision part. However, these fails to achieve second-order
+accuracy since they have the same numerical mechanism as the flux vector
+splitting (FVS) methods, where the intrinstic numerical dissipation is
+proportional to time step[5], which deteriorates the NS solution when a
+large time step is used. Xu et al[5] proposed the unified gas-kinetic
+scheme (UGKS) as AP scheme which couples the particles' free streaming
+and collision to remove the timestep restriction and achieve
+second-order accuracy. The multiscale transport modeling in UGKS has
+been applied in many transport problems later.</p>
 <h1 id="reference">Reference</h1>
 <p>[1] J. Lee, J.H. Kim, Statistical assessment of tangential momentum
 accommodation coefficient using internal flow rate model based on
 rarefied gas conditions, Results in Physics 43 (2022) 106130.
 https://doi.org/10.1016/j.rinp.2022.106130.</p>
 <p>[2]https://www.reddit.com/r/CFD/comments/15kpzup/molecular_gas_dynamics_simulation_of_turbulence/</p>
+<p>[3] Y.(朱亚军) Zhu, C.(刘畅) Liu, C.(钟诚文) Zhong, K.(徐昆) Xu,
+Unified gas-kinetic wave-particle methods. II. Multiscale simulation on
+unstructured mesh, Physics of Fluids 31 (2019) 067105.
+https://doi.org/10.1063/1.5097645.</p>
+<p>[4] Bird G A. Molecular gas dynamics and the direct simulation of gas
+flows[M]. Oxford university press, 1994.</p>
+<p>[5] K. Xu, J.-C. Huang, A unified gas-kinetic scheme for continuum
+and rarefied flows, Journal of Computational Physics 229 (2010)
+7747–7764. https://doi.org/10.1016/j.jcp.2010.06.032.</p>
 
                 
             </div>
