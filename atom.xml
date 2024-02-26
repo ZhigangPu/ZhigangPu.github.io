@@ -6,7 +6,7 @@
   <link href="https://zhigangpu.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhigangpu.github.io/"/>
-  <updated>2024-02-26T06:50:20.176Z</updated>
+  <updated>2024-02-26T07:28:06.635Z</updated>
   <id>https://zhigangpu.github.io/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Tools for Writing in Markdown</title>
+    <link href="https://zhigangpu.github.io/2024/02/26/Markdown-Tools/"/>
+    <id>https://zhigangpu.github.io/2024/02/26/Markdown-Tools/</id>
+    <published>2024-02-26T07:04:26.000Z</published>
+    <updated>2024-02-26T07:28:06.635Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;useful-resourse&quot;&gt;Useful resourse&lt;/h1&gt;
+&lt;ol type=&quot;1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.markdownguide.org/hacks/&quot;&gt;Hacks: Workarounds
+for</summary>
+        
+      
+    
+    
+    
+    <category term="Markdown" scheme="https://zhigangpu.github.io/categories/Markdown/"/>
+    
+    
+    <category term="Tools" scheme="https://zhigangpu.github.io/tags/Tools/"/>
+    
+    <category term="Blog" scheme="https://zhigangpu.github.io/tags/Blog/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Derivation of Unified Gas-Kinetic Wave-Particle methods</title>
     <link href="https://zhigangpu.github.io/2024/02/26/UGKWP/"/>
     <id>https://zhigangpu.github.io/2024/02/26/UGKWP/</id>
     <published>2024-02-26T01:04:26.000Z</published>
-    <updated>2024-02-26T06:50:20.176Z</updated>
+    <updated>2024-02-26T07:28:34.625Z</updated>
     
     
       
