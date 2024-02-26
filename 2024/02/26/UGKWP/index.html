@@ -527,21 +527,43 @@ scheme (UGKS) as AP scheme which couples the particles' free streaming
 and collision to remove the timestep restriction and achieve
 second-order accuracy. The multiscale transport modeling in UGKS has
 been applied in many transport problems later.</p>
+<p>The particle method and the deterministic method have their own
+merits and disadvantages. If we can combine them together, it should be
+a great method. In the context of UGKS, such work has been implemented.
+The direct particle implementation of UGKS is the so-called unified
+gas-kinetic particle (UGKP) method[6]. The UGKP method mploys particles
+to represent the distribution function, as opposed to discrete
+distribution function bins used in the UGKS. It should be noted that, as
+a result of collisions, a portion of the particles will relax towards
+the local thermodynamic equilibrium state. In the context of the unified
+gas-kinetic wave-particle (UGKWP) method[7], this relaxation phenomenon
+is leveraged to calculate the numerical flux contributed by these
+equilibrium particles analytically. By doing so, the computational cost
+associated with particle sampling and advancement can be significantly
+reduced. The UGKWP method thus can adaptively become the particle
+simulation in collisionless regime and the hydrodynamic solver in the
+collisional regime, the same as the gas-kinetic scheme (GKS).</p>
+<p>In this article, the construction of UGKWP method is introduced
+derived from GKS, UGKS and UGKP.</p>
 <h1 id="reference">Reference</h1>
-<p>[1] J. Lee, J.H. Kim, Statistical assessment of tangential momentum
+<p>[1] Lee J, Kim J H. Statistical assessment of tangential momentum
 accommodation coefficient using internal flow rate model based on
-rarefied gas conditions, Results in Physics 43 (2022) 106130.
-https://doi.org/10.1016/j.rinp.2022.106130.</p>
+rarefied gas conditions[J]. Results in Physics, 2022, 43: 106130.</p>
 <p>[2]https://www.reddit.com/r/CFD/comments/15kpzup/molecular_gas_dynamics_simulation_of_turbulence/</p>
-<p>[3] Y.(朱亚军) Zhu, C.(刘畅) Liu, C.(钟诚文) Zhong, K.(徐昆) Xu,
-Unified gas-kinetic wave-particle methods. II. Multiscale simulation on
-unstructured mesh, Physics of Fluids 31 (2019) 067105.
-https://doi.org/10.1063/1.5097645.</p>
+<p>[3] Zhu Y, Liu C, Zhong C, et al. Unified gas-kinetic wave-particle
+methods. II. Multiscale simulation on unstructured mesh[J]. Physics of
+Fluids, 2019, 31(6).</p>
 <p>[4] Bird G A. Molecular gas dynamics and the direct simulation of gas
 flows[M]. Oxford university press, 1994.</p>
-<p>[5] K. Xu, J.-C. Huang, A unified gas-kinetic scheme for continuum
-and rarefied flows, Journal of Computational Physics 229 (2010)
-7747–7764. https://doi.org/10.1016/j.jcp.2010.06.032.</p>
+<p>[5] Xu K, Huang J C. A unified gas-kinetic scheme for continuum and
+rarefied flows[J]. Journal of Computational Physics, 2010, 229(20):
+7747-7764.</p>
+<p>[6] Li W, Liu C, Zhu Y, et al. A unified gas-kinetic particle method
+for multiscale photon transport[J]. arXiv preprint arXiv:1810.05984,
+2018.</p>
+<p>[7] Liu C, Zhu Y, Xu K. Unified gas-kinetic wave-particle methods I:
+Continuum and rarefied gas flow[J]. Journal of Computational Physics,
+2020, 401: 108977.</p>
 
                 
             </div>
